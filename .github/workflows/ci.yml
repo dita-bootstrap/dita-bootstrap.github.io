@@ -1,0 +1,66 @@
+name: CI
+'on':
+  push:
+    branches:
+      - master
+      - develop
+  workflow_dispatch:
+
+jobs:
+  build-dita:
+    name: Build DITA
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v6
+
+      - name: Git checkout specialization
+        uses: actions/checkout@v6
+        with:
+          repository: dita-bootstrap/dita-bootstrap.specialization
+          ref: develop
+          path: specialization
+
+      - name: Copy Sample folder
+        run: cp -R specialization/sample sample
+
+      - name: Calculate short SHA
+        uses: benjlevesque/short-sha@v3.0
+        id: short-sha
+        with:
+          length: 7
+      - run: echo $SHA
+        env:
+          SHA: ${{ steps.short-sha.outputs.sha }}
+      - run: echo $SHA
+        env:
+          SHA: ${{ env.SHA }}
+
+      - name: Build Bootstrap
+        uses: dita-ot/dita-ot-action@4.4
+        with:
+          install: |
+            apt-get update -q
+            export DEBIAN_FRONTEND=noninteractive
+            apt-get install -qy --no-install-recommends nodejs
+            nodejs -v
+          plugins: |
+            fox.jason.extend.css
+            https://github.com/dita-bootstrap/dita-bootstrap.specialization/archive/develop.zip
+            https://github.com/infotexture/dita-bootstrap/archive/develop.zip
+            net.infotexture.dita-bootstrap.lunr
+            fox.jason.prismjs
+            fox.jason.favicon
+            fox.jason.open-graph
+            https://github.com/jason-fox/fox.jason.theme-switcher/archive/master.zip
+          project: .github/dita-ot/html.xml
+
+      - name: Deploy HTML 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.8.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages # The branch the action should deploy to.
+          folder: out/html # The folder the action should deploy.
+          commit-message: '🚀 Deploy ${{ env.SHA }} to GitHub Pages'
+          git-config-name: 'GitHub Action'
+          git-config-email: 'action@github.com'
