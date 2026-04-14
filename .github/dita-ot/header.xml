@@ -54,42 +54,50 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Plugin
+            Plugins
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownPlugin">
             <li><a
                 class="dropdown-item"
                 href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.html"
-              >dita-bootstrap.html</a></li>
+              >Bootstrap HTML Plugin</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.pdf"
-              >dita-bootstrap.pdf</a></li>
+              >Bootstrap PDF Plugin</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.pdf.theme"
-              >dita-bootstrap.pdf.theme</a></li>
+              >Bootstrap PDF Theme Plugin</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.specialization"
-              >dita-bootstrap.specialization</a></li>
+              >Bootstrap Specialization Plugin</a></li>
             <li><hr class="dropdown-divider"/></li>
             <li><a
                 class="dropdown-item"
-                href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.lunr"
-              >dita-bootstrap.lunr</a></li>
-            <li><a
-                class="dropdown-item"
-                href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.tables"
-              >dita-bootstrap.tables</a></li>
-            <li><a
-                class="dropdown-item"
-                href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.extension"
-              >dita-bootstrap.extension</a></li>
-            <li><a
-                class="dropdown-item"
-                href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.extension.specialization"
-              >dita-bootstrap.extension.specialization</a></li>
+            href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.extension"
+        >Bootstrap Extension Plugin</a></li>
+        <li><a
+            class="dropdown-item"
+            href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.extension.specialization"
+        >Bootstrap Extension Specialization Plugin</a></li>
+        <li><a
+            class="dropdown-item"
+            href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.lunr"
+        >Lunr Search Plugin</a></li>
+        <li><a
+            class="dropdown-item"
+            href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.sass"
+        >Bootstrap Sass Plugin</a></li>
+        <li><a
+            class="dropdown-item"
+            href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.tables"
+        >Bootstrap Tables Plugin</a></li>
+        <li><a
+            class="dropdown-item"
+            href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.watermark"
+        >Bootstrap Watermark Plugin</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -123,6 +131,14 @@
             <li><hr class="dropdown-divider"/></li>
             <li><a
                 class="dropdown-item"
+                href="https://github.com/dita-bootstrap/dita-bootstrap.extension"
+              >dita-bootstrap.extension</a></li>
+            <li><a
+                class="dropdown-item"
+                href="https://github.com/dita-bootstrap/dita-bootstrap.extension.specialization"
+              >dita-bootstrap.extension.specialization</a></li>
+            <li><a
+                class="dropdown-item"
                 href="https://github.com/dita-bootstrap/dita-bootstrap.lunr"
               >dita-bootstrap.lunr</a></li>
             <li><a
@@ -131,12 +147,12 @@
               >dita-bootstrap.tables</a></li>
             <li><a
                 class="dropdown-item"
-                href="https://github.com/dita-bootstrap/dita-bootstrap.extension"
-              >dita-bootstrap.extension</a></li>
+                href="https://github.com/dita-bootstrap/dita-bootstrap.sass"
+              >dita-bootstrap.sass</a></li>
             <li><a
                 class="dropdown-item"
-                href="https://github.com/dita-bootstrap/dita-bootstrap.extension.specialization"
-              >dita-bootstrap.extension.specialization</a></li>
+                href="https://github.com/dita-bootstrap/dita-bootstrap.watermark"
+              >dita-bootstrap.watermark</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -162,20 +178,12 @@
             <li><a
                 class="dropdown-item"
                 href="https://github.com/dita-bootstrap/dita-bootstrap.pdf.theme/releases"
-              >dita-bootstrap.pdf.thems</a></li>
+              >dita-bootstrap.pdf.theme</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://github.com/dita-bootstrap/dita-bootstrap.specialization/releases"
               >dita-bootstrap.specialization</a></li>
             <li><hr class="dropdown-divider"/></li>
-            <li><a
-                class="dropdown-item"
-                href="https://github.com/dita-bootstrap/dita-bootstrap.lunr/releases"
-              >dita-bootstrap.lunr</a></li>
-            <li><a
-                class="dropdown-item"
-                href="https://github.com/dita-bootstrap/dita-bootstrap.tables/releases"
-              >dita-bootstrap.tables</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://github.com/dita-bootstrap/dita-bootstrap.extension/releases"
@@ -184,6 +192,23 @@
                 class="dropdown-item"
                 href="https://github.com/dita-bootstrap/dita-bootstrap.extension.specialization/releases"
               >dita-bootstrap.extension.specialization</a></li>
+            <li><a
+                class="dropdown-item"
+                href="https://github.com/dita-bootstrap/dita-bootstrap.lunr/releases"
+              >dita-bootstrap.lunr</a></li>
+            <li><a
+                class="dropdown-item"
+                href="https://github.com/dita-bootstrap/dita-bootstrap.sass/releases"
+              >dita-bootstrap.sass</a></li>
+            <li><a
+                class="dropdown-item"
+                href="https://github.com/dita-bootstrap/dita-bootstrap.tables/releases"
+              >dita-bootstrap.tables</a></li>
+            <li><a
+                class="dropdown-item"
+                href="https://github.com/dita-bootstrap/dita-bootstrap.watermark/releases"
+              >dita-bootstrap.watermark</a></li>
+          </ul>
           </ul>
         </li>
         <li class="nav-item">
