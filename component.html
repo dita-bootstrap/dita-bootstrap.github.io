@@ -1,0 +1,555 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="copyright" content="(C) Copyright 2026"><meta name="generator" content="DITA-OT"><meta name="description" content="Extend the Bootstrap plugin by creating specialized DITA elements that map to specific Bootstrap components, such as Callouts."><meta name="icon" content="bi-puzzle"><meta property="og:type" content="website"><meta property="og:url" content="https://dita-bootstrap.github.io//component.html"><meta property="og:title" content="Custom Components"><meta property="og:description" content="Extend the Bootstrap plugin by creating specialized DITA elements that map to specific Bootstrap components, such as Callouts."><meta property="og:image" content="https://dita-bootstrap.github.io//open-graph.svg"><meta name="twitter:title" content="Custom Components"><meta name="twitter:description" content="Extend the Bootstrap plugin by creating specialized DITA elements that map to specific Bootstrap components, such as Callouts."><meta property="twitter:url" content="https://dita-bootstrap.github.io//component.html"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://dita-bootstrap.github.io//open-graph.svg"><title>Custom Components</title><script src="./js/lunr-client.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script language="javascript" src="./js/css-theme-switcher.js"></script><link rel="shortcut icon" href="./favicon/favicon.svg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="css/commonltr.css">
+<link rel="stylesheet" type="text/css" href="./css/common-extended.css"><link rel="stylesheet" type="text/css" href="css/theme.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" integrity="sha384-CK2SzKma4jA5H/MXDUU7i1TqZlCFaD4T01vtyDFvPlD97JQyS+IsSh1nI2EFbpyk" crossorigin="anonymous"></head><body id="component" class="d-flex flex-column min-vh-100 language-markup"><div class="visually-hidden-focusable overflow-hidden p-2 bg-body-tertiary"><div class="container-xl"><a class="d-inline-flex m-1 btn btn-outline-primary btn-sm" href="#ariaid-title1">Skip to main content</a><a href="#bs-sidebar-nav" class="d-none d-md-inline-flex m-1 btn btn-outline-primary btn-sm">Skip to docs navigation</a></div></div><header role="banner" class="sticky-top"><nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <!-- Modify -xxl to change container size -->
+  <div class="container-xxl">
+    <!-- This shows the menu on mobile -->
+    <div class="bd-navbar-toggle">
+      <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdSidebar" aria-controls="bdSidebar" aria-label="Toggle docs navigation">
+        <i class="bi bi-list"></i>
+      </button>
+    </div>
+    <a class="navbar-brand" href="https://dita-bootstrap.github.io">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bootstrap" viewBox="0 0 16 16">
+      <path d="M5.062 12h3.475c1.804 0 2.888-.908 2.888-2.396 0-1.102-.761-1.916-1.904-2.034v-.1c.832-.14 1.482-.93 1.482-1.816 0-1.3-.955-2.11-2.542-2.11H5.062V12zm1.313-4.875V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23H6.375zm0 3.762V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377H6.375z"/>
+      <path d="M0 4a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4zm4-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3H4z"/>
+    </svg>
+      DITA Bootstrap
+    </a>
+    <button class="navbar-toggler p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="bi bi-three-dots"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPlugin" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Plugins
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownPlugin">
+            <li><a class="dropdown-item" href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.html">Bootstrap HTML Plugin</a></li>
+            <li><a class="dropdown-item" href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.pdf">Bootstrap PDF Plugin</a></li>
+            <li><a class="dropdown-item" href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.pdf.theme">Bootstrap PDF Theme Plugin</a></li>
+            <li><a class="dropdown-item" href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.specialization">Bootstrap Specialization Plugin</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.extension">Bootstrap Extension Plugin</a></li>
+        <li><a class="dropdown-item" href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.extension.specialization">Bootstrap Extension Specialization Plugin</a></li>
+        <li><a class="dropdown-item" href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.lunr">Lunr Search Plugin</a></li>
+        <li><a class="dropdown-item" href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.sass">Bootstrap Sass Plugin</a></li>
+        <li><a class="dropdown-item" href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.tables">Bootstrap Tables Plugin</a></li>
+        <li><a class="dropdown-item" href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.watermark">Bootstrap Watermark Plugin</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownSource" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Source
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownSource">
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.html">dita-bootstrap.html</a></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.pdf">dita-bootstrap.pdf</a></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.pdf.theme">dita-bootstrap.pdf.theme</a></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.specialization">dita-bootstrap.specialization</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.extension">dita-bootstrap.extension</a></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.extension.specialization">dita-bootstrap.extension.specialization</a></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.lunr">dita-bootstrap.lunr</a></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.tables">dita-bootstrap.tables</a></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.sass">dita-bootstrap.sass</a></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.watermark">dita-bootstrap.watermark</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownReleases" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Releases
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownReleases">
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.html/releases">dita-bootstrap.html</a></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.pdf/releases">dita-bootstrap.pdf</a></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.pdf.theme/releases">dita-bootstrap.pdf.theme</a></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.specialization/releases">dita-bootstrap.specialization</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.extension/releases">dita-bootstrap.extension</a></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.extension.specialization/releases">dita-bootstrap.extension.specialization</a></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.lunr/releases">dita-bootstrap.lunr</a></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.sass/releases">dita-bootstrap.sass</a></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.tables/releases">dita-bootstrap.tables</a></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.watermark/releases">dita-bootstrap.watermark</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://getbootstrap.com/docs/5.3">Bootstrap Docs</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto">
+        <!--
+          This is a lunr.js search box
+          It requires JavaScript to function.
+        -->
+        <li class="nav-item d-flex align-items-center">
+          <span class="nav-link pe-2">
+            <i class="bi bi-search"></i>
+          </span>
+          <form class="position-relative me-auto search-box rounded">
+            <input type="search" class="form-control" placeholder="Search…" aria-label="Search for…" dir="auto">
+          </form>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-0 me-1">
+        <!--
+          This is a dark/light color theme toggler.
+          It requires JavaScript to function.
+        -->
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-color-mode" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
+            <span class="d-light">
+              <i class="bi bi-brightness-high-fill"></i>
+            </span>
+            <span class="d-dark">
+              <i class="bi bi-moon-stars-fill"></i>
+            </span>
+            <span class="d-auto">
+              <i class="bi bi-circle-half"></i>
+            </span>
+            <span class="d-lg-none ms-2">Toggle color mode</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-color-mode" style="--bs-dropdown-min-width: 6rem;" data-bs-popper="static">
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light">
+                <i class="bi bi-brightness-high-fill"></i>
+                <span class="ms-2">Light</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark">
+                <i class="bi bi-moon-stars-fill"></i>
+                <span class="ms-2">Dark</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto">
+                <i class="bi bi-circle-half"></i>
+                <span class="ms-2">Auto</span>
+              </button>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-0 me-1">
+        <!--
+          This is a css bootstrap theme toggler.
+          It requires JavaScript to function.
+        -->
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-css-theme" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
+            <i class="bi bi-filetype-css"></i>
+            <span class="d-lg-none ms-2">Toggle theme</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end css-themes-list overflow-y-auto" aria-labelledby="bd-css-theme" style="--bs-dropdown-min-width: 6rem;" data-bs-popper="static">
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+                Default
+              </button>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/brite/bootstrap.min.css">
+                Brite
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/cerulean/bootstrap.min.css">
+                Cerulean
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/cosmo/bootstrap.min.css">
+                Cosmo
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/cyborg/bootstrap.min.css">
+                Cyborg
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/darkly/bootstrap.min.css">
+                Darkly
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/flatly/bootstrap.min.css">
+                Flatly
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/journal/bootstrap.min.css">
+                Journal
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/litera/bootstrap.min.css">
+                Litera
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/lumen/bootstrap.min.css">
+                Lumen
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/lux/bootstrap.min.css">
+                Lux
+              </button>
+            </li>
+          <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/materia/bootstrap.min.css">
+                Materia
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/minty/bootstrap.min.css">
+                Minty
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/morph/bootstrap.min.css">
+                Morph
+              </button>
+            </li>
+
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/pulse/bootstrap.min.css">
+                Pulse
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/quartz/bootstrap.min.css">
+                Quartz
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/sandstone/bootstrap.min.css">
+                Sandstone
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/simplex/bootstrap.min.css">
+                Simplex
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/sketchy/bootstrap.min.css">
+                Sketchy
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/slate/bootstrap.min.css">
+                Slate
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/solar/bootstrap.min.css">
+                Solar
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/spacelab/bootstrap.min.css">
+                SpaceLab
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/superhero/bootstrap.min.css">
+                Superhero
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/united/bootstrap.min.css">
+                United
+              </button>
+            </li>
+          <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/vapor/bootstrap.min.css">
+                Vapor
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/yeti/bootstrap.min.css">
+                Yeti
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/zephyr/bootstrap.min.css">
+                Zephyr
+              </button>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav></header><div class="bs-container container-xxl bd-gutter mt-3 my-md-4" id="content"><div class="overflow-y-auto bs-sidebar"><div class="offcanvas-lg offcanvas-start" tabindex="-1" id="bdSidebar" aria-labelledby="bdSidebarOffcanvasLabel" aria-modal="true" role="dialog"><div class="offcanvas-header border-bottom"><h5 class="offcanvas-title" id="bdSidebarOffcanvasLabel">DITA Bootstrap</h5><button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#bdSidebar"></button></div><div class="offcanvas-body flex-column h-100"><nav class="d-flex flex-align-start flex-column h-100 overflow-y-auto" role="navigation" id="bs-sidebar-nav"><div class="overflow-y-auto"><div class="flex-column bd-links"><ul class="list-unstyled mb-0 py-3 pt-md-1"><li><div class="d-flex flex-row ps-0"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center p-0 border-0" data-bs-target="#menu-collapse-d81512e11"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-2" data-bs-target="#menu-collapse-d81512e11"><i class="me-2 bi-book-half" style="color: var(--bs-indigo)"></i>Getting Started</span></div><div id="menu-collapse-d81512e11" class="ps-2 collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="index.html">Introduction</a></div></li></ul></div></li><li><div class="d-flex flex-row ps-0"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center p-0 border-0" data-bs-target="#menu-collapse-d81512e31"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-2" data-bs-target="#menu-collapse-d81512e31"><i class="me-2 bi-grid-fill" style="color: var(--bs-teal)"></i>Layout</span></div><div id="menu-collapse-d81512e31" class="ps-2 collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="nav.html">Navigation Menus</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="containers.html">Containers</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="grid.html">Grid System</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="rtl.html">Right-to-Left Languages</a></div></li></ul></div></li><li><div class="d-flex flex-row ps-0"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center p-0 border-0" data-bs-target="#menu-collapse-d81512e81"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-2" data-bs-target="#menu-collapse-d81512e81"><i class="me-2 bi-file-earmark-richtext" style="color: var(--bs-gray)"></i>Content</span></div><div id="menu-collapse-d81512e81" class="ps-2 collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="typography.html">Typography</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="images.html">Images</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="tables.html">Tables</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="figures.html">Figures</a></div></li></ul></div></li><li><div class="d-flex flex-row ps-0"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center p-0 border-0" data-bs-target="#menu-collapse-d81512e127"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-2" data-bs-target="#menu-collapse-d81512e127"><i class="me-2 bi-menu-button-wide-fill" style="color: var(--bs-cyan)"></i>Components</span></div><div id="menu-collapse-d81512e127" class="ps-2 collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="accordion.html">Accordion</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="alerts.html">Alerts</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="badge.html">Badges</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="breadcrumb.html">Breadcrumb</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="buttons.html">Buttons</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="button-group.html">Button group</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="card.html">Cards</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="carousel.html">Carousel</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="collapse.html">Collapse</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="list-group.html">List Group</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="offcanvas.html">Offcanvas</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="pagination.html">Pagination</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="popovers.html">Popovers</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="scrollspy.html">Scrollspy</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="tabs.html">Tabbed Dialogs</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="tooltips.html">Tooltips</a></div></li></ul></div></li><li><div class="d-flex flex-row ps-0"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center p-0 border-0" data-bs-target="#menu-collapse-d81512e297"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-2" data-bs-target="#menu-collapse-d81512e297"><i class="me-2 bi-braces-asterisk" style="color: var(--bs-pink)"></i>Utilities</span></div><div id="menu-collapse-d81512e297" class="ps-2 collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="borders.html">Borders</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="color.html">Color</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="shadows.html">Shadows</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="spacing.html">Spacing</a></div></li></ul></div></li><li><div class="d-flex flex-row ps-0"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center p-0 border-0 active" data-bs-target="#menu-collapse-d81512e358" aria-expanded="true" aria-current="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-2 active" data-bs-target="#menu-collapse-d81512e358" aria-expanded="true" aria-current="true"><i class="me-2 bi-tools" style="color: var(--bs-blue)"></i>Extend</span></div><div id="menu-collapse-d81512e358" class="ps-2 collapse show"><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="icons.html"><i class="me-2 bi-images" style=""></i>Icons</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="dark-mode.html"><i class="me-2 bi-moon-stars" style=""></i>Dark Mode</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="extension-points.html"><i class="me-2 bi-wrench-adjustable" style=""></i>Extension Points</a></div></li><li><hr class="m-1"><span class="ps-3 bd-divider d-inline-flex">Additional Plug‑ins</span></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="search-box.html"><i class="me-2 bi-search" style=""></i>Search Box</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="offline.html"><i class="me-2 bi-wifi-off" style=""></i>Offline Mode</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1  active" href="component.html"><i class="me-2 bi-puzzle" style=""></i>Custom Components</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="sass.html"><i class="me-2 bi-filetype-sass" style=""></i>Bootstrap Sass</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="bootstrap-table.html"><i class="me-2 bi-table" style=""></i>Dynamic Tables</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="bootstrap-extension.html"><i class="me-2 bi-bootstrap" style=""></i>Bootstrap Extension</a></div></li></ul></div></li></ul></div></div></nav></div></div></div><main role="main" class="bs-main me-3"><article role="article" class="bs-content" aria-labelledby="ariaid-title1">
+  <h1 class="title " id="ariaid-title1">Custom Components</h1>
+  
+  
+  <div class="body  language-markup"><p class="shortdesc text-body-secondary lead ">Extend the Bootstrap plugin by creating specialized DITA elements that map to specific Bootstrap components, such as Callouts.</p>
+    <p class="p ">This scenario walks through the process of creating a custom component plug-in
+        (<code class="ph codeph  language-markup">com.example.bootstrap-component</code>) that defines a new <code class="keyword markupname xmlelement ">&lt;callout&gt;</code> element. 
+        This specialized element automatically applies Bootstrap utility classes.</p>
+    
+    <section class="section "><h2 class="title h4 ">Procedure</h2>
+      
+      <ol class="ol ">
+        <li class="li ">
+          <p class="p ">In the <span class="ph filepath ">plugins</span> directory, create a directory structure like the following:</p>
+          <figure class="fig  figure w-100 mw-100 p-3">
+            
+            <pre class="pre codeblock alert alert-secondary  language-bash"><code>com.example.bootstrap-component
+├── Customization
+│   └── xsl
+│       └── callout.xsl
+├── dtd
+│   └── base
+│       ├── bootstrap-custom-topic.dtd
+│       ├── bootstrapCustomDomain.ent
+│       └── bootstrapCustomDomain.mod
+├── catalog.xml
+├── plugin.xml
+└── xsl
+    └── xhtml.xsl</code></pre>
+          <figcaption class="fig  figure-caption"><span class="fig--title-label">Figure 1. </span>Plugin directory structure</figcaption></figure>
+
+        </li>
+        <li class="li ">
+          <p class="p ">Define the specialization entities in <span class="ph filepath ">bootstrapCustomDomain.ent</span>:</p>
+          <figure class="fig  figure w-100 mw-100 p-3">
+            
+            <pre class="pre codeblock alert alert-secondary  language-xml"><code><span class="ph  token prolog">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="ph  token comment">&lt;!-- MODULE: DITA Bootstrap Custom Domain Entities --&gt;</span>
+
+<span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span>!ENTITY</span> <span class="ph  token attr-name">%</span> <span class="ph  token attr-name">callout</span> <span class="ph  token attr-name">"callout"</span><span class="ph  token punctuation">&gt;</span></span>
+<span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span>!ENTITY</span> <span class="ph  token attr-name">%</span> <span class="ph  token attr-name">bootstrapCustom-d-section</span> <span class="ph  token attr-name">"callout"</span><span class="ph  token punctuation">&gt;</span></span>
+<span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span>!ENTITY</span> <span class="ph  token attr-name">bootstrapCustom-d-att</span> <span class="ph  token attr-name">"(topic</span> <span class="ph  token attr-name">bootstrapCustom-d)"</span><span class="ph  token punctuation">&gt;</span></span></code></pre>
+          <figcaption class="fig  figure-caption"><span class="fig--title-label">Figure 2. </span>Sample <span class="ph filepath ">bootstrapCustomDomain.ent</span> file</figcaption></figure>
+
+        </li>
+        <li class="li ">
+          <p class="p ">Define the specialization module in <span class="ph filepath ">bootstrapCustomDomain.mod</span>:</p>
+          <figure class="fig  figure w-100 mw-100 p-3">
+            
+            <pre class="pre codeblock alert alert-secondary  language-xml"><code><span class="ph  token comment">&lt;!-- ============================================================= --&gt;</span>
+<span class="ph  token comment">&lt;!--                   BOOTSTRAP CUSTOM DOMAIN                     --&gt;</span>
+<span class="ph  token comment">&lt;!-- ============================================================= --&gt;</span>
+
+<span class="ph  token comment">&lt;!-- ============================================================= --&gt;</span>
+<span class="ph  token comment">&lt;!--                    ELEMENT DECLARATIONS                       --&gt;</span>
+<span class="ph  token comment">&lt;!-- ============================================================= --&gt;</span>
+
+<span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span>!ENTITY</span> <span class="ph  token attr-name">%</span> <span class="ph  token attr-name">callout.content</span> <span class="ph  token attr-name">"(%section.cnt;)*"</span><span class="ph  token punctuation">&gt;</span></span>
+<span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span>!ENTITY</span> <span class="ph  token attr-name">%</span> <span class="ph  token attr-name">callout.attributes</span>
+  <span class="ph  token attr-name">"spectitle</span> <span class="ph  token attr-name">CDATA</span> <span class="ph  token attr-name">#IMPLIED</span>
+   <span class="ph  token attr-name">color</span> <span class="ph  token attr-name">CDATA</span> <span class="ph  token attr-name">#IMPLIED</span>
+   <span class="ph  token attr-name">rounded</span> <span class="ph  token attr-name">(yes</span> <span class="ph  token attr-name">|</span> <span class="ph  token attr-name">no</span> <span class="ph  token attr-name">|</span> <span class="ph  token attr-name">0</span> <span class="ph  token attr-name">|</span> <span class="ph  token attr-name">1</span> <span class="ph  token attr-name">|</span> <span class="ph  token attr-name">2</span> <span class="ph  token attr-name">|</span> <span class="ph  token attr-name">3</span> <span class="ph  token attr-name">|</span> <span class="ph  token attr-name">4</span> <span class="ph  token attr-name">|</span> <span class="ph  token attr-name">5</span> <span class="ph  token attr-name">|</span> <span class="ph  token attr-name">circle</span> <span class="ph  token attr-name">|</span> <span class="ph  token attr-name">pill)</span> <span class="ph  token attr-name">#IMPLIED</span>
+   <span class="ph  token attr-name">outputclass</span> <span class="ph  token attr-name">CDATA</span> <span class="ph  token attr-name">#IMPLIED</span>
+   <span class="ph  token attr-name">%univ-atts;"</span><span class="ph  token punctuation">&gt;</span></span>
+<span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span>!ELEMENT</span> <span class="ph  token attr-name">callout</span> <span class="ph  token attr-name">%callout.content;</span><span class="ph  token punctuation">&gt;</span></span>
+<span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span>!ATTLIST</span> <span class="ph  token attr-name">callout</span> <span class="ph  token attr-name">%callout.attributes;</span><span class="ph  token punctuation">&gt;</span></span>
+
+<span class="ph  token comment">&lt;!-- ============================================================= --&gt;</span>
+<span class="ph  token comment">&lt;!--                    SPECIALIZATION ATTRIBUTE DECLARATIONS      --&gt;</span>
+<span class="ph  token comment">&lt;!-- ============================================================= --&gt;</span>
+
+&lt;!ATTLIST callout class CDATA "+ topic/section bootstrapCustom-d/callout "&gt;</code></pre>
+          <figcaption class="fig  figure-caption"><span class="fig--title-label">Figure 3. </span>Sample <span class="ph filepath ">bootstrapCustomDomain.mod</span> file</figcaption></figure>
+
+        </li>
+        <li class="li ">
+          <p class="p ">Create a DTD Shell (<span class="ph filepath ">bootstrap-custom-topic.dtd</span>) to integrate the domain. 
+          The order of declarations is critical due to the XML DTD <strong class="ph b ">"First-Win" rule</strong>, which specifies that only the first definition of a parameter entity is authoritative.</p>
+          <p class="p ">The DTD shell must follow this specific sequence to ensure specializations are correctly recognized:</p>
+          <ol class="ol " type="a">
+            <li class="li "><strong class="ph b ">Domain Entities</strong>: Declare the entities for your custom domain.</li>
+            <li class="li "><strong class="ph b ">Domain Extensions</strong>: Redefine the base content models (e.g., <code class="keyword markupname parameterentity ">%section;</code>) to include your new elements. This MUST happen before structural modules are loaded.</li>
+            <li class="li "><strong class="ph b ">Structural Modules</strong>: Finally, import the base <span class="ph filepath ">topic.mod</span> and your custom <span class="ph filepath ">.mod</span> file.</li>
+          </ol>
+          <figure class="fig  figure w-100 mw-100 p-3">
+            
+            <pre class="pre codeblock alert alert-secondary  language-xml"><code><span class="ph  token prolog">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="ph  token comment">&lt;!-- ============================================================= --&gt;</span>
+<span class="ph  token comment">&lt;!--                    BOOTSTRAP CUSTOM TOPIC DTD SHELL           --&gt;</span>
+<span class="ph  token comment">&lt;!-- ============================================================= --&gt;</span>
+
+<span class="ph  token comment">&lt;!-- 1. ELEMENT NAME ENTITIES --&gt;</span>
+<span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span>!ENTITY</span> <span class="ph  token attr-name">%</span> <span class="ph  token attr-name">callout</span> <span class="ph  token attr-name">"callout"</span><span class="ph  token punctuation">&gt;</span></span>
+
+<span class="ph  token comment">&lt;!-- 2. DOMAIN ENTITY DECLARATIONS --&gt;</span>
+&lt;!ENTITY % hi-d-dec PUBLIC "-//OASIS//ENTITIES DITA 1.3 Highlight Domain//EN" "highlightDomain.ent"&gt;%hi-d-dec;
+&lt;!ENTITY % ut-d-dec PUBLIC "-//OASIS//ENTITIES DITA 1.3 Utilities Domain//EN" "utilitiesDomain.ent"&gt;%ut-d-dec;
+&lt;!ENTITY % indexing-d-dec PUBLIC "-//OASIS//ENTITIES DITA 1.3 Indexing Domain//EN" "indexingDomain.ent"&gt;%indexing-d-dec;
+&lt;!ENTITY % hazard-d-dec PUBLIC "-//OASIS//ENTITIES DITA 1.3 Hazard Statement Domain//EN" "hazardstatementDomain.ent"&gt;%hazard-d-dec;
+&lt;!ENTITY % sw-d-dec PUBLIC "-//OASIS//ENTITIES DITA 1.3 Software Domain//EN" "softwareDomain.ent"&gt;%sw-d-dec;
+&lt;!ENTITY % pr-d-dec PUBLIC "-//OASIS//ENTITIES DITA 1.3 Programming Domain//EN" "programmingDomain.ent"&gt;%pr-d-dec;
+&lt;!ENTITY % ui-d-dec PUBLIC "-//OASIS//ENTITIES DITA 1.3 User Interface Domain//EN" "uiDomain.ent"&gt;%ui-d-dec;
+&lt;!ENTITY % xml-d-dec PUBLIC "-//OASIS//ENTITIES DITA 1.3 XML Domain//EN" "xmlDomain.ent"&gt;%xml-d-dec;
+
+<span class="ph  token comment">&lt;!-- Bootstrap and Custom Callout entities --&gt;</span>
+&lt;!ENTITY % bootstrap-d-dec PUBLIC "-//Infotexture//ENTITIES DITA Bootstrap Domain//EN" "bootstrapDomain.ent"&gt;%bootstrap-d-dec;
+&lt;!ENTITY % bootstrapCustom-d-dec PUBLIC "//Example//ENTITIES DITA Bootstrap Custom Domain//EN" "bootstrapCustomDomain.ent"&gt;%bootstrapCustom-d-dec;
+
+<span class="ph  token comment">&lt;!-- 3. DOMAIN ATTRIBUTES DECLARATIONS --&gt;</span>
+&lt;!ENTITY % deliveryTargetAtt-d-dec PUBLIC "-//OASIS//ENTITIES DITA 1.3 Delivery Target Attribute Domain//EN" "deliveryTargetAttDomain.ent"&gt;%deliveryTargetAtt-d-dec;
+
+<span class="ph  token comment">&lt;!-- 4. DOMAIN EXTENSIONS - TOP DEFINTIONS WIN --&gt;</span>
+<span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span>!ENTITY</span> <span class="ph  token attr-name">%</span> <span class="ph  token attr-name">div</span>          <span class="ph  token attr-name">"div</span> <span class="ph  token attr-name">|</span> <span class="ph  token attr-name">%bootstrap-d-div;"</span><span class="ph  token punctuation">&gt;</span></span>
+<span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span>!ENTITY</span> <span class="ph  token attr-name">%</span> <span class="ph  token attr-name">ph</span>           <span class="ph  token attr-name">"ph</span> <span class="ph  token attr-name">|</span> <span class="ph  token attr-name">%hi-d-ph;</span> <span class="ph  token attr-name">|</span> <span class="ph  token attr-name">%pr-d-ph;</span> <span class="ph  token attr-name">|</span> <span class="ph  token attr-name">%bootstrap-d-ph;</span> <span class="ph  token attr-name">|</span> <span class="ph  token attr-name">%sw-d-ph;</span> <span class="ph  token attr-name">|</span> <span class="ph  token attr-name">%ui-d-ph;"</span><span class="ph  token punctuation">&gt;</span></span>
+<span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span>!ENTITY</span> <span class="ph  token attr-name">%</span> <span class="ph  token attr-name">xref</span>         <span class="ph  token attr-name">"xref</span> <span class="ph  token attr-name">|</span> <span class="ph  token attr-name">%bootstrap-d-xref;"</span><span class="ph  token punctuation">&gt;</span></span>
+<span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span>!ENTITY</span> <span class="ph  token attr-name">%</span> <span class="ph  token attr-name">ul</span>           <span class="ph  token attr-name">"ul</span> <span class="ph  token attr-name">|</span> <span class="ph  token attr-name">%bootstrap-d-ul;"</span><span class="ph  token punctuation">&gt;</span></span>
+<span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span>!ENTITY</span> <span class="ph  token attr-name">%</span> <span class="ph  token attr-name">li</span>           <span class="ph  token attr-name">"li</span> <span class="ph  token attr-name">|</span> <span class="ph  token attr-name">%bootstrap-d-li;"</span><span class="ph  token punctuation">&gt;</span></span>
+<span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span>!ENTITY</span> <span class="ph  token attr-name">%</span> <span class="ph  token attr-name">image</span>        <span class="ph  token attr-name">"image</span> <span class="ph  token attr-name">|</span> <span class="ph  token attr-name">%bootstrap-d-image;"</span><span class="ph  token punctuation">&gt;</span></span>
+<span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span>!ENTITY</span> <span class="ph  token attr-name">%</span> <span class="ph  token attr-name">fig</span>          <span class="ph  token attr-name">"fig</span> <span class="ph  token attr-name">|</span> <span class="ph  token attr-name">%ut-d-fig;</span> <span class="ph  token attr-name">|</span> <span class="ph  token attr-name">%pr-d-fig;"</span><span class="ph  token punctuation">&gt;</span></span>
+<span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span>!ENTITY</span> <span class="ph  token attr-name">%</span> <span class="ph  token attr-name">keyword</span>      <span class="ph  token attr-name">"keyword</span> <span class="ph  token attr-name">|</span> <span class="ph  token attr-name">%xml-d-keyword;</span> <span class="ph  token attr-name">|</span> <span class="ph  token attr-name">%pr-d-keyword;</span> <span class="ph  token attr-name">|</span> <span class="ph  token attr-name">%sw-d-keyword;</span> <span class="ph  token attr-name">|</span> <span class="ph  token attr-name">%ui-d-keyword;"</span><span class="ph  token punctuation">&gt;</span></span>
+<span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span>!ENTITY</span> <span class="ph  token attr-name">%</span> <span class="ph  token attr-name">pre</span>          <span class="ph  token attr-name">"pre</span> <span class="ph  token attr-name">|</span> <span class="ph  token attr-name">%pr-d-pre;</span> <span class="ph  token attr-name">|</span> <span class="ph  token attr-name">%sw-d-pre;</span> <span class="ph  token attr-name">|</span> <span class="ph  token attr-name">%ui-d-pre;"</span><span class="ph  token punctuation">&gt;</span></span>
+<span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span>!ENTITY</span> <span class="ph  token attr-name">%</span> <span class="ph  token attr-name">dl</span>           <span class="ph  token attr-name">"dl</span> <span class="ph  token attr-name">|</span> <span class="ph  token attr-name">%pr-d-dl;"</span><span class="ph  token punctuation">&gt;</span></span>
+<span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span>!ENTITY</span> <span class="ph  token attr-name">%</span> <span class="ph  token attr-name">bodydiv</span>      <span class="ph  token attr-name">"bodydiv</span> <span class="ph  token attr-name">|</span> <span class="ph  token attr-name">%bootstrap-d-bodydiv;"</span><span class="ph  token punctuation">&gt;</span></span>
+<span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span>!ENTITY</span> <span class="ph  token attr-name">%</span> <span class="ph  token attr-name">section</span>      <span class="ph  token attr-name">"section</span> <span class="ph  token attr-name">|</span> <span class="ph  token attr-name">%bootstrap-d-section;</span> <span class="ph  token attr-name">|</span> <span class="ph  token attr-name">%bootstrapCustom-d-section;"</span><span class="ph  token punctuation">&gt;</span></span>
+
+<span class="ph  token comment">&lt;!-- 5. DOMAIN ATTRIBUTE EXTENSIONS --&gt;</span>
+<span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span>!ENTITY</span> <span class="ph  token attr-name">%</span> <span class="ph  token attr-name">props-attribute-extensions</span> <span class="ph  token attr-name">"%deliveryTargetAtt-d-attribute;"</span><span class="ph  token punctuation">&gt;</span></span>
+
+<span class="ph  token comment">&lt;!-- 6. TOPIC ELEMENT INTEGRATION --&gt;</span>
+&lt;!ENTITY % topic-mod-def PUBLIC "-//OASIS//ELEMENTS DITA 1.3 Topic//EN" "topic.mod"&gt;%topic-mod-def;
+
+<span class="ph  token comment">&lt;!-- 7. DOMAIN ELEMENT INTEGRATION --&gt;</span>
+&lt;!ENTITY % bootstrap-d-def PUBLIC "-//Infotexture//ELEMENTS DITA Bootstrap Domain//EN" "bootstrapDomain.mod"&gt;%bootstrap-d-def;
+&lt;!ENTITY % bootstrapCustom-d-def PUBLIC "//Example//ELEMENTS DITA Bootstrap Custom Domain//EN" "bootstrapCustomDomain.mod"&gt;%bootstrapCustom-d-def;
+
+&lt;!ENTITY % hi-d-def PUBLIC "-//OASIS//ELEMENTS DITA 1.3 Highlight Domain//EN" "highlightDomain.mod"&gt;%hi-d-def;
+&lt;!ENTITY % ut-d-def PUBLIC "-//OASIS//ELEMENTS DITA 1.3 Utilities Domain//EN" "utilitiesDomain.mod"&gt;%ut-d-def;
+&lt;!ENTITY % indexing-d-def PUBLIC "-//OASIS//ELEMENTS DITA 1.3 Indexing Domain//EN" "indexingDomain.mod"&gt;%indexing-d-def;
+&lt;!ENTITY % hazard-d-def PUBLIC "-//OASIS//ELEMENTS DITA 1.3 Hazard Statement Domain//EN" "hazardstatementDomain.mod"&gt;%hazard-d-def;
+&lt;!ENTITY % sw-d-def PUBLIC "-//OASIS//ELEMENTS DITA 1.3 Software Domain//EN" "softwareDomain.mod"&gt;%sw-d-def;
+&lt;!ENTITY % pr-d-def PUBLIC "-//OASIS//ELEMENTS DITA 1.3 Programming Domain//EN" "programmingDomain.mod"&gt;%pr-d-def;
+&lt;!ENTITY % ui-d-def PUBLIC "-//OASIS//ELEMENTS DITA 1.3 User Interface Domain//EN" "uiDomain.mod"&gt;%ui-d-def;
+&lt;!ENTITY % xml-d-def PUBLIC "-//OASIS//ELEMENTS DITA 1.3 XML Domain//EN" "xmlDomain.mod"&gt;%xml-d-def;
+
+<span class="ph  token comment">&lt;!-- Specialization of element ancestors --&gt;</span>
+<span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span>!ENTITY</span> <span class="ph  token attr-name">included-domains</span> <span class="ph  token attr-name">"&amp;hi-d-att;</span> <span class="ph  token attr-name">&amp;ut-d-att;</span> <span class="ph  token attr-name">&amp;indexing-d-att;</span> <span class="ph  token attr-name">&amp;hazard-d-att;</span> <span class="ph  token attr-name">&amp;sw-d-att;</span> <span class="ph  token attr-name">&amp;pr-d-att;</span> <span class="ph  token attr-name">&amp;ui-d-att;</span> <span class="ph  token attr-name">&amp;xml-d-att;</span> <span class="ph  token attr-name">&amp;bootstrap-d-att;</span> <span class="ph  token attr-name">&amp;bootstrapCustom-d-att;</span> <span class="ph  token attr-name">&amp;deliveryTargetAtt-d-att;"</span><span class="ph  token punctuation">&gt;</span></span></code></pre>
+          <figcaption class="fig  figure-caption"><span class="fig--title-label">Figure 4. </span>Sample <span class="ph filepath ">bootstrap-custom-topic.dtd</span> file</figcaption></figure>
+
+        </li>
+        <li class="li ">
+          <p class="p ">Implement the component-specific XSLT transformation in <span class="ph filepath ">callout.xsl</span>. 
+          Use a <strong class="ph b ">high priority</strong> to override default behavior as necessary:</p>
+          <figure class="fig  figure w-100 mw-100 p-3">
+            
+            <pre class="pre codeblock alert alert-secondary  language-xml"><code><span class="ph  token comment">&lt;!-- Handle the callout element transformation --&gt;</span>
+<span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span><span class="ph  token namespace">xsl:</span>template</span> <span class="ph  token attr-name">match</span><span class="ph  token attr-value"><span class="ph  token punctuation attr-equals">=</span><span class="ph  token punctuation">"</span>*[contains(@class, 'bootstrapCustom-d/callout')]<span class="ph  token punctuation">"</span></span><span class="ph  token punctuation">&gt;</span></span>
+  <span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span>div</span><span class="ph  token punctuation">&gt;</span></span>
+    <span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span><span class="ph  token namespace">xsl:</span>call-template</span> <span class="ph  token attr-name">name</span><span class="ph  token attr-value"><span class="ph  token punctuation attr-equals">=</span><span class="ph  token punctuation">"</span>commonattributes<span class="ph  token punctuation">"</span></span><span class="ph  token punctuation">/&gt;</span></span>
+    <span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span><span class="ph  token namespace">xsl:</span>call-template</span> <span class="ph  token attr-name">name</span><span class="ph  token attr-value"><span class="ph  token punctuation attr-equals">=</span><span class="ph  token punctuation">"</span>setidaname<span class="ph  token punctuation">"</span></span><span class="ph  token punctuation">/&gt;</span></span>
+    <span class="ph  token comment">&lt;!-- Add special handling as necessary --&gt;</span>
+    <span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span><span class="ph  token namespace">xsl:</span>apply-templates</span><span class="ph  token punctuation">/&gt;</span></span>
+  <span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;/</span>div</span><span class="ph  token punctuation">&gt;</span></span>
+<span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;/</span><span class="ph  token namespace">xsl:</span>template</span><span class="ph  token punctuation">&gt;</span></span>
+
+<span class="ph  token comment">&lt;!-- Add custom output class handling for the new component --&gt;</span>
+<span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span><span class="ph  token namespace">xsl:</span>template</span> <span class="ph  token attr-name">match</span><span class="ph  token attr-value"><span class="ph  token punctuation attr-equals">=</span><span class="ph  token punctuation">"</span>*[contains(@class, 'bootstrapCustom-d/callout')]<span class="ph  token punctuation">"</span></span> <span class="ph  token attr-name">mode</span><span class="ph  token attr-value"><span class="ph  token punctuation attr-equals">=</span><span class="ph  token punctuation">"</span>set-output-class<span class="ph  token punctuation">"</span></span> <span class="ph  token attr-name">priority</span><span class="ph  token attr-value"><span class="ph  token punctuation attr-equals">=</span><span class="ph  token punctuation">"</span>50<span class="ph  token punctuation">"</span></span><span class="ph  token punctuation">&gt;</span></span>
+  <span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span><span class="ph  token namespace">xsl:</span>variable</span> <span class="ph  token attr-name">name</span><span class="ph  token attr-value"><span class="ph  token punctuation attr-equals">=</span><span class="ph  token punctuation">"</span>color<span class="ph  token punctuation">"</span></span> <span class="ph  token attr-name">select</span><span class="ph  token attr-value"><span class="ph  token punctuation attr-equals">=</span><span class="ph  token punctuation">"</span>(if (@color) then @color else 'primary')<span class="ph  token punctuation">"</span></span><span class="ph  token punctuation">/&gt;</span></span>
+  <span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span><span class="ph  token namespace">xsl:</span>variable</span> <span class="ph  token attr-name">name</span><span class="ph  token attr-value"><span class="ph  token punctuation attr-equals">=</span><span class="ph  token punctuation">"</span>classes<span class="ph  token punctuation">"</span></span> <span class="ph  token attr-name">as</span><span class="ph  token attr-value"><span class="ph  token punctuation attr-equals">=</span><span class="ph  token punctuation">"</span>xs:string*<span class="ph  token punctuation">"</span></span><span class="ph  token punctuation">&gt;</span></span>
+     <span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span><span class="ph  token namespace">xsl:</span>sequence</span> <span class="ph  token attr-name">select</span><span class="ph  token attr-value"><span class="ph  token punctuation attr-equals">=</span><span class="ph  token punctuation">"</span>tokenize('callout p-2 border-start border-5', '\s+')<span class="ph  token punctuation">"</span></span><span class="ph  token punctuation">/&gt;</span></span>
+     <span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span><span class="ph  token namespace">xsl:</span>sequence</span> <span class="ph  token attr-name">select</span><span class="ph  token attr-value"><span class="ph  token punctuation attr-equals">=</span><span class="ph  token punctuation">"</span>concat('bg-', $color, '-subtle')<span class="ph  token punctuation">"</span></span><span class="ph  token punctuation">/&gt;</span></span>
+     <span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span><span class="ph  token namespace">xsl:</span>sequence</span> <span class="ph  token attr-name">select</span><span class="ph  token attr-value"><span class="ph  token punctuation attr-equals">=</span><span class="ph  token punctuation">"</span>concat('border-', $color)<span class="ph  token punctuation">"</span></span><span class="ph  token punctuation">/&gt;</span></span>
+     <span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span><span class="ph  token namespace">xsl:</span>sequence</span> <span class="ph  token attr-name">select</span><span class="ph  token attr-value"><span class="ph  token punctuation attr-equals">=</span><span class="ph  token punctuation">"</span>concat('callout-', $color)<span class="ph  token punctuation">"</span></span><span class="ph  token punctuation">/&gt;</span></span>
+     <span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span><span class="ph  token namespace">xsl:</span>sequence</span> <span class="ph  token attr-name">select</span><span class="ph  token attr-value"><span class="ph  token punctuation attr-equals">=</span><span class="ph  token punctuation">"</span>tokenize(normalize-space($ancestry), '\s+')<span class="ph  token punctuation">"</span></span><span class="ph  token punctuation">/&gt;</span></span>
+  <span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;/</span><span class="ph  token namespace">xsl:</span>variable</span><span class="ph  token punctuation">&gt;</span></span>
+  <span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span><span class="ph  token namespace">xsl:</span>attribute</span> <span class="ph  token attr-name">name</span><span class="ph  token attr-value"><span class="ph  token punctuation attr-equals">=</span><span class="ph  token punctuation">"</span>class<span class="ph  token punctuation">"</span></span> <span class="ph  token attr-name">select</span><span class="ph  token attr-value"><span class="ph  token punctuation attr-equals">=</span><span class="ph  token punctuation">"</span>normalize-space(string-join(distinct-values($classes), ' '))<span class="ph  token punctuation">"</span></span><span class="ph  token punctuation">/&gt;</span></span>
+<span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;/</span><span class="ph  token namespace">xsl:</span>template</span><span class="ph  token punctuation">&gt;</span></span></code></pre>
+          <figcaption class="fig  figure-caption"><span class="fig--title-label">Figure 5. </span>Sample <span class="ph filepath ">callout.xsl</span> file</figcaption></figure>
+
+        </li>
+        <li class="li ">
+          <p class="p ">Create a central hub in <span class="ph filepath ">xsl/xhtml.xsl</span> to include your custom transformations:</p>
+          <figure class="fig  figure w-100 mw-100 p-3">
+            
+            <pre class="pre codeblock alert alert-secondary  language-xml"><code><span class="ph  token prolog">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span><span class="ph  token namespace">xsl:</span>stylesheet</span>
+  <span class="ph  token attr-name">version</span><span class="ph  token attr-value"><span class="ph  token punctuation attr-equals">=</span><span class="ph  token punctuation">"</span>2.0<span class="ph  token punctuation">"</span></span>
+  <span class="ph  token attr-name"><span class="ph  token namespace">xmlns:</span>dita-ot</span><span class="ph  token attr-value"><span class="ph  token punctuation attr-equals">=</span><span class="ph  token punctuation">"</span>http://dita-ot.sourceforge.net/ns/201007/dita-ot<span class="ph  token punctuation">"</span></span>
+  <span class="ph  token attr-name"><span class="ph  token namespace">xmlns:</span>xs</span><span class="ph  token attr-value"><span class="ph  token punctuation attr-equals">=</span><span class="ph  token punctuation">"</span>http://www.w3.org/2001/XMLSchema<span class="ph  token punctuation">"</span></span>
+  <span class="ph  token attr-name"><span class="ph  token namespace">xmlns:</span>xsl</span><span class="ph  token attr-value"><span class="ph  token punctuation attr-equals">=</span><span class="ph  token punctuation">"</span>http://www.w3.org/1999/XSL/Transform<span class="ph  token punctuation">"</span></span>
+  <span class="ph  token attr-name">exclude-result-prefixes</span><span class="ph  token attr-value"><span class="ph  token punctuation attr-equals">=</span><span class="ph  token punctuation">"</span>xs dita-ot<span class="ph  token punctuation">"</span></span>
+<span class="ph  token punctuation">&gt;</span></span>
+  <span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span><span class="ph  token namespace">xsl:</span>include</span> <span class="ph  token attr-name">href</span><span class="ph  token attr-value"><span class="ph  token punctuation attr-equals">=</span><span class="ph  token punctuation">"</span>../Customization/xsl/callout.xsl<span class="ph  token punctuation">"</span></span><span class="ph  token punctuation">/&gt;</span></span>
+
+<span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;/</span><span class="ph  token namespace">xsl:</span>stylesheet</span><span class="ph  token punctuation">&gt;</span></span></code></pre>
+          <figcaption class="fig  figure-caption"><span class="fig--title-label">Figure 6. </span>Sample <span class="ph filepath ">xhtml.xsl</span> hub file</figcaption></figure>
+
+        </li>
+        <li class="li ">
+          <p class="p ">Register the plugin hub in <span class="ph filepath ">plugin.xml</span> using the <span class="keyword option ">dita.xsl.html5-bootstrap</span> extension point:</p>
+          <figure class="fig  figure w-100 mw-100 p-3">
+            
+            <pre class="pre codeblock alert alert-secondary  language-xml"><code><span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span>plugin</span> <span class="ph  token attr-name">id</span><span class="ph  token attr-value"><span class="ph  token punctuation attr-equals">=</span><span class="ph  token punctuation">"</span>com.example.bootstrap-component<span class="ph  token punctuation">"</span></span><span class="ph  token punctuation">&gt;</span></span>
+  <span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span>feature</span> <span class="ph  token attr-name">extension</span><span class="ph  token attr-value"><span class="ph  token punctuation attr-equals">=</span><span class="ph  token punctuation">"</span>dita.xsl.html5-bootstrap<span class="ph  token punctuation">"</span></span> <span class="ph  token attr-name">value</span><span class="ph  token attr-value"><span class="ph  token punctuation attr-equals">=</span><span class="ph  token punctuation">"</span>xsl/xhtml.xsl<span class="ph  token punctuation">"</span></span> <span class="ph  token attr-name">type</span><span class="ph  token attr-value"><span class="ph  token punctuation attr-equals">=</span><span class="ph  token punctuation">"</span>file<span class="ph  token punctuation">"</span></span> <span class="ph  token punctuation">/&gt;</span></span>
+  <span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span>feature</span> <span class="ph  token attr-name">extension</span><span class="ph  token attr-value"><span class="ph  token punctuation attr-equals">=</span><span class="ph  token punctuation">"</span>dita.specialization.catalog.relative<span class="ph  token punctuation">"</span></span> <span class="ph  token attr-name">file</span><span class="ph  token attr-value"><span class="ph  token punctuation attr-equals">=</span><span class="ph  token punctuation">"</span>catalog.xml<span class="ph  token punctuation">"</span></span><span class="ph  token punctuation">/&gt;</span></span>
+<span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;/</span>plugin</span><span class="ph  token punctuation">&gt;</span></span></code></pre>
+          <figcaption class="fig  figure-caption"><span class="fig--title-label">Figure 7. </span>Sample <span class="ph filepath ">plugin.xml</span> file</figcaption></figure>
+
+        </li>
+      </ol>
+    </section>
+
+    <section class="section "><h2 class="title h4 ">Example Usage</h2>
+      
+      <p class="p ">Once installed, authors can use the specialized element in DITA content:</p>
+      <figure class="fig  figure w-100 mw-100 p-3">
+        
+        <pre class="pre codeblock alert alert-secondary  language-xml"><code><span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span>callout</span> <span class="ph  token attr-name">color</span><span class="ph  token attr-value"><span class="ph  token punctuation attr-equals">=</span><span class="ph  token punctuation">"</span>success<span class="ph  token punctuation">"</span></span><span class="ph  token punctuation">&gt;</span></span>
+  <span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span>title</span><span class="ph  token punctuation">&gt;</span></span>Success!<span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;/</span>title</span><span class="ph  token punctuation">&gt;</span></span>
+  <span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;</span>p</span><span class="ph  token punctuation">&gt;</span></span>Further text can be added here.<span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;/</span>p</span><span class="ph  token punctuation">&gt;</span></span>
+<span class="ph  token tag"><span class="ph  token tag"><span class="ph  token punctuation">&lt;/</span>callout</span><span class="ph  token punctuation">&gt;</span></span></code></pre>
+      <figcaption class="fig  figure-caption"><span class="fig--title-label">Figure 8. </span>Specialized callout usage</figcaption></figure>
+
+      <figure class="fig  figure w-100 mw-100 p-3">
+        
+        <img class="image  figure-img img-fluid border rounded" src="src/callout.png">
+      <figcaption class="fig  figure-caption"><span class="fig--title-label">Figure 9. </span>Rendered Callout Component</figcaption></figure>
+
+    </section>
+  </div>
+</article></main></div><script language="javascript" src="./js/popovers.js"></script><script language="javascript" src="./js/dark-mode-toggler.js"></script><footer role="contentinfo" class="mt-auto border-top bg-primary-subtle"><!-- Footer --><div class="container text-center">
+  <div class="row">
+    <div class="col">
+      <!-- Social media -->
+      <p class="pt-3">
+        <!-- GitHub -->
+        <a class="btn m-1" href="https://github.com/infotexture/dita-bootstrap" role="button" style="background-color: #333333;">
+          <i class="bi bi-github text-white"></i>
+        </a>
+        <!-- LinkedIn -->
+        <a class="btn m-1" href="https://www.linkedin.com/in/infotexture/" role="button" style="background-color: #0082ca;">
+          <i class="bi bi-linkedin text-white"></i>
+        </a>
+        <!-- Mastodon -->
+        <a class="btn m-1" href="https://indieweb.social/@infotexture" role="button" style="background-color: #563acc;">
+          <i class="bi bi-mastodon text-white"></i>
+        </a>
+        <!-- Bluesky -->
+        <a class="btn m-1" href="https://bsky.app/profile/infotexture.net" role="button" style="background-color: #0085ff;">
+          <i class="bi bi-bluesky text-white"></i>
+        </a>
+      </p>
+      <p>
+        <small>
+          © 2017–2025
+          <a href="https://infotexture.net/">infotexture</a>
+        </small>
+      </p>
+    </div>
+  </div>
+</div><!-- Footer --></footer></body></html>
