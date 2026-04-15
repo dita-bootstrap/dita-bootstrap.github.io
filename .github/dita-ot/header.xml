@@ -60,19 +60,19 @@
             <li><a
                 class="dropdown-item"
                 href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.html"
-              >Bootstrap HTML Plugin</a></li>
+              >HTML Plugin</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.pdf"
-              >Bootstrap PDF Plugin</a></li>
+              >PDF Plugin</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.pdf.theme"
-              >Bootstrap PDF Theme Plugin</a></li>
+              >Bootswatch PDF Themes</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.specialization"
-              >Bootstrap Specialization Plugin</a></li>
+              >DITA Specialization for Bootstrap</a></li>
             <li><hr class="dropdown-divider"/></li>
             <li><a
                 class="dropdown-item"
@@ -81,11 +81,7 @@
         <li><a
             class="dropdown-item"
             href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.extension.specialization"
-        >Bootstrap Extension Specialization Plugin</a></li>
-        <li><a
-            class="dropdown-item"
-            href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.lunr"
-        >Lunr Search Plugin</a></li>
+        >DITA Specialization for Bootstrap Extension</a></li>
         <li><a
             class="dropdown-item"
             href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.sass"
@@ -96,8 +92,12 @@
         >Bootstrap Tables Plugin</a></li>
         <li><a
             class="dropdown-item"
+            href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.lunr"
+        >Lunr Search Plugin</a></li>
+        <li><a
+            class="dropdown-item"
             href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.watermark"
-        >Bootstrap Watermark Plugin</a></li>
+        >Watermark Plugin</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -153,6 +153,15 @@
                 class="dropdown-item"
                 href="https://github.com/dita-bootstrap/dita-bootstrap.watermark"
               >dita-bootstrap.watermark</a></li>
+            <li><hr class="dropdown-divider"/></li>
+             <li><a
+                class="dropdown-item"
+                href="https://github.com/dita-bootstrap/com.example.boostrap-component"
+              >com.example.boostrap-component</a></li>
+            <li><a
+                class="dropdown-item"
+                href="https://github.com/dita-bootstrap/com.example.offline"
+              >com.example.boostrap-component</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
