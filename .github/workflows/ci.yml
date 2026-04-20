@@ -49,7 +49,7 @@ jobs:
             https://github.com/dita-bootstrap/dita-bootstrap.specialization/archive/develop.zip
             https://github.com/infotexture/dita-bootstrap/archive/develop.zip
             net.infotexture.dita-bootstrap.lunr
-            fox.jason.prismjs
+            https://github.com/jason-fox/fox.jason.prismjs/archive/master.zip
             fox.jason.favicon
             fox.jason.open-graph
             https://github.com/jason-fox/fox.jason.theme-switcher/archive/master.zip
