@@ -31,7 +31,7 @@
 
 /* override part of the Bootstrap color scheme */
 :root {
-  --bs-code-color: var(--bs-secondary-color);
+  --bs-code-color: var(--bs-secondary-text-emphasis);
 }
 
 /* Make all CSS themes scrollable */
