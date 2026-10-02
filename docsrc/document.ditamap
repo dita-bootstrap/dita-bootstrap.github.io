@@ -128,8 +128,8 @@
     <topicmeta>
       <navtitle>Getting Started</navtitle>
       <othermeta name="divider" content="PDF"/>
-      <othermeta name="icon" content="bi-file-pdf"/>
-      <othermeta name="icon-style" content="color: var(--bs-red)"/>
+      <othermeta name="icon" content="bi-book-half"/>
+      <othermeta name="icon-style" content="color: var(--bs-indigo)"/>
     </topicmeta>
     <topicref navtitle="Introduction" href="pdf/getting-started.dita" locktitle="yes"/>
   </topicref>

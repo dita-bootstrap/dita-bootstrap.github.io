@@ -31,11 +31,11 @@
       for multiple output formats:</p>
       <ul outputclass="list-group mb-5">
         <li outputclass="list-group-item list-group-item-action">
-          <icon outputclass="pe-2 bi-filetype-html" style="color: var(--bs-blue);"/>
+          <icon outputclass="pe-2 bi-filetype-html" style="font-size: 2rem; color: var(--bs-blue);"/>
           See
           <xref href="./html/getting-started.dita" format="dita" outputclass="stretched-link"/> for information on how to render DITA documents as HTML using Bootstrap components.</li>
         <li outputclass="list-group-item list-group-item-action">
-          <icon outputclass="pe-2 bi-file-pdf" style="color: var(--bs-red);"/>
+          <icon outputclass="pe-2 bi-file-pdf" style="font-size: 2rem; color: var(--bs-red);"/>
           See
           <xref href="./pdf/getting-started.dita" format="dita" outputclass="stretched-link"/> for information on how to render DITA documents as a PDF aligned to the Bootstrap look-and-feel.</li>
       </ul>
