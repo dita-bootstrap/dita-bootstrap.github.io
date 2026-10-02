@@ -1,6 +1,6 @@
 # DITA Bootstrap Website
 
-Website generation for a series of plug-in for [DITA Open Toolkit][1] that extend output with a [Bootstrap][2] templating
+Website generation for a series of plug-in for [DITA Open Toolkit][1] that extend output with [Bootstrap][2] templating
 and components
 
 > [!NOTE]
