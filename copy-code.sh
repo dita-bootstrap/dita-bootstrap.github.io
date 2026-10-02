@@ -17,6 +17,8 @@ for pair in "html:$HTML_DIR" "specialization:$SPEC_DIR"; do
   cp -R "$src" "docsrc/html/code/$name"
 done
 
+cp -R "$HTML_DIR/sample/src/." docsrc/html/src/
+
 [ -d "$PDF_DIR/docsrc" ] || { echo "Missing $PDF_DIR/docsrc (set PDF_DIR)" >&2; exit 1; }
 rm -rf docsrc/pdf
 cp -R "$PDF_DIR/docsrc" docsrc/pdf
