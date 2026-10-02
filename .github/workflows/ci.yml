@@ -28,11 +28,8 @@ jobs:
           ref: develop
           path: html
 
-      - name: Link code examples
-        run: |
-          mkdir -p docsrc/code
-          ln -s "$PWD/html/sample/code" docsrc/code/html
-          ln -s "$PWD/specialization/sample/code" docsrc/code/specialization
+      - name: Copy code examples
+        run: HTML_DIR=html SPEC_DIR=specialization ./copy-code.sh
 
       - name: Calculate short SHA
         uses: benjlevesque/short-sha@v4.0
