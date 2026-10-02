@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//DITA Bootstrap//DTD DITA Bootstrap Topic//EN" "bootstrap-topic.dtd">
+<!--
+  Within the sample documentation, where necessary, the texts describing the usage of each component have been copied
+  directly from the official Bootstrap 5.3 documentation (found at https://getbootstrap.com/docs/5.3), however DITA
+  markup is used throughout the examples describing how to implement these components correctly using outputclass.
+
+  This work is a derivative of "Bootstrap 5.3 docs" by Twitter, Inc. and the Bootstrap Authors,
+  and used under CC BY 3.0. See the accompanying LICENSE file for applicable licenses.
+-->
+<topic id="tables">
+  <title>Tables</title>
+  <shortdesc>Documentation and examples for styling DITA tables with Bootstrap classes.</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Tables</indexterm>
+        <indexterm>CSS
+          <indexterm><xmlatt>outputclass</xmlatt></indexterm>
+        </indexterm>
+        <indexterm><xmlelement>table</xmlelement></indexterm>
+        <indexterm><xmlelement>row</xmlelement></indexterm>
+        <indexterm><xmlelement>entry</xmlelement></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body outputclass="language-markup">
+    <section>
+      <title>Overview</title>
+      <p>Due to the widespread use of <xmlelement>table</xmlelement> elements across third-party widgets like calendars
+        and date pickers, Bootstrap’s tables are opt-in. Extend with optional modifier output classes or custom styles.
+        All table styles are not inherited in Bootstrap, meaning any nested tables can be styled independent from the
+        parent.</p>
+      <p>Using the most basic table markup, here’s how the default DITA Bootstrap <codeph>.table</codeph>-based tables
+        look in Bootstrap.</p>
+    </section>
+    <bodydiv border="yes" padding="3">
+      <table>
+        <tgroup cols="2">
+          <colspec colname="COLSPEC0"/>
+          <colspec colname="COLSPEC1"/>
+          <thead>
+            <row>
+              <entry colname="COLSPEC0" valign="top">Animal</entry>
+              <entry colname="COLSPEC1" valign="top">Gestation</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Elephant (African and Asian)</entry>
+              <entry>19-22 months</entry>
+            </row>
+            <row>
+              <entry>Giraffe</entry>
+              <entry>15 months</entry>
+            </row>
+            <row>
+              <entry>Rhinoceros</entry>
+              <entry>14-16 months</entry>
+            </row>
+            <row>
+              <entry>Hippopotamus</entry>
+              <entry>7 1/2 months</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </bodydiv>
+
+    <tabbed-dialog style="pills" margin="t3">
+      <section>
+        <title>Specialization</title>
+        <codeblock><coderef href="code/specialization/tables/overview.xml"/></codeblock>
+      </section>
+      <section>
+        <title><xmlatt>outputclass</xmlatt></title>
+        <codeblock><coderef href="code/html/tables/overview.xml"/></codeblock>
+      </section>
+    </tabbed-dialog>
+    <section>
+      <title>Variants</title>
+      <p>Use contextual classes to color tables, table rows or individual cells.</p>
+    </section>
+    <bodydiv border="yes" padding="3">
+      <table color="primary" padding="1" width="100">
+        <tgroup cols="2">
+          <thead>
+            <row>
+              <entry>Animal</entry>
+              <entry>Gestation</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row color="info">
+              <entry>Elephant (African and Asian)</entry>
+              <entry>19-22 months</entry>
+            </row>
+            <row color="success">
+              <entry>Giraffe</entry>
+              <entry>15 months</entry>
+            </row>
+            <row>
+              <entry>Rhinoceros</entry>
+              <entry color="danger">14-16 months</entry>
+            </row>
+            <row>
+              <entry>Hippopotamus</entry>
+              <entry>7 1/2 months</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </bodydiv>
+
+    <tabbed-dialog style="pills" margin="t3">
+      <section>
+        <title>Specialization</title>
+        <codeblock><coderef href="code/specialization/tables/variants.xml"/></codeblock>
+      </section>
+      <section>
+        <title><xmlatt>outputclass</xmlatt></title>
+        <codeblock><coderef href="code/html/tables/variants.xml"/></codeblock>
+      </section>
+    </tabbed-dialog>
+    <section>
+      <title>Striped rows</title>
+      <p>Use <xmlatt>striped="yes"</xmlatt> to add zebra-striping to any table row
+        within the <xmlelement>tbody</xmlelement>.</p>
+    </section>
+    <bodydiv border="yes" padding="3">
+      <table striped="yes">
+        <tgroup cols="2">
+          <colspec colname="COLSPEC0"/>
+          <colspec colname="COLSPEC1"/>
+          <thead>
+            <row>
+              <entry colname="COLSPEC0" valign="top">Animal</entry>
+              <entry colname="COLSPEC1" valign="top">Gestation</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Elephant (African and Asian)</entry>
+              <entry>19-22 months</entry>
+            </row>
+            <row>
+              <entry>Giraffe</entry>
+              <entry>15 months</entry>
+            </row>
+            <row>
+              <entry>Rhinoceros</entry>
+              <entry>14-16 months</entry>
+            </row>
+            <row>
+              <entry>Hippopotamus</entry>
+              <entry>7 1/2 months</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </bodydiv>
+    <tabbed-dialog style="pills" margin="t3">
+      <section>
+        <title>Specialization</title>
+        <codeblock><coderef href="code/specialization/tables/striped-rows.xml"/></codeblock>
+      </section>
+      <section>
+        <title><xmlatt>outputclass</xmlatt></title>
+        <codeblock><coderef href="code/html/tables/striped-rows.xml"/></codeblock>
+      </section>
+    </tabbed-dialog>
+    <section>
+      <title>Striped columns</title>
+      <p>Use <xmlatt>striped-columns="yes"</xmlatt> to add zebra-striping to any table column
+        within the <xmlelement>tbody</xmlelement>.</p>
+    </section>
+    <bodydiv border="yes" padding="3">
+      <table striped-columns="yes">
+        <tgroup cols="2">
+          <colspec colname="COLSPEC0"/>
+          <colspec colname="COLSPEC1"/>
+          <thead>
+            <row>
+              <entry colname="COLSPEC0" valign="top">Animal</entry>
+              <entry colname="COLSPEC1" valign="top">Gestation</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Elephant (African and Asian)</entry>
+              <entry>19-22 months</entry>
+            </row>
+            <row>
+              <entry>Giraffe</entry>
+              <entry>15 months</entry>
+            </row>
+            <row>
+              <entry>Rhinoceros</entry>
+              <entry>14-16 months</entry>
+            </row>
+            <row>
+              <entry>Hippopotamus</entry>
+              <entry>7 1/2 months</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </bodydiv>
+    <tabbed-dialog style="pills" margin="t3">
+      <section>
+        <title>Specialization</title>
+        <codeblock><coderef href="code/specialization/tables/striped-columns.xml"/></codeblock>
+      </section>
+      <section>
+        <title><xmlatt>outputclass</xmlatt></title>
+        <codeblock><coderef href="code/html/tables/striped-columns.xml"/></codeblock>
+      </section>
+    </tabbed-dialog>
+    <section>
+      <title>Bordered tables</title>
+      <p>Add <xmlatt>rowsep="1"</xmlatt> and <xmlatt
+        >colsep="1"</xmlatt> for borders on all sides of the table and cells.</p>
+    </section>
+    <bodydiv border="yes" padding="3">
+      <table rowsep="1" colsep="1">
+        <tgroup cols="2">
+          <colspec colname="COLSPEC0"/>
+          <colspec colname="COLSPEC1"/>
+          <thead>
+            <row>
+              <entry colname="COLSPEC0" valign="top">Animal</entry>
+              <entry colname="COLSPEC1" valign="top">Gestation</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Elephant (African and Asian)</entry>
+              <entry>19-22 months</entry>
+            </row>
+            <row>
+              <entry>Giraffe</entry>
+              <entry>15 months</entry>
+            </row>
+            <row>
+              <entry>Rhinoceros</entry>
+              <entry>14-16 months</entry>
+            </row>
+            <row>
+              <entry>Hippopotamus</entry>
+              <entry>7 1/2 months</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </bodydiv>
+    <tabbed-dialog style="pills" margin="t3">
+      <section>
+        <title>Specialization</title>
+        <codeblock><coderef href="code/specialization/tables/bordered-tables.xml"/></codeblock>
+      </section>
+      <section>
+        <title><xmlatt>outputclass</xmlatt></title>
+        <codeblock><coderef href="code/html/tables/bordered-tables.xml"/></codeblock>
+      </section>
+    </tabbed-dialog>
+    <section>
+      <title>Tables without borders</title>
+      <p>Add <xmlatt>rowsep="0"</xmlatt> and <xmlatt>colsep="0"</xmlatt> for a table without borders.</p>
+    </section>
+    <bodydiv border="yes" padding="3">
+      <table rowsep="0" colsep="0">
+        <tgroup cols="2">
+          <colspec colname="COLSPEC0"/>
+          <colspec colname="COLSPEC1"/>
+          <thead>
+            <row>
+              <entry colname="COLSPEC0" valign="top">Animal</entry>
+              <entry colname="COLSPEC1" valign="top">Gestation</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Elephant (African and Asian)</entry>
+              <entry>19-22 months</entry>
+            </row>
+            <row>
+              <entry>Giraffe</entry>
+              <entry>15 months</entry>
+            </row>
+            <row>
+              <entry>Rhinoceros</entry>
+              <entry>14-16 months</entry>
+            </row>
+            <row>
+              <entry>Hippopotamus</entry>
+              <entry>7 1/2 months</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </bodydiv>
+    <tabbed-dialog style="pills" margin="t3">
+      <section>
+        <title>Specialization</title>
+        <codeblock><coderef href="code/specialization/tables/tables-without-borders.xml"/></codeblock>
+      </section>
+      <section>
+        <title><xmlatt>outputclass</xmlatt></title>
+        <codeblock><coderef href="code/html/tables/tables-without-borders.xml"/></codeblock>
+      </section>
+    </tabbed-dialog>
+    <section>
+      <title>Small tables</title>
+      <p>Add <xmlatt>compact="yes"</xmlatt> to make any table more compact by cutting all cell <codeph
+        >padding</codeph> in half.</p>
+    </section>
+    <bodydiv border="yes" padding="3">
+      <table compact="yes">
+        <tgroup cols="2">
+          <colspec colname="COLSPEC0"/>
+          <colspec colname="COLSPEC1"/>
+          <thead>
+            <row>
+              <entry colname="COLSPEC0" valign="top">Animal</entry>
+              <entry colname="COLSPEC1" valign="top">Gestation</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Elephant (African and Asian)</entry>
+              <entry>19-22 months</entry>
+            </row>
+            <row>
+              <entry>Giraffe</entry>
+              <entry>15 months</entry>
+            </row>
+            <row>
+              <entry>Rhinoceros</entry>
+              <entry>14-16 months</entry>
+            </row>
+            <row>
+              <entry>Hippopotamus</entry>
+              <entry>7 1/2 months</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </bodydiv>
+    <tabbed-dialog style="pills" margin="t3">
+      <section>
+        <title>Specialization</title>
+        <codeblock><coderef href="code/specialization/tables/small-tables.xml"/></codeblock>
+      </section>
+      <section>
+        <title><xmlatt>outputclass</xmlatt></title>
+        <codeblock><coderef href="code/html/tables/small-tables.xml"/></codeblock>
+      </section>
+    </tabbed-dialog>
+    <section>
+      <title>Table group dividers</title>
+      <p>Add a thicker border, darker between table groups—<xmlelement>thead</xmlelement> and <xmlelement
+        >tbody</xmlelement>, with <xmlatt>divider="yes"</xmlatt> on the table.</p>
+    </section>
+    <bodydiv border="yes" padding="3">
+      <table divider="yes">
+        <tgroup cols="2">
+          <colspec colname="COLSPEC0"/>
+          <colspec colname="COLSPEC1"/>
+          <thead>
+            <row>
+              <entry colname="COLSPEC0" valign="top">Animal</entry>
+              <entry colname="COLSPEC1" valign="top">Gestation</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Elephant (African and Asian)</entry>
+              <entry>19-22 months</entry>
+            </row>
+            <row>
+              <entry>Giraffe</entry>
+              <entry>15 months</entry>
+            </row>
+            <row>
+              <entry>Rhinoceros</entry>
+              <entry>14-16 months</entry>
+            </row>
+            <row>
+              <entry>Hippopotamus</entry>
+              <entry>7 1/2 months</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </bodydiv>
+    <tabbed-dialog style="pills" margin="t3">
+      <section>
+        <title>Specialization</title>
+        <codeblock><coderef href="code/specialization/tables/table-group-dividers.xml"/></codeblock>
+      </section>
+      <section>
+        <title><xmlatt>outputclass</xmlatt></title>
+        <codeblock><coderef href="code/html/tables/table-group-dividers.xml"/></codeblock>
+      </section>
+    </tabbed-dialog>
+    <section>
+      <title>Vertical alignment</title>
+      <p>Table cells of <xmlelement
+        >thead</xmlelement> are always vertical aligned to the bottom. Table cells in <xmlelement
+        >tbody</xmlelement> inherit their alignment from <xmlelement
+        >table</xmlelement> and are aligned to the top by default. Use the <xmlatt
+        >valign</xmlatt> attribute to re-align where needed.</p>
+    </section>
+    <bodydiv border="yes" padding="3">
+      <table outputclass="align-middle">
+        <tgroup cols="4">
+          <colspec colname="COLSPEC0"/>
+          <colspec colname="COLSPEC1"/>
+          <colspec colname="COLSPEC2"/>
+          <colspec colname="COLSPEC3"/>
+          <thead>
+            <row>
+              <entry colname="COLSPEC0" valign="top">Heading 1</entry>
+              <entry colname="COLSPEC1" valign="bottom">Heading 2</entry>
+              <entry colname="COLSPEC2" valign="middle">Heading 3</entry>
+              <entry
+                colname="COLSPEC3"
+              >Heading 4 - here is some placeholder text, intended to take up quite a bit of vertical space, to demonstrate how the vertical alignment works in the headers</entry>
+            </row>
+          </thead>
+
+          <tbody>
+            <row>
+              <entry>This cell inherits <xmlatt>outputclass="align-middle"</xmlatt> from the table</entry>
+              <entry>This cell inherits <xmlatt>outputclass="align-middle"</xmlatt> from the table</entry>
+              <entry>This cell inherits <xmlatt>outputclass="align-middle"</xmlatt> from the table</entry>
+              <entry
+              >This here is some placeholder text, intended to take up quite a bit of vertical space, to demonstrate how the vertical alignment works in the preceding cells.</entry>
+            </row>
+            <row valign="bottom">
+              <entry>This cell inherits <xmlatt>valign="bottom"</xmlatt> from the table row</entry>
+              <entry>This cell inherits <xmlatt>valign="bottom"</xmlatt> from the table row</entry>
+              <entry>This cell inherits <xmlatt>valign="bottom"</xmlatt> from the table row</entry>
+              <entry
+              >This here is some placeholder text, intended to take up quite a bit of vertical space, to demonstrate how the vertical alignment works in the preceding cells.</entry>
+            </row>
+            <row>
+              <entry>This cell inherits <xmlatt>outputclass="align-middle"</xmlatt> from the table</entry>
+              <entry>This cell inherits <xmlatt>outputclass="align-middle"</xmlatt> from the table</entry>
+              <entry valign="top">This cell is aligned to the top.</entry>
+              <entry
+              >This here is some placeholder text, intended to take up quite a bit of vertical space, to demonstrate how the vertical alignment works in the preceding cells.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </bodydiv>
+    <tabbed-dialog style="pills" margin="t3">
+      <section>
+        <title>Specialization</title>
+        <codeblock><coderef href="code/specialization/tables/vertical-alignment.xml"/></codeblock>
+      </section>
+      <section>
+        <title><xmlatt>outputclass</xmlatt></title>
+        <codeblock><coderef href="code/html/tables/vertical-alignment.xml"/></codeblock>
+      </section>
+    </tabbed-dialog>
+    <section>
+      <title>Table head</title>
+      <p>Similar to tables and dark tables, use the modifier <xmlatt>color="light"</xmlatt> or
+          <xmlatt>color="dark"</xmlatt> to make <xmlelement>thead</xmlelement> elements appear light or dark
+        gray.</p>
+    </section>
+    <bodydiv border="yes" padding="3">
+      <table>
+        <tgroup cols="2">
+          <colspec colname="COLSPEC0"/>
+          <colspec colname="COLSPEC1"/>
+          <thead color="light">
+            <row>
+              <entry colname="COLSPEC0" valign="top">Animal</entry>
+              <entry colname="COLSPEC1" valign="top">Gestation</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Elephant (African and Asian)</entry>
+              <entry>19-22 months</entry>
+            </row>
+            <row>
+              <entry>Giraffe</entry>
+              <entry>15 months</entry>
+            </row>
+            <row>
+              <entry>Rhinoceros</entry>
+              <entry>14-16 months</entry>
+            </row>
+            <row>
+              <entry>Hippopotamus</entry>
+              <entry>7 1/2 months</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </bodydiv>
+    <tabbed-dialog style="pills" margin="t3">
+      <section>
+        <title>Specialization</title>
+        <codeblock><coderef href="code/specialization/tables/table-head.xml"/></codeblock>
+      </section>
+      <section>
+        <title><xmlatt>outputclass</xmlatt></title>
+        <codeblock><coderef href="code/html/tables/table-head.xml"/></codeblock>
+      </section>
+    </tabbed-dialog>
+    <bodydiv border="yes" padding="3">
+      <table>
+        <tgroup cols="2">
+          <colspec colname="COLSPEC0"/>
+          <colspec colname="COLSPEC1"/>
+          <thead color="dark">
+            <row>
+              <entry colname="COLSPEC0" valign="top">Animal</entry>
+              <entry colname="COLSPEC1" valign="top">Gestation</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Elephant (African and Asian)</entry>
+              <entry>19-22 months</entry>
+            </row>
+            <row>
+              <entry>Giraffe</entry>
+              <entry>15 months</entry>
+            </row>
+            <row>
+              <entry>Rhinoceros</entry>
+              <entry>14-16 months</entry>
+            </row>
+            <row>
+              <entry>Hippopotamus</entry>
+              <entry>7 1/2 months</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </bodydiv>
+    <tabbed-dialog style="pills" margin="t3">
+      <section>
+        <title>Specialization</title>
+        <codeblock><coderef href="code/specialization/tables/table-head-colors.xml"/></codeblock>
+      </section>
+      <section>
+        <title><xmlatt>outputclass</xmlatt></title>
+        <codeblock><coderef href="code/html/tables/table-head-colors.xml"/></codeblock>
+      </section>
+    </tabbed-dialog>
+  </body>
+</topic>
