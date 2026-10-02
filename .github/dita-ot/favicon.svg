@@ -2,8 +2,8 @@
   <defs>
     <!-- Soft gradient for the background card -->
     <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#8a5cf6" />
-      <stop offset="100%" stop-color="#5a2ca0" />
+      <stop offset="0%" stop-color="#9013fe" />
+      <stop offset="100%" stop-color="#6810f2" />
     </linearGradient>
 
     <!-- Radiating glow filter for behind the background -->
