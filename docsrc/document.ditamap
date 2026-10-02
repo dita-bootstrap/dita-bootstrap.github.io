@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
-<bookmap>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
   <title>DITA Bootstrap</title>
-  <frontmatter deliveryTarget="pdf">
-    <booklists>
-      <toc/>
-    </booklists>
-  </frontmatter>
-  <chapter>
+
+  <topicref href="index.dita" navtitle="DITA Bootstrap" locktitle="yes"/>
+  <topicref href="html-getting-started.dita" locktitle="yes">
     <topicmeta>
       <navtitle>Getting Started</navtitle>
-      <othermeta name="icon" content="bi-book-half"/>
-      <othermeta name="icon-style" content="color: var(--bs-indigo)"/>
+      <othermeta name="divider" content="HTML"/>
+      <othermeta name="icon" content="bi-filetype-html"/>
+      <othermeta name="icon-style" content="color: var(--bs-red)"/>
     </topicmeta>
-    <topicref navtitle="Introduction" href="index.dita" locktitle="yes"/>
-  </chapter>
-  <chapter>
+  </topicref>
+  <topicref>
     <topicmeta>
       <navtitle>Layout</navtitle>
       <othermeta name="icon" content="bi-grid-fill"/>
@@ -25,8 +22,8 @@
     <topicref href="containers.dita"/>
     <topicref href="grid.dita"/>
     <topicref href="rtl.dita" navtitle="Right-to-Left Languages" locktitle="yes"/>
-  </chapter>
-  <chapter>
+  </topicref>
+  <topicref>
     <topicmeta>
       <navtitle>Content</navtitle>
       <othermeta name="icon" content="bi-file-earmark-richtext"/>
@@ -36,8 +33,8 @@
     <topicref href="images.dita"/>
     <topicref href="tables.dita"/>
     <topicref href="figures.dita"/>
-  </chapter>
-  <chapter>
+  </topicref>
+  <topicref>
     <topicmeta>
       <navtitle>Components</navtitle>
       <othermeta name="icon" content="bi-menu-button-wide-fill"/>
@@ -59,8 +56,8 @@
     <topicref href="scrollspy.dita"/>
     <topicref href="tabs.dita"/>
     <topicref href="tooltips.dita"/>
-  </chapter>
-  <chapter>
+  </topicref>
+  <topicref>
     <topicmeta>
       <navtitle>Utilities</navtitle>
       <othermeta name="icon" content="bi-braces-asterisk"/>
@@ -70,8 +67,8 @@
     <topicref href="color.dita"/>
     <topicref href="shadows.dita"/>
     <topicref href="spacing.dita"/>
-  </chapter>
-  <chapter>
+  </topicref>
+  <topicref>
     <topicmeta>
       <navtitle>Extend</navtitle>
       <othermeta name="icon" content="bi-tools"/>
@@ -123,10 +120,13 @@
         <othermeta name="icon" content="bi-bootstrap"/>
       </topicmeta>
     </topicref>
-  </chapter>
-  <backmatter deliveryTarget="pdf">
-    <booklists>
-      <indexlist/>
-    </booklists>
-  </backmatter>
-</bookmap>
+  </topicref>
+  <topicref navtitle="Introduction" href="pdf-getting-started.dita" locktitle="yes">
+    <topicmeta>
+      <navtitle>Getting Started</navtitle>
+      <othermeta name="divider" content="PDF"/>
+      <othermeta name="icon" content="bi-file-pdf"/>
+      <othermeta name="icon-style" content="color: var(--bs-red)"/>
+    </topicmeta>
+  </topicref>
+</map>
