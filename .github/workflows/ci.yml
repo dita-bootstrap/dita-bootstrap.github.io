@@ -28,8 +28,15 @@ jobs:
           ref: develop
           path: html
 
+      - name: Git checkout PDF
+        uses: actions/checkout@v7
+        with:
+          repository: dita-bootstrap/dita-bootstrap.pdf
+          ref: develop
+          path: pdf
+
       - name: Copy code examples
-        run: HTML_DIR=html SPEC_DIR=specialization ./copy-code.sh
+        run: HTML_DIR=html SPEC_DIR=specialization PDF_DIR=pdf ./copy-code.sh
 
       - name: Calculate short SHA
         uses: benjlevesque/short-sha@v4.0

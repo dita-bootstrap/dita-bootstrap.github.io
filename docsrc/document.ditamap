@@ -13,7 +13,7 @@
       <othermeta name="icon" content="bi-book-half"/>
       <othermeta name="icon-style" content="color: var(--bs-indigo)"/>
     </topicmeta>
-    <topicref navtitle="Introduction" href="html-getting-started.dita" locktitle="yes"/>
+    <topicref navtitle="Introduction" href="html/getting-started.dita" locktitle="yes"/>
   </topicref>
   <topicref>
     <topicmeta>
@@ -21,10 +21,10 @@
       <othermeta name="icon" content="bi-grid-fill"/>
       <othermeta name="icon-style" content="color: var(--bs-teal)"/>
     </topicmeta>
-    <topicref href="nav.dita"/>
-    <topicref href="containers.dita"/>
-    <topicref href="grid.dita"/>
-    <topicref href="rtl.dita" navtitle="Right-to-Left Languages" locktitle="yes"/>
+    <topicref href="html/nav.dita"/>
+    <topicref href="html/containers.dita"/>
+    <topicref href="html/grid.dita"/>
+    <topicref href="html/rtl.dita" navtitle="Right-to-Left Languages" locktitle="yes"/>
   </topicref>
   <topicref>
     <topicmeta>
@@ -32,10 +32,10 @@
       <othermeta name="icon" content="bi-file-earmark-richtext"/>
       <othermeta name="icon-style" content="color: var(--bs-gray)"/>
     </topicmeta>
-    <topicref href="typography.dita"/>
-    <topicref href="images.dita"/>
-    <topicref href="tables.dita"/>
-    <topicref href="figures.dita"/>
+    <topicref href="html/typography.dita"/>
+    <topicref href="html/images.dita"/>
+    <topicref href="html/tables.dita"/>
+    <topicref href="html/figures.dita"/>
   </topicref>
   <topicref>
     <topicmeta>
@@ -43,22 +43,22 @@
       <othermeta name="icon" content="bi-menu-button-wide-fill"/>
       <othermeta name="icon-style" content="color: var(--bs-cyan)"/>
     </topicmeta>
-    <topicref href="accordion.dita"/>
-    <topicref href="alerts.dita"/>
-    <topicref href="badge.dita"/>
-    <topicref href="breadcrumb.dita"/>
-    <topicref href="buttons.dita"/>
-    <topicref href="button-group.dita"/>
-    <topicref href="card.dita"/>
-    <topicref href="carousel.dita"/>
-    <topicref href="collapse.dita"/>
-    <topicref href="list-group.dita"/>
-    <topicref href="offcanvas.dita"/>
-    <topicref href="pagination.dita"/>
-    <topicref href="popovers.dita"/>
-    <topicref href="scrollspy.dita"/>
-    <topicref href="tabs.dita"/>
-    <topicref href="tooltips.dita"/>
+    <topicref href="html/accordion.dita"/>
+    <topicref href="html/alerts.dita"/>
+    <topicref href="html/badge.dita"/>
+    <topicref href="html/breadcrumb.dita"/>
+    <topicref href="html/buttons.dita"/>
+    <topicref href="html/button-group.dita"/>
+    <topicref href="html/card.dita"/>
+    <topicref href="html/carousel.dita"/>
+    <topicref href="html/collapse.dita"/>
+    <topicref href="html/list-group.dita"/>
+    <topicref href="html/offcanvas.dita"/>
+    <topicref href="html/pagination.dita"/>
+    <topicref href="html/popovers.dita"/>
+    <topicref href="html/scrollspy.dita"/>
+    <topicref href="html/tabs.dita"/>
+    <topicref href="html/tooltips.dita"/>
   </topicref>
   <topicref>
     <topicmeta>
@@ -66,10 +66,10 @@
       <othermeta name="icon" content="bi-braces-asterisk"/>
       <othermeta name="icon-style" content="color: var(--bs-pink)"/>
     </topicmeta>
-    <topicref href="borders.dita"/>
-    <topicref href="color.dita"/>
-    <topicref href="shadows.dita"/>
-    <topicref href="spacing.dita"/>
+    <topicref href="html/borders.dita"/>
+    <topicref href="html/color.dita"/>
+    <topicref href="html/shadows.dita"/>
+    <topicref href="html/spacing.dita"/>
   </topicref>
   <topicref>
     <topicmeta>
@@ -77,59 +77,109 @@
       <othermeta name="icon" content="bi-tools"/>
       <othermeta name="icon-style" content="color: var(--bs-blue)"/>
     </topicmeta>
-    <topicref navtitle="Icons" href="icons.dita">
+    <topicref navtitle="Icons" href="html/icons.dita">
       <topicmeta>
         <othermeta name="icon" content="bi-images"/>
       </topicmeta>
     </topicref>
-    <topicref href="dark-mode.dita">
+    <topicref href="html/dark-mode.dita">
       <topicmeta>
         <othermeta name="icon" content="bi-moon-stars"/>
       </topicmeta>
     </topicref>
-    <topicref href="extension-points.dita">
+    <topicref href="html/extension-points.dita">
       <topicmeta>
         <othermeta name="icon" content="bi-wrench-adjustable"/>
       </topicmeta>
     </topicref>
-    <topicref href="search-box.dita">
+    <topicref href="html/search-box.dita">
       <topicmeta>
         <othermeta name="icon" content="bi-search"/>
         <othermeta name="divider" content="Additional Plug&#8209;ins"/>
       </topicmeta>
     </topicref>
-    <topicref href="offline.dita">
+    <topicref href="html/offline.dita">
       <topicmeta>
         <othermeta name="icon" content="bi-wifi-off"/>
       </topicmeta>
     </topicref>
-    <topicref href="component.dita">
+    <topicref href="html/component.dita">
       <topicmeta>
         <othermeta name="icon" content="bi-puzzle"/>
       </topicmeta>
     </topicref>
-    <topicref href="sass.dita">
+    <topicref href="html/sass.dita">
       <topicmeta>
         <othermeta name="icon" content="bi-filetype-sass"/>
       </topicmeta>
     </topicref>
-    <topicref href="bootstrap-table.dita">
+    <topicref href="html/bootstrap-table.dita">
       <topicmeta>
         <othermeta name="icon" content="bi-table"/>
       </topicmeta>
     </topicref>
-    <topicref href="bootstrap-extension.dita">
+    <topicref href="html/bootstrap-extension.dita">
       <topicmeta>
         <othermeta name="icon" content="bi-bootstrap"/>
       </topicmeta>
     </topicref>
   </topicref>
-  <topicref navtitle="Introduction" href="pdf-getting-started.dita" locktitle="yes">
+  <topicref>
     <topicmeta>
       <navtitle>Getting Started</navtitle>
       <othermeta name="divider" content="PDF"/>
       <othermeta name="icon" content="bi-file-pdf"/>
       <othermeta name="icon-style" content="color: var(--bs-red)"/>
     </topicmeta>
+    <topicref navtitle="Introduction" href="pdf/getting-started.dita" locktitle="yes"/>
+  </topicref>
+  <topicref>
+    <topicmeta>
+      <navtitle>Content</navtitle>
+      <othermeta name="icon" content="bi-file-earmark-richtext"/>
+      <othermeta name="icon-style" content="color: var(--bs-gray)"/>
+    </topicmeta>
+    <topicref href="pdf/typography.dita"/>
+    <topicref href="pdf/images.dita"/>
+    <topicref href="pdf/tables.dita"/>
+    <topicref href="pdf/figures.dita"/>
+  </topicref>
+  <topicref>
+    <topicmeta>
+      <navtitle>Components</navtitle>
+      <othermeta name="icon" content="bi-menu-button-wide-fill"/>
+      <othermeta name="icon-style" content="color: var(--bs-cyan)"/>
+    </topicmeta>
+    <topicref href="pdf/accordion.dita"/>
+    <topicref href="pdf/alerts.dita"/>
+    <topicref href="pdf/badge.dita"/>
+    <topicref href="pdf/buttons.dita"/>
+    <topicref href="pdf/button-group.dita"/>
+    <topicref href="pdf/card.dita"/>
+    <topicref href="pdf/carousel.dita"/>
+    <topicref href="pdf/list-group.dita"/>
+  </topicref>
+  <topicref>
+    <topicmeta>
+      <navtitle>Utilities</navtitle>
+      <othermeta name="icon" content="bi-braces-asterisk"/>
+      <othermeta name="icon-style" content="color: var(--bs-pink)"/>
+    </topicmeta>
+    <topicref href="pdf/borders.dita"/>
+    <topicref href="pdf/color.dita"/>
+    <topicref href="pdf/shadows.dita"/>
+    <topicref href="pdf/spacing.dita"/>
+  </topicref>
+  <topicref>
+    <topicmeta>
+      <navtitle>Extend</navtitle>
+      <othermeta name="icon" content="bi-tools"/>
+      <othermeta name="icon-style" content="color: var(--bs-blue)"/>
+    </topicmeta>
+    <topicref navtitle="Icons" href="pdf/icons.dita">
+      <topicmeta>
+        <othermeta name="icon" content="bi-images"/>
+      </topicmeta>
+    </topicref>
   </topicref>
 </map>
