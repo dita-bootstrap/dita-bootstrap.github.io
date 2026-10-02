@@ -4,13 +4,16 @@
   <title>DITA Bootstrap</title>
 
   <topicref href="index.dita" navtitle="DITA Bootstrap" locktitle="yes"/>
-  <topicref href="html-getting-started.dita" locktitle="yes">
+
+
+  <topicref>
     <topicmeta>
       <navtitle>Getting Started</navtitle>
       <othermeta name="divider" content="HTML"/>
-      <othermeta name="icon" content="bi-filetype-html"/>
-      <othermeta name="icon-style" content="color: var(--bs-red)"/>
+      <othermeta name="icon" content="bi-book-half"/>
+      <othermeta name="icon-style" content="color: var(--bs-indigo)"/>
     </topicmeta>
+    <topicref navtitle="Introduction" href="html-getting-started.dita" locktitle="yes"/>
   </topicref>
   <topicref>
     <topicmeta>
