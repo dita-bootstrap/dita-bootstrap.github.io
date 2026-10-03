@@ -21,8 +21,22 @@ jobs:
           ref: develop
           path: specialization
 
-      - name: Copy Sample folder
-        run: cp -R specialization/sample sample
+      - name: Git checkout HTML
+        uses: actions/checkout@v7
+        with:
+          repository: dita-bootstrap/dita-bootstrap.html
+          ref: develop
+          path: html
+
+      - name: Git checkout PDF
+        uses: actions/checkout@v7
+        with:
+          repository: dita-bootstrap/dita-bootstrap.pdf
+          ref: develop
+          path: pdf
+
+      - name: Copy code examples
+        run: HTML_DIR=html SPEC_DIR=specialization PDF_DIR=pdf ./copy-code.sh
 
       - name: Calculate short SHA
         uses: benjlevesque/short-sha@v4.0
