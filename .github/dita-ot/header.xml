@@ -14,8 +14,8 @@
         <i class="bi bi-list"/>
       </button>
     </div>
-    <a class="navbar-brand" href="https://dita-bootstrap.github.io">
-      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+    <a class="d-flex text-decoration-none" href="https://dita-bootstrap.github.io">
+      <svg class="d-inline-flex" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 32 32">
         <defs>
           <clipPath id="bird-clip-v5-gray" clipPathUnits="userSpaceOnUse">
             <path d="M19.5 -1L32 -1L32 16L28.5 16L27 18L22 22L22 27L11 27L11 12L19.5 5Z"/>
@@ -27,7 +27,7 @@
         </g>
         <rect fill="none" stroke="var(--bs-primary-border-subtle)" stroke-width="2" x="1" y="1" width="30" height="30" rx="7"/>
       </svg>
-      <span class="d-inline pt-2 align-middle">DITA Bootstrap</span>
+      <span class="ms-3 navbar-brand d-inline-flex">DITA Bootstrap</span>
     </a>
     <button
       class="navbar-toggler p-2"
