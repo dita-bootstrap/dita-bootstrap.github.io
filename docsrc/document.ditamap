@@ -13,7 +13,7 @@
       <othermeta name="icon" content="bi-book-half"/>
       <othermeta name="icon-style" content="color: var(--bs-indigo)"/>
     </topicmeta>
-    <topicref navtitle="Introduction" href="html/getting-started.dita" locktitle="yes"/>
+    <topicref navtitle="Introduction" href="html/index.dita" locktitle="yes"/>
   </topicref>
   <topicref>
     <topicmeta>
@@ -131,7 +131,7 @@
       <othermeta name="icon" content="bi-book-half"/>
       <othermeta name="icon-style" content="color: var(--bs-indigo)"/>
     </topicmeta>
-    <topicref navtitle="Introduction" href="pdf/getting-started.dita" locktitle="yes"/>
+    <topicref navtitle="Introduction" href="pdf/index.dita" locktitle="yes"/>
   </topicref>
   <topicref>
     <topicmeta>

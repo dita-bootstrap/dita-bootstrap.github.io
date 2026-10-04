@@ -33,11 +33,11 @@
         <li outputclass="list-group-item list-group-item-action">
           <icon outputclass="pe-2 bi-filetype-html" style="font-size: 2rem; color: var(--bs-blue);"/>
           See
-          <xref href="./html/getting-started.dita" format="dita" outputclass="stretched-link"/> for information on how to render DITA documents as HTML using Bootstrap components.</li>
+          <xref href="./html/index.dita" format="dita" outputclass="stretched-link"/> for information on how to render DITA documents as HTML using Bootstrap components.</li>
         <li outputclass="list-group-item list-group-item-action">
           <icon outputclass="pe-2 bi-file-pdf" style="font-size: 2rem; color: var(--bs-red);"/>
           See
-          <xref href="./pdf/getting-started.dita" format="dita" outputclass="stretched-link"/> for information on how to render DITA documents as a PDF aligned to the Bootstrap look-and-feel.</li>
+          <xref href="./pdf/index.dita" format="dita" outputclass="stretched-link"/> for information on how to render DITA documents as a PDF aligned to the Bootstrap look-and-feel.</li>
       </ul>
     </section>
     <section>
