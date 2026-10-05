@@ -21,18 +21,11 @@
     </metadata>
   </prolog>
   <body outputclass="language-markup">
-    <p>The <term>DITA Bootstrap Table</term> plug-in is a DITA-OT plug-in that incorporates the
-        <xref href="https://bootstrap-table.com/" format="html" scope="external">Bootstrap Table</xref> library
-        and adds the necessary CSS and JavaScript for dynamic tables with search, sort, and pagination functions.</p>
-      <p>For the full documentation, see
-        <xref
-        href="https://dita-bootstrap.github.io/dita-bootstrap.table/"
-        format="html"
-        scope="external"
-      >dita-bootstrap.github.io/dita-bootstrap.table</xref>.</p>
-    <note type="note">If you just want to style DITA tables with the standard Bootstrap table styles, you don’t need a 
-      separate plug-in. See <xref href="tables.dita"/> for details on the output classes that the 
-      <term>DITA Bootstrap</term> plug-in supports.</note>
+    <p><term>DITA Bootstrap Table</term> is a DITA-OT plug-in that extends the
+      <xref href="https://dita-bootstrap.github.io/" format="html" scope="external">DITA Bootstrap</xref>
+      HTML output with dynamic tables from the
+      <xref href="https://bootstrap-table.com/" format="html" scope="external">Bootstrap Table</xref> library. It adds
+      the necessary CSS and JavaScript for dynamic tables with search, sort, and pagination functions.</p>
     <section>
       <title>Installing the <term>DITA Bootstrap Table</term> plug-in</title>
       <p>Use the <cmdname>dita</cmdname> command to add the <term>DITA Bootstrap Table</term>
@@ -40,41 +33,117 @@
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname
         >install</parmname> org.dita-bootstrap.table</codeblock>
     </section>
-
     <section>
-      <title>Search and Filtering</title>
-      <p>Add <xmlelement>table otherprops="search"</xmlelement> to filter the results based on a search term.</p>
+      <title>Search</title>
+       <p>Add <xmlelement>table otherprops="search"</xmlelement> to filter the results based on a search term.</p>
     </section>
-    <fig>
-      <title>Example table with the results filtering on "Bear"</title>
-      <image scalefit="yes" href="./src/table-filter.png"/>
-    </fig>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <table outputclass="table-striped" otherprops="search pagination">
+        <tgroup cols="3">
+          <colspec colname="COLSPEC0" colwidth="2*"/>
+          <colspec colname="COLSPEC1" colwidth="2*"/>
+          <colspec colname="COLSPEC2" colwidth="1*"/>
+          <thead>
+            <row>
+              <entry colname="COLSPEC0" valign="top">Animal</entry>
+              <entry colname="COLSPEC1" valign="top">Species</entry>
+              <entry colname="COLSPEC2" valign="top">Gestation</entry>
+            </row>
+          </thead>
+          <tbody conref="gestation.dita#gestation/data">
+            <row>
+              <entry/>
+              <entry/>
+              <entry/>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </bodydiv>
     <codeblock>&lt;table otherprops="search"&gt;
   ...etc
 &lt;/table&gt;</codeblock>
     <section>
       <title>Pagination</title>
-      <p>Add <xmlelement>table otherprops="pagination"</xmlelement> to add a pagination footer to a large table.</p>
+      <p>Add <xmlelement>table otherprops="pagination"</xmlelement> to add paginator to a large table.</p>
+
     </section>
-    <fig>
-      <title>Paginated table with 140 rows reduced to ten</title>
-      <image scalefit="yes" href="./src/table-paginate.png"/>
-    </fig>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <table outputclass="table-striped" otherprops="pagination">
+        <tgroup cols="3">
+          <colspec colname="COLSPEC0" colwidth="2*"/>
+          <colspec colname="COLSPEC1" colwidth="2*"/>
+          <colspec colname="COLSPEC2" colwidth="1*"/>
+          <thead>
+            <row>
+              <entry colname="COLSPEC0" valign="top">Animal</entry>
+              <entry colname="COLSPEC1" valign="top">Species</entry>
+              <entry colname="COLSPEC2" valign="top">Gestation</entry>
+            </row>
+          </thead>
+          <tbody conref="gestation.dita#gestation/data">
+            <row>
+              <entry/>
+              <entry/>
+              <entry/>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </bodydiv>
     <codeblock>&lt;table otherprops="pagination"&gt;
   ...etc
 &lt;/table&gt;</codeblock>
-    <section>
+    <p>The following page sizes are supported:</p>
+    <parml otherprops="cols(4)">
+      <plentry>
+        <pt><xmlatt>otherprops="pagination"</xmlatt></pt>
+        <pd>Table page size is 10 rows (default)</pd>
+      </plentry>
+      <plentry>
+        <pt><xmlatt>otherprops="pagination-25"</xmlatt></pt>
+         <pd>Table page size is 25 rows</pd>
+      </plentry>
+      <plentry>
+      <pt><xmlatt>otherprops="pagination-50"</xmlatt></pt>
+       <pd>Table page size is 50 rows</pd>
+      </plentry>
+      <plentry>
+      <pt><xmlatt>otherprops="pagination-100"</xmlatt></pt>
+       <pd>Table page size is 100 rows</pd>
+      </plentry>
+    </parml>
+
+     <section>
       <title>Sorting</title>
-      <p>Add <xmlelement>table otherprops="sortable"</xmlelement> to allow each column to be sorted dynamically.</p>
+      <p>Add <xmlelement>table otherprops="sortable"</xmlelement>
+      to allow each column to be sorted dynamically.</p>
     </section>
-    <fig>
-      <title>Sorted table using reverse alphabetical order</title>
-      <image scalefit="yes" href="./src/table-sort.png"/>
-    </fig>
-    <codeblock>&lt;table otherprops="sortable"&gt;
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <table outputclass="table-striped" otherprops="pagination sortable">
+        <tgroup cols="3">
+          <colspec colname="COLSPEC0" colwidth="2*"/>
+          <colspec colname="COLSPEC1" colwidth="2*"/>
+          <colspec colname="COLSPEC2" colwidth="1*"/>
+          <thead>
+            <row>
+              <entry colname="COLSPEC0" valign="top">Animal</entry>
+              <entry colname="COLSPEC1" valign="top">Species</entry>
+              <entry colname="COLSPEC2" valign="top">Gestation</entry>
+            </row>
+          </thead>
+          <tbody conref="gestation.dita#gestation/data">
+            <row>
+              <entry/>
+              <entry/>
+              <entry/>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </bodydiv>
+    <codeblock>&lt;table otherprops="pagination sortable"&gt;
   ...etc
 &lt;/table&gt;</codeblock>
-
-
   </body>
 </topic>
