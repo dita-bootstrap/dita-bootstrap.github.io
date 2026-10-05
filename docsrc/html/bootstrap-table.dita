@@ -22,7 +22,6 @@
   </prolog>
   <body outputclass="language-markup">
     <p><term>DITA Bootstrap Table</term> is a DITA-OT plug-in that extends the
-      <xref href="https://dita-bootstrap.github.io/" format="html" scope="external">DITA Bootstrap</xref>
       HTML output with dynamic tables from the
       <xref href="https://bootstrap-table.com/" format="html" scope="external">Bootstrap Table</xref> library. It adds
       the necessary CSS and JavaScript for dynamic tables with search, sort, and pagination functions.</p>
