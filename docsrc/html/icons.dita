@@ -45,7 +45,7 @@
     <tabbed-dialog style="pills" margin="t3">
       <section>
         <title>Specialization</title>
-        <codeblock><coderef href="code/icons/example.xml"/></codeblock>
+        <codeblock><coderef href="code/specialization/icons/example.xml"/></codeblock>
       </section>
       <section>
         <title><xmlatt>outputclass</xmlatt></title>
@@ -98,7 +98,7 @@
     <tabbed-dialog style="pills" margin="t3">
       <section>
         <title>Specialization</title>
-        <codeblock><coderef href="code/icons/dark-link.xml"/></codeblock>
+        <codeblock><coderef href="code/specialization/icons/dark-link.xml"/></codeblock>
       </section>
       <section>
         <title><xmlatt>outputclass</xmlatt></title>
@@ -117,7 +117,7 @@
     <tabbed-dialog style="pills" margin="t3">
       <section>
         <title>Specialization</title>
-        <codeblock><coderef href="code/icons/icons-in-buttons.xml"/></codeblock>
+        <codeblock><coderef href="code/specialization/icons/icons-in-buttons.xml"/></codeblock>
       </section>
       <section>
         <title><xmlatt>outputclass</xmlatt></title>
