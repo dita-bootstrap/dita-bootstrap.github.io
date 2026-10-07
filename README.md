@@ -10,4 +10,4 @@ and components
 > by Twitter, Inc. and the Bootstrap Authors, and used under CC BY 3.0.
 
 [1]: http://www.dita-ot.org
-[2]: https://dita-bootstrap.github.io
+[2]: https://dita-bootstrap.org
