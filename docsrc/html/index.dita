@@ -514,7 +514,7 @@
      
 
       <note type="note">You can switch between the available themes via the CSS dropdown in the menu bar at
-        <xref href="https://dita-bootstrap.github.io/" format="html" scope="external">dita-bootstrap.github.io</xref>.
+        <xref href="https://dita-bootstrap.org/" format="html" scope="external">dita-bootstrap.org</xref>.
       </note>
     </section>
 
@@ -647,7 +647,7 @@
 
        <note type="note">For an example of <option>collapsible</option> styling, see the output at
         <xref
-          href="https://dita-bootstrap.github.io/dita-bootstrap/"
+          href="https://dita-bootstrap.org/dita-bootstrap/"
           format="html"
           scope="external"
         >dita-bootstrap.github.io/dita-bootstrap</xref>. </note>
