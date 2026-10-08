@@ -1,7 +1,7 @@
 {
   "name": "dita-bootstrap.github.io",
-  "description": "DTD Specialization for the DITA Bootstrap HTML output with additional features from the Bootstrap Extension library.",
-  "homepage": "https://dita-bootstrap.org/dita-bootstrap.extension.dtd",
+  "description": "Website for DITA Bootstrap Components",
+  "homepage": "https://dita-bootstrap.org",
   "repository": {
     "type": "git",
     "url": "https://github.com/dita-bootstrap/dita-bootstrap.github.io.git"
