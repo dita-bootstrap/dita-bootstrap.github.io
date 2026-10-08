@@ -39,6 +39,10 @@
        plug-in to your DITA Open Toolkit installation:</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname
         >install</parmname> org.dita-bootstrap.extension</codeblock>
+      <p><b>Optional:</b> install the extension DTD plug-in to add support for new DITA elements that
+       generate Bootstrap Extension components:</p>
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname
+        >install</parmname> org.dita-bootstrap.extension.dtd</codeblock>
     </section>
   </body>
 </topic>

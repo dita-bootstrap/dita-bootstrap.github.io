@@ -35,7 +35,9 @@
         <title>DITA-OT 3.5 and newer</title>
           <ol>  
             <li>
-              <p><b>Optional:</b> install the specialization plug-in to add support for new DITA elements that
+              <p><b>Optional:</b> install the <xref
+                href="../specialization.dita"
+              >specialization</xref> plug-in to add support for new DITA elements that
                generate Bootstrap components:
               </p>
               <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname
@@ -60,7 +62,9 @@
         <title>DITA-OT 3.3 and newer</title>
           <ol>  
             <li>
-              <p><b>Optional:</b> install the specialization plug-in to add support for new DITA elements that
+              <p><b>Optional:</b> install the <xref
+                href="../specialization.dita"
+              >specialization</xref> plug-in to add support for new DITA elements that
                generate Bootstrap components:
               </p>
               <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname
@@ -85,7 +89,9 @@
         <title>DITA-OT 3.2 and older</title>
           <ol>  
             <li>
-              <p><b>Optional:</b> install the specialization plug-in to add support for new DITA elements that
+              <p><b>Optional:</b> install the <xref
+                href="../specialization.dita"
+              >specialization</xref> plug-in to add support for new DITA elements that
                generate Bootstrap components:
               </p>
               <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname
@@ -115,7 +121,7 @@
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname
         >--input</parmname>=path/to/your.ditamap <parmname>--format</parmname>=<option
         >html5-bootstrap</option></codeblock>
-      <p>If using DITA-Bootstrap specialization, ensure that the <codeph
+      <p>If using <xref href="../specialization.dita">DITA-Bootstrap specialization</xref>, ensure that the <codeph
         >*.dita</codeph> files are using the following <codeph>DOCTYPE</codeph> declaration:</p>
         <codeblock
         outputclass="language-xml"

@@ -3,8 +3,9 @@
 <map>
   <title>DITA Bootstrap</title>
 
-  <topicref href="index.dita" navtitle="DITA Bootstrap" locktitle="yes"/>
-
+  <topicref href="index.dita" navtitle="DITA Bootstrap" locktitle="yes" linking="none">
+    <topicref href="specialization.dita" navtitle="Specialization" locktitle="yes"/>
+  </topicref>
 
   <topicref>
     <topicmeta>

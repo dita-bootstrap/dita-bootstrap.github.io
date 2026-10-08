@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Within the sample documentation, where necessary, the texts describing the usage of each component have been copied
+  directly from the official Bootstrap 5.3 documentation (found at https://getbootstrap.com/docs/5.3), however DITA
+  markup is used throughout the examples describing how to implement these components correctly using outputclass.
+
+  This work is a derivative of "Bootstrap 5.3 docs" by Twitter, Inc. and the Bootstrap Authors,
+  and used under CC BY 3.0. See the accompanying LICENSE file for applicable licenses.
+-->
+<!DOCTYPE topic PUBLIC "-//DITA Bootstrap//DTD DITA Bootstrap Topic//EN" "bootstrap-topic.dtd">
+<topic id="specialization">
+  <title>Specialization</title>
+  <shortdesc>DITA Bootstrap provides a DTD specialization, so Bootstrap components can be authored as native DITA
+    elements with specialized attributes instead of <xmlatt>outputclass</xmlatt> values.</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Specialization
+          <indexterm>DTD</indexterm>
+        </indexterm>
+        <indexterm><xmlatt>class</xmlatt></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+
+      <p>Specialization is the standard DITA mechanism for defining that an element type or attribute is derived from
+        an ancestor type. Unlike generic XML, DITA formally records the parent-child relationship between element
+        types, so a new element inherits the semantics and the processing behavior of the element it was derived
+        from.</p>
+      <p>Information architects use specialization to define new kinds of information while maximizing reuse and
+        minimizing maintenance costs. It is appropriate when existing elements cannot express the semantics you need
+        or when the output requires specialized processing.</p>
+     
+      <p>The <xmlatt>class</xmlatt> attribute records each element's ancestry, mapping its current name to its more
+        general equivalents. A processor that does not recognize a specialized element can therefore fall back to the
+        base element it was derived from.</p>
+
+    <section>
+      <title>Why use a Bootstrap specialization</title>
+      <p>Without specialization, a Bootstrap component is authored by adding <xmlatt>outputclass</xmlatt> values to
+        generic DITA elements. The DITA Bootstrap DTD instead provides native DITA elements with specialized
+        attributes for Bootstrap styling. The markup describes the component, and the specialization carries the
+        Bootstrap-specific details.</p>
+      <codeblock outputclass="language-xml">&lt;card color="primary" border="1" rounded="yes"&gt;
+  &lt;title&gt;Card Title&lt;/title&gt;
+  &lt;p&gt;Card content goes here.&lt;/p&gt;
+&lt;/card&gt;</codeblock>
+    </section>
+    <section>
+      <title>Using the DTD</title>
+      <p>Topics that use the specialized elements must declare the DITA Bootstrap DTD in the document type
+        declaration:</p>
+      <codeblock
+        outputclass="language-xml"
+      >&lt;!DOCTYPE topic PUBLIC "-//DITA Bootstrap//DTD DITA Bootstrap Topic//EN" "bootstrap-topic.dtd"&gt;</codeblock>
+    </section>
+    <section>
+      <title>Bootstrap components</title>
+      <p>The DTD includes handling for the following Bootstrap components:</p>
+      <table>
+        <tgroup cols="3">
+          <colspec colname="c1" colwidth="1*"/>
+          <colspec colname="c2" colwidth="2*"/>
+          <colspec colname="c3" colwidth="1*"/>
+          <thead>
+            <row>
+              <entry>Component</entry>
+              <entry>Elements</entry>
+              <entry>Extends</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><xref href="html/accordion.dita">Accordions</xref></entry>
+              <entry><xmlelement>accordion</xmlelement>, <xmlelement>accordion-item</xmlelement></entry>
+              <entry><xmlelement>bodydiv</xmlelement>, <xmlelement>section</xmlelement></entry>
+            </row>
+            <row>
+              <entry><xref href="html/alerts.dita">Alerts</xref></entry>
+              <entry><xmlelement>alert</xmlelement></entry>
+              <entry><xmlelement>section</xmlelement></entry>
+            </row>
+            <row>
+              <entry><xref href="html/badge.dita">Badges</xref></entry>
+              <entry><xmlelement>badge</xmlelement></entry>
+              <entry><xmlelement>ph</xmlelement></entry>
+            </row>
+            <row>
+              <entry><xref href="html/buttons.dita">Buttons</xref></entry>
+              <entry><xmlelement>button</xmlelement></entry>
+              <entry><xmlelement>xref</xmlelement></entry>
+            </row>
+            <row>
+              <entry><xref href="html/button-group.dita">Button groups</xref></entry>
+              <entry><xmlelement>button-group</xmlelement>, <xmlelement>button-toolbar</xmlelement></entry>
+              <entry><xmlelement>bodydiv</xmlelement></entry>
+            </row>
+            <row>
+              <entry><xref href="html/card.dita">Cards</xref></entry>
+              <entry><xmlelement>card</xmlelement>, <xmlelement>card-header</xmlelement>, <xmlelement
+                >card-footer</xmlelement></entry>
+              <entry><xmlelement>section</xmlelement>, <xmlelement>div</xmlelement></entry>
+            </row>
+            <row>
+              <entry><xref href="html/carousel.dita">Carousels</xref></entry>
+              <entry><xmlelement>carousel</xmlelement>, <xmlelement>carousel-item</xmlelement></entry>
+              <entry><xmlelement>ul</xmlelement>, <xmlelement>li</xmlelement></entry>
+            </row>
+            <row>
+              <entry><xref href="html/collapse.dita">Collapse</xref></entry>
+              <entry><xmlelement>collapse</xmlelement></entry>
+              <entry><xmlelement>bodydiv</xmlelement></entry>
+            </row>
+            <row>
+              <entry><xref href="html/icons.dita">Icons</xref></entry>
+              <entry><xmlelement>icon</xmlelement></entry>
+              <entry><xmlelement>ph</xmlelement></entry>
+            </row>
+            <row>
+              <entry><xref href="html/grid.dita">Grid layout</xref></entry>
+              <entry><xmlelement>grid-row</xmlelement>, <xmlelement>grid-col</xmlelement></entry>
+              <entry><xmlelement>bodydiv</xmlelement></entry>
+            </row>
+            <row>
+              <entry><xref href="html/list-group.dita">List groups</xref></entry>
+              <entry><xmlelement>list-group</xmlelement></entry>
+              <entry><xmlelement>ul</xmlelement></entry>
+            </row>
+            <row>
+              <entry><xref href="html/offcanvas.dita">Offcanvas</xref></entry>
+              <entry><xmlelement>offcanvas</xmlelement></entry>
+              <entry><xmlelement>section</xmlelement></entry>
+            </row>
+            <row>
+              <entry><xref href="html/pagination.dita">Pagination</xref></entry>
+              <entry><xmlelement>pagination</xmlelement></entry>
+              <entry><xmlelement>section</xmlelement></entry>
+            </row>
+            <row>
+              <entry><xref href="html/popovers.dita">Popovers</xref></entry>
+              <entry><xmlelement>popover</xmlelement></entry>
+              <entry><xmlelement>xref</xmlelement></entry>
+            </row>
+            <row>
+              <entry><xref href="html/tabs.dita">Tabs</xref></entry>
+              <entry><xmlelement>tabbed-dialog</xmlelement></entry>
+              <entry><xmlelement>bodydiv</xmlelement></entry>
+            </row>
+            <row>
+              <entry><xref href="html/images.dita">Thumbnails</xref></entry>
+              <entry><xmlelement>thumbnail</xmlelement></entry>
+              <entry><xmlelement>image</xmlelement></entry>
+            </row>
+            <row>
+              <entry><xref href="html/images.dita">Pictures</xref></entry>
+              <entry><xmlelement>picture</xmlelement></entry>
+              <entry><xmlelement>div</xmlelement></entry>
+            </row>
+            <row>
+              <entry><xref href="html/tooltips.dita">Tooltips</xref></entry>
+              <entry><xmlelement>tooltip</xmlelement></entry>
+              <entry><xmlelement>xref</xmlelement></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <title>Bootstrap Extension components</title>
+      <p>The <xref href="html/bootstrap-extension.dita">Bootstrap Extension</xref> specialization adds elements for
+        Bootstrap Extension features. Topics that use them must declare the extension DTD instead:</p>
+      <codeblock
+        outputclass="language-xml"
+      >&lt;!DOCTYPE topic PUBLIC "-//DITA Bootstrap//DTD DITA Bootstrap Extension Topic//EN" "bootstrap-ext-topic.dtd"&gt;</codeblock>
+      <table>
+        <tgroup cols="3">
+          <colspec colname="c1" colwidth="1*"/>
+          <colspec colname="c2" colwidth="2*"/>
+          <colspec colname="c3" colwidth="1*"/>
+          <thead>
+            <row>
+              <entry>Component</entry>
+              <entry>Elements</entry>
+              <entry>Extends</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Counter</entry>
+              <entry><xmlelement>counter</xmlelement></entry>
+              <entry><xmlelement>ph</xmlelement></entry>
+            </row>
+            <row>
+              <entry>Parallax</entry>
+              <entry><xmlelement>parallax</xmlelement></entry>
+              <entry><xmlelement>section</xmlelement></entry>
+            </row>
+            <row>
+              <entry>Slider</entry>
+              <entry><xmlelement>slider</xmlelement></entry>
+              <entry><xmlelement>bodydiv</xmlelement></entry>
+            </row>
+            <row>
+              <entry>Whitebox</entry>
+              <entry><xmlelement>whitebox</xmlelement>, <xmlelement>whitebox-item</xmlelement></entry>
+              <entry><xmlelement>ul</xmlelement>, <xmlelement>li</xmlelement></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <title>Colors and borders</title>
+      <p>Most specializations, and many base DITA elements, support common attributes to control their
+        appearance:</p>
+      <dl>
+        <dlentry>
+          <dt>Color themes</dt>
+          <dd>Standard Bootstrap themes: <option>primary</option>, <option>secondary</option>, <option
+            >success</option>, <option>danger</option>, <option>warning</option>, <option>info</option>, <option
+            >light</option> and <option>dark</option>.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Border thickness</dt>
+          <dd>Numeric values from <option>1</option> to <option>5</option> control the border width.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Rounded corners</dt>
+          <dd>Values such as <option>yes</option>, <option>no</option>, <option>pill</option> or <option
+            >circle</option>.</dd>
+        </dlentry>
+      </dl>
+    </section>
+  </body>
+</topic>
