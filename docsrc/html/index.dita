@@ -123,9 +123,9 @@
         >html5-bootstrap</option></codeblock>
       <p>If using <xref href="../specialization.dita">DITA-Bootstrap specialization</xref>, ensure that the <codeph
         >*.dita</codeph> files are using the following <codeph>DOCTYPE</codeph> declaration:</p>
-        <codeblock
-        outputclass="language-xml"
-      >&lt;!DOCTYPE topic PUBLIC "-//DITA Bootstrap//DTD DITA Bootstrap Topic//EN" "bootstrap-topic.dtd"&gt;</codeblock>
+        <codeblock outputclass="language-xml">&lt;!DOCTYPE topic PUBLIC
+  "-//DITA Bootstrap//DTD DITA Bootstrap Topic//EN"
+  "bootstrap-topic.dtd"&gt;</codeblock>
     </section>
     <section>
       <title>Bootswatch themes</title>

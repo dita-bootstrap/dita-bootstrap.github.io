@@ -51,9 +51,9 @@
       <title>Using the DTD</title>
       <p>Topics that use the specialized elements must declare the DITA Bootstrap DTD in the document type
         declaration:</p>
-      <codeblock
-        outputclass="language-xml"
-      >&lt;!DOCTYPE topic PUBLIC "-//DITA Bootstrap//DTD DITA Bootstrap Topic//EN" "bootstrap-topic.dtd"&gt;</codeblock>
+      <codeblock outputclass="language-xml">&lt;!DOCTYPE topic PUBLIC 
+  "-//DITA Bootstrap//DTD DITA Bootstrap Topic//EN" 
+  "bootstrap-topic.dtd"&gt;</codeblock>
     </section>
     <section>
       <title>Bootstrap components</title>
@@ -170,9 +170,9 @@
       <title>Bootstrap Extension components</title>
       <p>The <xref href="html/bootstrap-extension.dita">Bootstrap Extension</xref> specialization adds elements for
         Bootstrap Extension features. Topics that use them must declare the extension DTD instead:</p>
-      <codeblock
-        outputclass="language-xml"
-      >&lt;!DOCTYPE topic PUBLIC "-//DITA Bootstrap//DTD DITA Bootstrap Extension Topic//EN" "bootstrap-ext-topic.dtd"&gt;</codeblock>
+      <codeblock outputclass="language-xml">&lt;!DOCTYPE topic PUBLIC
+  "-//DITA Bootstrap//DTD DITA Bootstrap Extension Topic//EN"
+  "bootstrap-ext-topic.dtd"&gt;</codeblock>
       <table>
         <tgroup cols="3">
           <colspec colname="c1" colwidth="1*"/>
