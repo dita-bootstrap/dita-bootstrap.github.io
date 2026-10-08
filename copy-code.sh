@@ -5,7 +5,7 @@ set -euo pipefail
 
 cd "$(dirname "$0")"
 HTML_DIR="${HTML_DIR:-../dita-bootstrap.html}"
-SPEC_DIR="${SPEC_DIR:-../dita-bootstrap.specialization}"
+SPEC_DIR="${SPEC_DIR:-../dita-bootstrap.dtd}"
 PDF_DIR="${PDF_DIR:-../dita-bootstrap.pdf}"
 
 for pair in "html:$HTML_DIR" "specialization:$SPEC_DIR"; do

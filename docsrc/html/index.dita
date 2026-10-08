@@ -39,7 +39,7 @@
                generate Bootstrap components:
               </p>
               <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname
-              >install</parmname> org.dita-bootstrap.specialization</codeblock>
+              >install</parmname> org.dita-bootstrap.dtd</codeblock>
             </li>
             <li>
               <p>Install the CSS plug-in and the HTML plug-in as shown:
@@ -64,7 +64,7 @@
                generate Bootstrap components:
               </p>
               <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname
-              >--install</parmname> org.dita-bootstrap.specialization</codeblock>
+              >--install</parmname> org.dita-bootstrap.dtd</codeblock>
           </li>
           <li>
           <p>Install the CSS plug-in and the HTML plug-in as shown:
@@ -89,7 +89,7 @@
                generate Bootstrap components:
               </p>
               <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname
-              >--install</parmname> https://github.com/dita-bootstrap/dita-bootstrap.specialization/archive/master.zip</codeblock>
+              >--install</parmname> https://github.com/dita-bootstrap/dita-bootstrap.dtd/archive/develop.zip</codeblock>
             </li>
             <li>
               <p>Install the CSS plug-in and the HTML plug-in as shown:
@@ -97,7 +97,7 @@
               <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname
               >--install</parmname> https://github.com/jason-fox/fox.jason.extend.css/archive/master.zip
 <cmdname>dita</cmdname> <parmname
-              >--install</parmname> https://github.com/dita-bootstrap/dita-bootstrap.html/archive/master.zip</codeblock>
+              >--install</parmname> https://github.com/dita-bootstrap/dita-bootstrap.html/archive/develop.zip</codeblock>
             </li>
             <li>
               <p>To add syntax highlighting using the bootstrap color scheme, install the Prism.js plug-in if required:
@@ -113,12 +113,13 @@
        <p>Specify the <option>html5-bootstrap</option> format when building output with the <cmdname>dita</cmdname>
         command:</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname
-          >--input</parmname>=path/to/your.ditamap <parmname>--format</parmname>=<option>html5-bootstrap</option></codeblock>
+        >--input</parmname>=path/to/your.ditamap <parmname>--format</parmname>=<option
+        >html5-bootstrap</option></codeblock>
       <p>If using DITA-Bootstrap specialization, ensure that the <codeph
-          >*.dita</codeph> files are using the following <codeph>DOCTYPE</codeph> declaration:</p>
+        >*.dita</codeph> files are using the following <codeph>DOCTYPE</codeph> declaration:</p>
         <codeblock
-          outputclass="language-xml"
-        >&lt;!DOCTYPE topic PUBLIC "-//DITA Bootstrap//DTD DITA Bootstrap Topic//EN" "bootstrap-topic.dtd"&gt;</codeblock>
+        outputclass="language-xml"
+      >&lt;!DOCTYPE topic PUBLIC "-//DITA Bootstrap//DTD DITA Bootstrap Topic//EN" "bootstrap-topic.dtd"&gt;</codeblock>
     </section>
     <section>
       <title>Bootswatch themes</title>

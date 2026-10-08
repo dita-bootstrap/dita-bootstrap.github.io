@@ -11,7 +11,11 @@
 <topic id="index">
   <title>DITA Bootstrap</title>
   <shortdesc>A series of plug-ins for
-    <xref href="http://www.dita-ot.org" format="html" scope="external">DITA Open Toolkit</xref> that extends outputs with
+    <xref
+      href="http://www.dita-ot.org"
+      format="html"
+      scope="external"
+    >DITA Open Toolkit</xref> that extends outputs with
     <xref href="https://getbootstrap.com/docs/5.3" format="html" scope="external">Bootstrap 5.3</xref> templating and
     components.
   </shortdesc>
@@ -27,17 +31,26 @@
   <body>
     <section>
       <title>DITA Bootstrap documentation</title>
-      <p>The DITA Bootstrap documentation provides information about installing, running, configuring and extending the Bootstrap plugins
+      <p
+      >The DITA Bootstrap documentation provides information about installing, running, configuring and extending the Bootstrap plugins
       for multiple output formats:</p>
       <ul outputclass="list-group mb-5">
         <li outputclass="list-group-item list-group-item-action">
           <icon outputclass="pe-2 bi-filetype-html" style="font-size: 2rem; color: var(--bs-blue);"/>
           See
-          <xref href="./html/index.dita" format="dita" outputclass="stretched-link"/> for information on how to render DITA documents as HTML using Bootstrap components.</li>
+          <xref
+            href="./html/index.dita"
+            format="dita"
+            outputclass="stretched-link"
+          /> for information on how to render DITA documents as HTML using Bootstrap components.</li>
         <li outputclass="list-group-item list-group-item-action">
           <icon outputclass="pe-2 bi-file-pdf" style="font-size: 2rem; color: var(--bs-red);"/>
           See
-          <xref href="./pdf/index.dita" format="dita" outputclass="stretched-link"/> for information on how to render DITA documents as a PDF aligned to the Bootstrap look-and-feel.</li>
+          <xref
+            href="./pdf/index.dita"
+            format="dita"
+            outputclass="stretched-link"
+          /> for information on how to render DITA documents as a PDF aligned to the Bootstrap look-and-feel.</li>
       </ul>
     </section>
     <section>
