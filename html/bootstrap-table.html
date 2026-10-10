@@ -1,0 +1,2559 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="copyright" content="(C) Copyright 2026"><meta name="generator" content="DITA-OT"><meta name="description" content="Documentation and examples for creating dynamic tables with the Bootstrap Table extension."><meta name="icon" content="bi-table"><meta property="og:type" content="website"><meta property="og:url" content="https://dita-bootstrap.org//html/bootstrap-table.html"><meta property="og:title" content="Dynamic Tables"><meta property="og:description" content="Documentation and examples for creating dynamic tables with the Bootstrap Table extension."><meta property="og:image" content="https://dita-bootstrap.org//open-graph.svg"><meta name="twitter:title" content="Dynamic Tables"><meta name="twitter:description" content="Documentation and examples for creating dynamic tables with the Bootstrap Table extension."><meta property="twitter:url" content="https://dita-bootstrap.org//html/bootstrap-table.html"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://dita-bootstrap.org//open-graph.svg"><title>Dynamic Tables</title><script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script><script src="../js/lunr-client.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><link rel="shortcut icon" href="../favicon/favicon.svg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script>
+(function() {
+  var validThemes = ["https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css","https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/brite/bootstrap.min.css","https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/cerulean/bootstrap.min.css","https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/cosmo/bootstrap.min.css","https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/cyborg/bootstrap.min.css","https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/darkly/bootstrap.min.css","https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/flatly/bootstrap.min.css","https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/journal/bootstrap.min.css","https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/litera/bootstrap.min.css","https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/lumen/bootstrap.min.css","https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/lux/bootstrap.min.css","https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/materia/bootstrap.min.css","https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/minty/bootstrap.min.css","https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/morph/bootstrap.min.css","https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/pulse/bootstrap.min.css","https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/quartz/bootstrap.min.css","https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/sandstone/bootstrap.min.css","https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/simplex/bootstrap.min.css","https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/sketchy/bootstrap.min.css","https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/slate/bootstrap.min.css","https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/solar/bootstrap.min.css","https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/spacelab/bootstrap.min.css","https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/superhero/bootstrap.min.css","https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/united/bootstrap.min.css","https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/vapor/bootstrap.min.css","https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/yeti/bootstrap.min.css","https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/zephyr/bootstrap.min.css"];
+  var css = localStorage.getItem('css-theme');
+  if (css) {
+    if (validThemes.indexOf(css) !== -1) {
+      var link = Array.prototype.find.call(document.querySelectorAll('link'), function(l) {
+        return /\.min\.css$/.test(l.href);
+      });
+      if (link) {
+        if (link.href !== css) {
+          link.removeAttribute('integrity');
+          link.href = css;
+        }
+      }
+    }
+  }
+})();
+</script><script language="javascript" src="../js/css-theme-switcher.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-table@1.25.0/dist/bootstrap-table.min.css" integrity="sha384-0EBL7a+6RJx/ZpOVikVEqEKhRM4zT0bEkA/YH7sUzCE9fUlLarrO1XjqHWnJ3Asd" crossorigin="anonymous"><script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.25.0/dist/bootstrap-table.min.js" integrity="sha384-90CQ8fUpHseHAv+BqZqbTtB57S75pQknmB29mVJRZeyODVs2vt1OHCAgb1yuIKfG" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.25.0/dist/bootstrap-table-locale-all.min.js" integrity="sha384-w+UjSaOhp1NzbrpQ/OkXX4VD23JtOAMNTn7nk1b/+bqADVF9tOGjuHQw4ytP6ayF" crossorigin="anonymous"></script><link rel="stylesheet" type="text/css" href="../css/commonltr.css">
+<link rel="stylesheet" type="text/css" href="../css/common-extended.css"><link rel="stylesheet" type="text/css" href="../css/theme.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" integrity="sha384-CK2SzKma4jA5H/MXDUU7i1TqZlCFaD4T01vtyDFvPlD97JQyS+IsSh1nI2EFbpyk" crossorigin="anonymous"></head><body id="dynamic-tables" class="d-flex flex-column min-vh-100 language-markup"><div class="visually-hidden-focusable overflow-hidden p-2 bg-body-tertiary"><div class="container-xl"><a class="d-inline-flex m-1 btn btn-outline-primary btn-sm" href="#ariaid-title1">Skip to main content</a><a href="#bs-sidebar-nav" class="d-none d-md-inline-flex m-1 btn btn-outline-primary btn-sm">Skip to docs navigation</a></div></div><header role="banner" class="sticky-top"><nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <!-- Modify -xxl to change container size -->
+  <div class="container-xxl">
+    <!-- This shows the menu on mobile -->
+    <div class="bd-navbar-toggle">
+      <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdSidebar" aria-controls="bdSidebar" aria-label="Toggle docs navigation">
+        <i class="bi bi-list"></i>
+      </button>
+    </div>
+    <a class="d-flex text-decoration-none" href="https://dita-bootstrap.org">
+      <svg xmlns="http://www.w3.org/2000/svg" class="d-inline-flex" width="40" height="40" viewBox="0 0 32 32">
+        <defs>
+          <clipPath id="bird-clip-v5-gray" clipPathUnits="userSpaceOnUse">
+            <path d="M19.5 -1L32 -1L32 16L28.5 16L27 18L22 22L22 27L11 27L11 12L19.5 5Z"/>
+          </clipPath>
+        </defs>
+        <rect fill="var(--bs-primary-bg-subtle)" x="1" y="1" width="30" height="30" rx="7"/>
+        <g transform="translate(-4, 4)">
+          <path fill="var(--bs-primary-text-emphasis)" clip-path="url(#bird-clip-v5-gray)" d="M4.458.007A4.462 4.462 0 0 0-.014 4.48v23.057a4.462 4.462 0 0 0 4.472 4.471h23.057a4.462 4.462 0 0 0 4.471-4.471V18.45H29.505l-6.217 5.063v.001l-.008.011c-.02.017-.041.031-.063.049-.413.337-1.119.645-2.063-.26-.05-.049-.156-.14-.156-.14l-2.477-2.025a7.586 7.586 0 0 0 2.568.217 5.555 5.555 0 0 0 1.71-.443l.72-.36c1.719-.98 3.14-2.667 4.016-4.1 1.263-2.068 1.437-4.712 1.393-5.48-.043-.77-.392-3.702-.392-4.327s.13-1.01.13-1.01l2.222-.865-1.699-1.635s-.086-.865-.391-1.49C28.493 1.031 27.49.358 25.836.214a3.584 3.584 0 0 0-.31-.014c-1.913-.04-3.24.644-3.726 1.38-.701 1.058-1.581 4.403-1.973 5.7-.021.07-.048.142-.079.216.177.149.358.315.504.45 1.733 1.376.92 4.736-.168 6.73-.954 1.75-2.197 3.414-3.388 4.981l-.01-.008c-.18.252-.38.52-.59.797l-.068.09a64.19 64.19 0 0 1-.71.912l5.237 4.29c.194.14.386.252.573.341v3.595H7.388V14.953l4.553 3.73c.218-.988.36-1.564.597-2.424l-5.164-4.22 11.898-9.69V.007H4.458zm21.76 2.113c.226-.009.44.071.487.387.091.612-.092.874-.595.977-.504.103-1.1-.051-1.1-.411s.432-.743.825-.875c.11-.036.249-.073.384-.078zm-21.461.22h10.962l-.07.048-9.495 7.636c-.66.524-1.03 1.193-1.03 1.973 0 .033.002.065.003.097h-.002v17.58h-.368a2.432 2.432 0 0 1-2.437-2.437V4.778a2.432 2.432 0 0 1 2.437-2.437zm23.638.644 1.59 1.553-2.58.992s-.036-.475-.106-.863c-.071-.388-.248-.56-.248-.56s.212-.475.46-.734c.247-.259.884-.388.884-.388zM18.807 8.3c-.49-.015-1.062.458-1.36.817-.77.932-.922 1.202-1.332 1.838-.428.664-.839 1.344-1.172 2.06-.6 1.289-1.073 2.638-1.479 4.001-.239.805-.473 1.686-.693 2.713-.456 2.118-.65 3.074-.687 3.585-.015.205.06.112.13.045.966-.95 1.78-2.023 2.248-2.612.501-.63.925-1.189 1.368-1.798 1.832-2.52 2.22-2.846 3.28-4.8 1.18-2.174 1.426-4.87.02-5.753a.633.633 0 0 0-.323-.096zm10.846 12.968v5.969a2.432 2.432 0 0 1-2.437 2.437h-3.568V26.13c.13-.066.272-.156.406-.28l.026-.016 5.573-4.565Z"/>
+        </g>
+        <rect fill="none" stroke="var(--bs-primary-border-subtle)" stroke-width="2" x="1" y="1" width="30" height="30" rx="7"/>
+      </svg>
+      <span class="ms-3 navbar-brand d-inline-flex">DITA Bootstrap</span>
+    </a>
+    <button class="navbar-toggler p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="bi bi-three-dots"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPlugin" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Plugins
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownPlugin">
+            <li><a class="dropdown-item" href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.html">HTML Plugin</a></li>
+            <li><a class="dropdown-item" href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.pdf">PDF Plugin</a></li>
+            <li><a class="dropdown-item" href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.pdf.theme">Bootswatch PDF Themes</a></li>
+            <li><a class="dropdown-item" href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.dtd">DITA Specialization for Bootstrap</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.extension">Bootstrap Extension Plugin</a></li>
+        <li><a class="dropdown-item" href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.extension.dtd">DITA Specialization for Bootstrap Extension</a></li>
+        <li><a class="dropdown-item" href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.sass">Bootstrap Sass Plugin</a></li>
+        <li><a class="dropdown-item" href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.table">Bootstrap Table Plugin</a></li>
+        <li><a class="dropdown-item" href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.lunr">Lunr Search Plugin</a></li>
+        <li><a class="dropdown-item" href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.watermark">Watermark Plugin</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownSource" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Source
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownSource">
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.html">dita-bootstrap.html</a></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.pdf">dita-bootstrap.pdf</a></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.pdf.theme">dita-bootstrap.pdf.theme</a></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.dtd">dita-bootstrap.dtd</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.extension">dita-bootstrap.extension</a></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.extension.dtd">dita-bootstrap.extension.dtd</a></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.lunr">dita-bootstrap.lunr</a></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.table">dita-bootstrap.table</a></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.sass">dita-bootstrap.sass</a></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.watermark">dita-bootstrap.watermark</a></li>
+            <li><hr class="dropdown-divider"></li>
+             <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/com.example.bootstrap-component">com.example.bootstrap-component</a></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/com.example.bootstrap-offline">com.example.bootstrap-offline</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownReleases" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Releases
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownReleases">
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.html/releases">dita-bootstrap.html</a></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.pdf/releases">dita-bootstrap.pdf</a></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.pdf.theme/releases">dita-bootstrap.pdf.theme</a></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.dtd/releases">dita-bootstrap.dtd</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.extension/releases">dita-bootstrap.extension</a></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.extension.dtd/releases">dita-bootstrap.extension.dtd</a></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.lunr/releases">dita-bootstrap.lunr</a></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.sass/releases">dita-bootstrap.sass</a></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.table/releases">dita-bootstrap.table</a></li>
+            <li><a class="dropdown-item" href="https://github.com/dita-bootstrap/dita-bootstrap.watermark/releases">dita-bootstrap.watermark</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://getbootstrap.com/docs/5.3">Bootstrap Docs</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto">
+        <!--
+          This is a lunr.js search box
+          It requires JavaScript to function.
+        -->
+        <li class="nav-item d-flex align-items-center">
+          <span class="nav-link pe-2">
+            <i class="bi bi-search"></i>
+          </span>
+          <form class="position-relative me-auto search-box rounded">
+            <input type="search" class="form-control" placeholder="Search…" aria-label="Search for…" dir="auto">
+          </form>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-0 me-1">
+        <!--
+          This is a dark/light color theme toggler.
+          It requires JavaScript to function.
+        -->
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-color-mode" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
+            <span class="d-light">
+              <i class="bi bi-brightness-high-fill"></i>
+            </span>
+            <span class="d-dark">
+              <i class="bi bi-moon-stars-fill"></i>
+            </span>
+            <span class="d-auto">
+              <i class="bi bi-circle-half"></i>
+            </span>
+            <span class="d-lg-none ms-2">Toggle color mode</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-color-mode" style="--bs-dropdown-min-width: 6rem;" data-bs-popper="static">
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light">
+                <i class="bi bi-brightness-high-fill"></i>
+                <span class="ms-2">Light</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark">
+                <i class="bi bi-moon-stars-fill"></i>
+                <span class="ms-2">Dark</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto">
+                <i class="bi bi-circle-half"></i>
+                <span class="ms-2">Auto</span>
+              </button>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-0 me-1">
+        <!--
+          This is a css bootstrap theme toggler.
+          It requires JavaScript to function.
+        -->
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-css-theme" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
+            <i class="bi bi-filetype-css"></i>
+            <span class="d-lg-none ms-2">Toggle theme</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end css-themes-list overflow-y-auto" aria-labelledby="bd-css-theme" style="--bs-dropdown-min-width: 6rem;" data-bs-popper="static">
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+                Default
+              </button>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/brite/bootstrap.min.css">
+                Brite
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/cerulean/bootstrap.min.css">
+                Cerulean
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/cosmo/bootstrap.min.css">
+                Cosmo
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/cyborg/bootstrap.min.css">
+                Cyborg
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/darkly/bootstrap.min.css">
+                Darkly
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/flatly/bootstrap.min.css">
+                Flatly
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/journal/bootstrap.min.css">
+                Journal
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/litera/bootstrap.min.css">
+                Litera
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/lumen/bootstrap.min.css">
+                Lumen
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/lux/bootstrap.min.css">
+                Lux
+              </button>
+            </li>
+          <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/materia/bootstrap.min.css">
+                Materia
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/minty/bootstrap.min.css">
+                Minty
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/morph/bootstrap.min.css">
+                Morph
+              </button>
+            </li>
+
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/pulse/bootstrap.min.css">
+                Pulse
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/quartz/bootstrap.min.css">
+                Quartz
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/sandstone/bootstrap.min.css">
+                Sandstone
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/simplex/bootstrap.min.css">
+                Simplex
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/sketchy/bootstrap.min.css">
+                Sketchy
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/slate/bootstrap.min.css">
+                Slate
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/solar/bootstrap.min.css">
+                Solar
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/spacelab/bootstrap.min.css">
+                SpaceLab
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/superhero/bootstrap.min.css">
+                Superhero
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/united/bootstrap.min.css">
+                United
+              </button>
+            </li>
+          <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/vapor/bootstrap.min.css">
+                Vapor
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/yeti/bootstrap.min.css">
+                Yeti
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/zephyr/bootstrap.min.css">
+                Zephyr
+              </button>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav></header><div class="bs-container container-xxl bd-gutter mt-3 my-md-4" id="content"><div class="overflow-y-auto bs-sidebar"><div class="offcanvas-lg offcanvas-start" tabindex="-1" id="bdSidebar" aria-labelledby="bdSidebarOffcanvasLabel" aria-modal="true" role="dialog"><div class="offcanvas-header border-bottom"><h5 class="offcanvas-title" id="bdSidebarOffcanvasLabel">DITA Bootstrap</h5><button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#bdSidebar"></button></div><div class="offcanvas-body flex-column h-100"><nav class="d-flex flex-align-start flex-column h-100 overflow-y-auto" role="navigation" id="bs-sidebar-nav"><div class="overflow-y-auto"><div class="flex-column bd-links"><ul class="list-unstyled mb-0 py-3 pt-md-1"><li><div class="d-flex flex-row ps-0" id="menu-collapse-trigger-d230904e11"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center p-0 border-0" data-bs-target="#menu-collapse-d230904e11" aria-labelledby="menu-collapse-trigger-d230904e11" aria-controls="menu-collapse-d230904e11"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><a class="d-inline-flex align-items-center flex-shrink-1 " href="../index.html">DITA Bootstrap</a></div><div id="menu-collapse-d230904e11" class="ps-2 collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 ps-2" href="../specialization.html">Specialization</a></div></li></ul></div></li><li><hr class="m-1"><span class="ps-3 bd-divider d-inline-flex">HTML</span></li><li><div class="d-flex flex-row ps-0"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center p-0 border-0" data-bs-target="#menu-collapse-d230904e38"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-2" data-bs-target="#menu-collapse-d230904e38"><i class="me-2 bi-book-half" style="color: var(--bs-indigo)"></i>Getting Started</span></div><div id="menu-collapse-d230904e38" class="ps-2 collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/index.html">Introduction</a></div></li></ul></div></li><li><div class="d-flex flex-row ps-0"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center p-0 border-0" data-bs-target="#menu-collapse-d230904e59"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-2" data-bs-target="#menu-collapse-d230904e59"><i class="me-2 bi-grid-fill" style="color: var(--bs-teal)"></i>Layout</span></div><div id="menu-collapse-d230904e59" class="ps-2 collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/nav.html">Navigation Menus</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/containers.html">Containers</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/grid.html">Grid System</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/rtl.html">Right-to-Left Languages</a></div></li></ul></div></li><li><div class="d-flex flex-row ps-0"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center p-0 border-0" data-bs-target="#menu-collapse-d230904e109"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-2" data-bs-target="#menu-collapse-d230904e109"><i class="me-2 bi-file-earmark-richtext" style="color: var(--bs-gray)"></i>Content</span></div><div id="menu-collapse-d230904e109" class="ps-2 collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/typography.html">Typography</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/images.html">Images</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/tables.html">Tables</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/figures.html">Figures</a></div></li></ul></div></li><li><div class="d-flex flex-row ps-0"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center p-0 border-0" data-bs-target="#menu-collapse-d230904e155"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-2" data-bs-target="#menu-collapse-d230904e155"><i class="me-2 bi-menu-button-wide-fill" style="color: var(--bs-cyan)"></i>Components</span></div><div id="menu-collapse-d230904e155" class="ps-2 collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/accordion.html">Accordion</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/alerts.html">Alerts</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/badge.html">Badges</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/breadcrumb.html">Breadcrumb</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/buttons.html">Buttons</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/button-group.html">Button group</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/card.html">Cards</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/carousel.html">Carousel</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/collapse.html">Collapse</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/list-group.html">List Group</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/offcanvas.html">Offcanvas</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/pagination.html">Pagination</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/popovers.html">Popovers</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/scrollspy.html">Scrollspy</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/tabs.html">Tabbed Dialogs</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/tooltips.html">Tooltips</a></div></li></ul></div></li><li><div class="d-flex flex-row ps-0"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center p-0 border-0" data-bs-target="#menu-collapse-d230904e325"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-2" data-bs-target="#menu-collapse-d230904e325"><i class="me-2 bi-braces-asterisk" style="color: var(--bs-pink)"></i>Utilities</span></div><div id="menu-collapse-d230904e325" class="ps-2 collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/borders.html">Borders</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/color.html">Color</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/shadows.html">Shadows</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/spacing.html">Spacing</a></div></li></ul></div></li><li><div class="d-flex flex-row ps-0"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center p-0 border-0 active" data-bs-target="#menu-collapse-d230904e386" aria-expanded="true" aria-current="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-2 active" data-bs-target="#menu-collapse-d230904e386" aria-expanded="true" aria-current="true"><i class="me-2 bi-tools" style="color: var(--bs-blue)"></i>Extend</span></div><div id="menu-collapse-d230904e386" class="ps-2 collapse show"><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/icons.html"><i class="me-2 bi-images" style=""></i>Icons</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/dark-mode.html"><i class="me-2 bi-moon-stars" style=""></i>Dark Mode</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/extension-points.html"><i class="me-2 bi-wrench-adjustable" style=""></i>Extension Points</a></div></li><li><hr class="m-1"><span class="ps-3 bd-divider d-inline-flex">Additional Plug‑ins</span></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/search-box.html"><i class="me-2 bi-search" style=""></i>Search Box</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/offline.html"><i class="me-2 bi-wifi-off" style=""></i>Offline Mode</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/component.html"><i class="me-2 bi-puzzle" style=""></i>Custom Components</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/sass.html"><i class="me-2 bi-filetype-sass" style=""></i>Bootstrap Sass</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1  active" href="../html/bootstrap-table.html"><i class="me-2 bi-table" style=""></i>Dynamic Tables</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../html/bootstrap-extension.html"><i class="me-2 bi-bootstrap" style=""></i>Bootstrap Extension</a></div></li></ul></div></li><li><hr class="m-1"><span class="ps-3 bd-divider d-inline-flex">PDF</span></li><li><div class="d-flex flex-row ps-0"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center p-0 border-0" data-bs-target="#menu-collapse-d230904e523"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-2" data-bs-target="#menu-collapse-d230904e523"><i class="me-2 bi-book-half" style="color: var(--bs-indigo)"></i>Getting Started</span></div><div id="menu-collapse-d230904e523" class="ps-2 collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../pdf/index.html">Introduction</a></div></li></ul></div></li><li><div class="d-flex flex-row ps-0"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center p-0 border-0" data-bs-target="#menu-collapse-d230904e544"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-2" data-bs-target="#menu-collapse-d230904e544"><i class="me-2 bi-file-earmark-richtext" style="color: var(--bs-gray)"></i>Content</span></div><div id="menu-collapse-d230904e544" class="ps-2 collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../pdf/typography.html">Typography</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../pdf/images.html">Images</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../pdf/tables.html">Tables</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../pdf/figures.html">Figures</a></div></li></ul></div></li><li><div class="d-flex flex-row ps-0"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center p-0 border-0" data-bs-target="#menu-collapse-d230904e590"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-2" data-bs-target="#menu-collapse-d230904e590"><i class="me-2 bi-menu-button-wide-fill" style="color: var(--bs-cyan)"></i>Components</span></div><div id="menu-collapse-d230904e590" class="ps-2 collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../pdf/accordion.html">Accordion</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../pdf/alerts.html">Alerts</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../pdf/badge.html">Badges</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../pdf/buttons.html">Buttons</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../pdf/button-group.html">Button group</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../pdf/card.html">Cards</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../pdf/carousel.html">Carousel</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../pdf/list-group.html">List Group</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../pdf/pagination.html">Pagination</a></div></li></ul></div></li><li><div class="d-flex flex-row ps-0"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center p-0 border-0" data-bs-target="#menu-collapse-d230904e687"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-2" data-bs-target="#menu-collapse-d230904e687"><i class="me-2 bi-braces-asterisk" style="color: var(--bs-pink)"></i>Utilities</span></div><div id="menu-collapse-d230904e687" class="ps-2 collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../pdf/borders.html">Borders</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../pdf/color.html">Color</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../pdf/shadows.html">Shadows</a></div></li><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../pdf/spacing.html">Spacing</a></div></li></ul></div></li><li><div class="d-flex flex-row ps-0"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center p-0 border-0" data-bs-target="#menu-collapse-d230904e748"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-2" data-bs-target="#menu-collapse-d230904e748"><i class="me-2 bi-tools" style="color: var(--bs-blue)"></i>Extend</span></div><div id="menu-collapse-d230904e748" class="ps-2 collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row ps-0"><a class="d-inline-flex align-items-center flex-shrink-1 " href="../pdf/icons.html"><i class="me-2 bi-images" style=""></i>Icons</a></div></li></ul></div></li></ul></div></div></nav></div></div></div><main role="main" class="bs-main me-3"><article role="article" class="bs-content" aria-labelledby="ariaid-title1">
+  <h1 class="title" id="ariaid-title1">Dynamic Tables</h1>
+  
+  
+  <div class="body language-markup"><p class="shortdesc text-body-secondary lead">Documentation and examples for creating dynamic tables with the Bootstrap Table extension.</p>
+    <p class="p"><dfn class="term">DITA Bootstrap Table</dfn> is a DITA-OT plug-in that extends the
+      HTML output with dynamic tables from the
+      <a class="xref" href="https://bootstrap-table.com/" target="_blank" rel="external noopener">Bootstrap Table</a> library. It adds
+      the necessary CSS and JavaScript for dynamic tables with search, sort, and pagination functions.</p>
+    <section class="section"><h2 class="title h4">Installing the <dfn class="term">DITA Bootstrap Table</dfn> plug-in</h2>
+      
+      <p class="p">Use the <span class="keyword cmdname">dita</span> command to add the <dfn class="term">DITA Bootstrap Table</dfn>
+       plug-in to your DITA Open Toolkit installation:</p>
+      <pre class="pre codeblock alert alert-secondary language-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname"><span class="ph token function">install</span></span> org.dita-bootstrap.table</code></pre>
+    </section>
+    <section class="section"><h2 class="title h4">Search</h2>
+      
+       <p class="p">Add <code class="keyword markupname xmlelement">&lt;table otherprops="search"&gt;</code> to filter the results based on a search term.</p>
+    </section>
+    <div class="bodydiv bd-example">
+      <div><table class="table table-striped" data-toggle="table" data-locale="en" data-search="true" data-search-accent-neutralise="true" data-pagination="true"><colgroup><col style="width:40%"><col style="width:40%"><col style="width:20%"></colgroup><thead class="thead">
+            <tr>
+              <th class="entry align-top" id="dynamic-tables__entry__1">Animal</th>
+              <th class="entry align-top" id="dynamic-tables__entry__2">Species</th>
+              <th class="entry align-top" id="dynamic-tables__entry__3">Gestation</th>
+            </tr>
+          </thead><tbody class="tbody">
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">African wild dog</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Lycaon pictus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">71</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Alpaca</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Lama pacos</td>
+            <td class="entry" headers="dynamic-tables__entry__3">345</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">American bison</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Bison bison</td>
+            <td class="entry" headers="dynamic-tables__entry__3">285</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Antelope (Blackbuck)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Antilope cervicapra</td>
+            <td class="entry" headers="dynamic-tables__entry__3">165</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Antelope (Impala)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Aepyceros melampus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">191</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Antelope (Sable)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Hippotragus niger</td>
+            <td class="entry" headers="dynamic-tables__entry__3">270</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Armadillo (Nine-banded)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Dasypus novemcinctus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">120</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Armadillo (Six-banded)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Euphractus sexcinctus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">62</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Baboon</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Papio sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__3">185</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Badger (American)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Taxidea taxus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">60</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Bear (black)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Ursus americanus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">220</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Bear (grizzly)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Ursus arctos</td>
+            <td class="entry" headers="dynamic-tables__entry__3">215</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Bear (polar)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Ursus maritimus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">241</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Beaver</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Castor sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__3">122</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Wild boar</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Sus scrofa</td>
+            <td class="entry" headers="dynamic-tables__entry__3">120</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Bonobo</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Pan paniscus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">228</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Bactrian camel</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Camelus bactrianus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">390</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Barbary sheep</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Ammotragus lervia</td>
+            <td class="entry" headers="dynamic-tables__entry__3">158</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Capuchin monkey</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Cebus sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__3">180</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Cat</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Felis catus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">64</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Cattle</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Bos taurus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">283</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Cheetah</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Acinoyx jubatus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">92</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Chital</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Axis axis</td>
+            <td class="entry" headers="dynamic-tables__entry__3">218</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Chimpanzee</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Pan troglodytes</td>
+            <td class="entry" headers="dynamic-tables__entry__3">240</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Chinchilla</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Chinchilla chinchilla</td>
+            <td class="entry" headers="dynamic-tables__entry__3">110</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Chinchilla (Long-tailed)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Chinchilla laniger</td>
+            <td class="entry" headers="dynamic-tables__entry__3">110</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Chipmunk</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Tamias striatus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">31</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Coyote</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Canis latrans</td>
+            <td class="entry" headers="dynamic-tables__entry__3">62</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Coypu</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Myocastor coypus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">132</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Deer (Common fallow deer</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Dama dama</td>
+            <td class="entry" headers="dynamic-tables__entry__3">228</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Deer (mule deer)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Odocoileus hemionus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">206</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Deer (Père David's)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Elaphurus davidianus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">284</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Deer (red deer</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Cervus elaphus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">238</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Deer (Sambar)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Rusa unicolor</td>
+            <td class="entry" headers="dynamic-tables__entry__3">246</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Deer (white-tailed)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Odocoileus virginianus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">201</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Dog (domestic)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Canis familiaris</td>
+            <td class="entry" headers="dynamic-tables__entry__3">61</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Dolphin (Bottlenose)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Tursiops truncatus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">364</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Dolphin (Spinner)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Stenella longirostris</td>
+            <td class="entry" headers="dynamic-tables__entry__3">318</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Donkey</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Equus asinus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">365</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Eland</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Taurotragus oryx</td>
+            <td class="entry" headers="dynamic-tables__entry__3">255</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Elephant (Asian)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Elephas maximus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">617</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Elephant (African bush)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Loxodonta africana</td>
+            <td class="entry" headers="dynamic-tables__entry__3">655</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Elephant shrew (Bushveld)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Elephantulus intufi</td>
+            <td class="entry" headers="dynamic-tables__entry__3">51</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Elephant shrew (eastern rock elephant shrew)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Elephantulus myurus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">46</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Flying squirrel (Southern)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Glaucomys volans</td>
+            <td class="entry" headers="dynamic-tables__entry__3">40</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Fox (Bat-eared)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Otocyon megalotis</td>
+            <td class="entry" headers="dynamic-tables__entry__3">65</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Fox (island)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Urocyon littoralis</td>
+            <td class="entry" headers="dynamic-tables__entry__3">63</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Fox (red)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Vulpes vulpes</td>
+            <td class="entry" headers="dynamic-tables__entry__3">52</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Gazelle (Dorcas)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Gazella dorcas</td>
+            <td class="entry" headers="dynamic-tables__entry__3">132</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Gazelle (Thomson's)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Gazella thomsonii</td>
+            <td class="entry" headers="dynamic-tables__entry__3">165</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Gerbil (Greater Egyptian)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Gebrillus pyramidum</td>
+            <td class="entry" headers="dynamic-tables__entry__3">21</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Gerbil (Mongolian)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Meriones unguiculatus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">24</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Gibbon</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Hylobates lar</td>
+            <td class="entry" headers="dynamic-tables__entry__3">220</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Giraffe</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Giraffa sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__3">430</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Goat (domestic)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Capra hircus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">150</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Goat (mountain goat)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Oreamnos americanus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">176</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Golden lion tamarin</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Leontopithecus rosalia</td>
+            <td class="entry" headers="dynamic-tables__entry__3">131</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Gorilla</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Gorilla gorilla</td>
+            <td class="entry" headers="dynamic-tables__entry__3">257</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Grivet</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Cercopithecus aethiops</td>
+            <td class="entry" headers="dynamic-tables__entry__3">210</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Guenon</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Cercopithecus sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__3">160</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Guinea pig</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Cavia sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__3">65</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Hamster</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Phodopus campbelli</td>
+            <td class="entry" headers="dynamic-tables__entry__3">20</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Hamster (Chinese)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Cricetulus griseus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">21</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Hamster (Golden)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Mesocricetus auratus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">16</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Hare (European)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Lepus europaeus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">41</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Hedgehog (European)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Erinaceus europaeus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">34</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Hippopotamus</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Hippopotamus amphibius</td>
+            <td class="entry" headers="dynamic-tables__entry__3">237</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Horse</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Equus caballus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">336</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Human</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Homo sapiens</td>
+            <td class="entry" headers="dynamic-tables__entry__3">270</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Hyena (Striped)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Hyaena hyaena</td>
+            <td class="entry" headers="dynamic-tables__entry__3">90</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Jackal (golden)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Canis aureus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">62</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Kangaroo</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Osphranter antilopinus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">42</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Kinkajou</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Potos flavus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">77</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Koala</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Phascolarctos cinereus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">34</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Langur (northern plain)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Semnopithecus entellus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">183</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Lemur</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Lemur sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__3">128</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Leopard</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Panthera pardus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">93</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Lion</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Panthera leo</td>
+            <td class="entry" headers="dynamic-tables__entry__3">108</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Llama</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Lama glama</td>
+            <td class="entry" headers="dynamic-tables__entry__3">330</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Lynx (Canadian)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Lynx canadensis</td>
+            <td class="entry" headers="dynamic-tables__entry__3">60</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Mangabey (Grey-cheeked)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Cercocebus albigena</td>
+            <td class="entry" headers="dynamic-tables__entry__3">174</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Howler monkey (mantled howler)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Alquatta paliatta</td>
+            <td class="entry" headers="dynamic-tables__entry__3">139</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Monkey (blue)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Cercopithecus mitis</td>
+            <td class="entry" headers="dynamic-tables__entry__3">140</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Monkey (Dusky leaf)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Trachypithecus obscurus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">150</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Monkey (patas)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Erythrocebus patas</td>
+            <td class="entry" headers="dynamic-tables__entry__3">192</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Monkey (proboscis)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Nasalis larvatus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">166</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Monkey (Red-tailed)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Cercopithecus ascanius</td>
+            <td class="entry" headers="dynamic-tables__entry__3">190</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Monkey (spider)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Ateles sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__3">139</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Monkey (squirrel)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Saimiri sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__3">167</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Monkey (Talapoin)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Cercopithecus talapoin</td>
+            <td class="entry" headers="dynamic-tables__entry__3">196</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Monkey (Vervet)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Cercopithecus pygerythrus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">195</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Moose</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Alces alces</td>
+            <td class="entry" headers="dynamic-tables__entry__3">245</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Mouse (domestic)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Mus musculus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">19</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Mouse (meadow)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Zapus hudsonius</td>
+            <td class="entry" headers="dynamic-tables__entry__3">21</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Mouse (Cotton)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Peromyscus gossypinus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">23</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Mouse (White-footed)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Peromyscus leucopus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">23</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Opossum (Virginia)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Didelphis virginiana</td>
+            <td class="entry" headers="dynamic-tables__entry__3">12</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Orangutan (Bornean)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Pongo pygmaeus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">234</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Orca</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Orcinus orca</td>
+            <td class="entry" headers="dynamic-tables__entry__3">532</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Otter</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Lutra sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__3">73</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Pig (domestic)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Sus domesticus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">113</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Porcupine (Crested)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Hystrix cristata</td>
+            <td class="entry" headers="dynamic-tables__entry__3">112</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Porcupine (North American)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Erethizon dorsatum</td>
+            <td class="entry" headers="dynamic-tables__entry__3">113</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Porpoise (harbour)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Phocoena phocoena</td>
+            <td class="entry" headers="dynamic-tables__entry__3">270</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Pronghorn</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Antilocapra americana</td>
+            <td class="entry" headers="dynamic-tables__entry__3">246</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Puma</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Puma concolor</td>
+            <td class="entry" headers="dynamic-tables__entry__3">90</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Quokka</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Setonix brachyurus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">26</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Rabbit (domestic)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Oryctolagus cuniculus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">31</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Rabbit (European)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Oryctolagus cuniculus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">31</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Raccoon</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Procyon lotor</td>
+            <td class="entry" headers="dynamic-tables__entry__3">63</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Rat</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Rattus sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__3">22</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Reindeer</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Reindeer (Rangifer tarandus)</td>
+            <td class="entry" headers="dynamic-tables__entry__3">215</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Rat (Hispid cotton)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Sigmodon hispidus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">27</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Rhinoceros (black)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Diceros bicornis</td>
+            <td class="entry" headers="dynamic-tables__entry__3">450</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Rhinoceros (Indian)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Rhinoceros unicornis</td>
+            <td class="entry" headers="dynamic-tables__entry__3">478</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Rhinoceros (white)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Ceratotherium simum</td>
+            <td class="entry" headers="dynamic-tables__entry__3">467</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Rock hyrax</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Procavia capensis</td>
+            <td class="entry" headers="dynamic-tables__entry__3">255</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Seal</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Seal</td>
+            <td class="entry" headers="dynamic-tables__entry__3">330</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Seal (Northern fur)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Callorhinus ursinus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">254</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Seal (Weddel)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Leptonychotes wedelli</td>
+            <td class="entry" headers="dynamic-tables__entry__3">310</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Sea lion</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Zalophus californianus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">350</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Sheep</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Ovis aries</td>
+            <td class="entry" headers="dynamic-tables__entry__3">150</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Sheep (Bighorn)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Ovis canadensis</td>
+            <td class="entry" headers="dynamic-tables__entry__3">180</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Slow loris (Sunda loris)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Nycticebus coucang</td>
+            <td class="entry" headers="dynamic-tables__entry__3">90</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Siamang</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Symphalangus syndactylus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">236</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Skunk (Striped)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Mephitis mephitis</td>
+            <td class="entry" headers="dynamic-tables__entry__3">65</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Squirrel (gray)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Sciurus carolinensis</td>
+            <td class="entry" headers="dynamic-tables__entry__3">35</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Squirrel (red)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Sciurus vulgaris</td>
+            <td class="entry" headers="dynamic-tables__entry__3">38</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Tamarin</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Saguinus sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__3">162</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Tapir (Malayan)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Acrocodia indica</td>
+            <td class="entry" headers="dynamic-tables__entry__3">379</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Tiger</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Panthera tigris</td>
+            <td class="entry" headers="dynamic-tables__entry__3">109</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Treeshrew (common)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Tupaia glis</td>
+            <td class="entry" headers="dynamic-tables__entry__3">46</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Walrus</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Odobenus rosmarus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">456</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Whale (Beluga)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Delphinapterus leucas</td>
+            <td class="entry" headers="dynamic-tables__entry__3">408</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Whale (sperm)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Physeter catodon</td>
+            <td class="entry" headers="dynamic-tables__entry__3">535</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Wolf</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Canis lupus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">64</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Wombat</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Vombatus ursinus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">27</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Woolly monkey (Brown)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Lagothrix lagothrica</td>
+            <td class="entry" headers="dynamic-tables__entry__3">139</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Yak</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Bos grunniens</td>
+            <td class="entry" headers="dynamic-tables__entry__3">255</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Zebu</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Bos taurus</td>
+            <td class="entry" headers="dynamic-tables__entry__3">280</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__1">Zebra (Burchell's)</td>
+            <td class="entry" headers="dynamic-tables__entry__2">Equus quagga burchelli</td>
+            <td class="entry" headers="dynamic-tables__entry__3">390</td>
+          </tr>
+        </tbody></table></div>
+    </div>
+    <pre class="pre codeblock alert alert-secondary language-markup"><code><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>table</span> <span class="ph token attr-name">otherprops</span><span class="ph token attr-value"><span class="ph token punctuation attr-equals">=</span><span class="ph token punctuation">"</span>search<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
+  ...etc
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>table</span><span class="ph token punctuation">&gt;</span></span></code></pre>
+    <section class="section"><h2 class="title h4">Pagination</h2>
+      
+      <p class="p">Add <code class="keyword markupname xmlelement">&lt;table otherprops="pagination"&gt;</code> to add paginator to a large table.</p>
+
+    </section>
+    <div class="bodydiv bd-example">
+      <div><table class="table table-striped" data-toggle="table" data-locale="en" data-pagination="true"><colgroup><col style="width:40%"><col style="width:40%"><col style="width:20%"></colgroup><thead class="thead">
+            <tr>
+              <th class="entry align-top" id="dynamic-tables__entry__427">Animal</th>
+              <th class="entry align-top" id="dynamic-tables__entry__428">Species</th>
+              <th class="entry align-top" id="dynamic-tables__entry__429">Gestation</th>
+            </tr>
+          </thead><tbody class="tbody">
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">African wild dog</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Lycaon pictus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">71</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Alpaca</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Lama pacos</td>
+            <td class="entry" headers="dynamic-tables__entry__429">345</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">American bison</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Bison bison</td>
+            <td class="entry" headers="dynamic-tables__entry__429">285</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Antelope (Blackbuck)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Antilope cervicapra</td>
+            <td class="entry" headers="dynamic-tables__entry__429">165</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Antelope (Impala)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Aepyceros melampus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">191</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Antelope (Sable)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Hippotragus niger</td>
+            <td class="entry" headers="dynamic-tables__entry__429">270</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Armadillo (Nine-banded)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Dasypus novemcinctus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">120</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Armadillo (Six-banded)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Euphractus sexcinctus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">62</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Baboon</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Papio sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__429">185</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Badger (American)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Taxidea taxus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">60</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Bear (black)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Ursus americanus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">220</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Bear (grizzly)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Ursus arctos</td>
+            <td class="entry" headers="dynamic-tables__entry__429">215</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Bear (polar)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Ursus maritimus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">241</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Beaver</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Castor sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__429">122</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Wild boar</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Sus scrofa</td>
+            <td class="entry" headers="dynamic-tables__entry__429">120</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Bonobo</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Pan paniscus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">228</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Bactrian camel</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Camelus bactrianus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">390</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Barbary sheep</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Ammotragus lervia</td>
+            <td class="entry" headers="dynamic-tables__entry__429">158</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Capuchin monkey</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Cebus sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__429">180</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Cat</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Felis catus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">64</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Cattle</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Bos taurus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">283</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Cheetah</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Acinoyx jubatus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">92</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Chital</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Axis axis</td>
+            <td class="entry" headers="dynamic-tables__entry__429">218</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Chimpanzee</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Pan troglodytes</td>
+            <td class="entry" headers="dynamic-tables__entry__429">240</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Chinchilla</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Chinchilla chinchilla</td>
+            <td class="entry" headers="dynamic-tables__entry__429">110</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Chinchilla (Long-tailed)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Chinchilla laniger</td>
+            <td class="entry" headers="dynamic-tables__entry__429">110</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Chipmunk</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Tamias striatus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">31</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Coyote</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Canis latrans</td>
+            <td class="entry" headers="dynamic-tables__entry__429">62</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Coypu</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Myocastor coypus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">132</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Deer (Common fallow deer</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Dama dama</td>
+            <td class="entry" headers="dynamic-tables__entry__429">228</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Deer (mule deer)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Odocoileus hemionus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">206</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Deer (Père David's)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Elaphurus davidianus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">284</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Deer (red deer</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Cervus elaphus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">238</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Deer (Sambar)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Rusa unicolor</td>
+            <td class="entry" headers="dynamic-tables__entry__429">246</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Deer (white-tailed)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Odocoileus virginianus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">201</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Dog (domestic)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Canis familiaris</td>
+            <td class="entry" headers="dynamic-tables__entry__429">61</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Dolphin (Bottlenose)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Tursiops truncatus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">364</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Dolphin (Spinner)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Stenella longirostris</td>
+            <td class="entry" headers="dynamic-tables__entry__429">318</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Donkey</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Equus asinus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">365</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Eland</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Taurotragus oryx</td>
+            <td class="entry" headers="dynamic-tables__entry__429">255</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Elephant (Asian)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Elephas maximus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">617</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Elephant (African bush)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Loxodonta africana</td>
+            <td class="entry" headers="dynamic-tables__entry__429">655</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Elephant shrew (Bushveld)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Elephantulus intufi</td>
+            <td class="entry" headers="dynamic-tables__entry__429">51</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Elephant shrew (eastern rock elephant shrew)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Elephantulus myurus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">46</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Flying squirrel (Southern)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Glaucomys volans</td>
+            <td class="entry" headers="dynamic-tables__entry__429">40</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Fox (Bat-eared)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Otocyon megalotis</td>
+            <td class="entry" headers="dynamic-tables__entry__429">65</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Fox (island)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Urocyon littoralis</td>
+            <td class="entry" headers="dynamic-tables__entry__429">63</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Fox (red)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Vulpes vulpes</td>
+            <td class="entry" headers="dynamic-tables__entry__429">52</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Gazelle (Dorcas)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Gazella dorcas</td>
+            <td class="entry" headers="dynamic-tables__entry__429">132</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Gazelle (Thomson's)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Gazella thomsonii</td>
+            <td class="entry" headers="dynamic-tables__entry__429">165</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Gerbil (Greater Egyptian)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Gebrillus pyramidum</td>
+            <td class="entry" headers="dynamic-tables__entry__429">21</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Gerbil (Mongolian)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Meriones unguiculatus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">24</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Gibbon</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Hylobates lar</td>
+            <td class="entry" headers="dynamic-tables__entry__429">220</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Giraffe</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Giraffa sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__429">430</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Goat (domestic)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Capra hircus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">150</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Goat (mountain goat)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Oreamnos americanus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">176</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Golden lion tamarin</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Leontopithecus rosalia</td>
+            <td class="entry" headers="dynamic-tables__entry__429">131</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Gorilla</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Gorilla gorilla</td>
+            <td class="entry" headers="dynamic-tables__entry__429">257</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Grivet</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Cercopithecus aethiops</td>
+            <td class="entry" headers="dynamic-tables__entry__429">210</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Guenon</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Cercopithecus sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__429">160</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Guinea pig</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Cavia sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__429">65</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Hamster</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Phodopus campbelli</td>
+            <td class="entry" headers="dynamic-tables__entry__429">20</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Hamster (Chinese)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Cricetulus griseus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">21</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Hamster (Golden)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Mesocricetus auratus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">16</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Hare (European)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Lepus europaeus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">41</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Hedgehog (European)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Erinaceus europaeus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">34</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Hippopotamus</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Hippopotamus amphibius</td>
+            <td class="entry" headers="dynamic-tables__entry__429">237</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Horse</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Equus caballus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">336</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Human</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Homo sapiens</td>
+            <td class="entry" headers="dynamic-tables__entry__429">270</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Hyena (Striped)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Hyaena hyaena</td>
+            <td class="entry" headers="dynamic-tables__entry__429">90</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Jackal (golden)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Canis aureus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">62</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Kangaroo</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Osphranter antilopinus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">42</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Kinkajou</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Potos flavus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">77</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Koala</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Phascolarctos cinereus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">34</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Langur (northern plain)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Semnopithecus entellus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">183</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Lemur</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Lemur sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__429">128</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Leopard</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Panthera pardus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">93</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Lion</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Panthera leo</td>
+            <td class="entry" headers="dynamic-tables__entry__429">108</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Llama</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Lama glama</td>
+            <td class="entry" headers="dynamic-tables__entry__429">330</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Lynx (Canadian)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Lynx canadensis</td>
+            <td class="entry" headers="dynamic-tables__entry__429">60</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Mangabey (Grey-cheeked)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Cercocebus albigena</td>
+            <td class="entry" headers="dynamic-tables__entry__429">174</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Howler monkey (mantled howler)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Alquatta paliatta</td>
+            <td class="entry" headers="dynamic-tables__entry__429">139</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Monkey (blue)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Cercopithecus mitis</td>
+            <td class="entry" headers="dynamic-tables__entry__429">140</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Monkey (Dusky leaf)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Trachypithecus obscurus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">150</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Monkey (patas)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Erythrocebus patas</td>
+            <td class="entry" headers="dynamic-tables__entry__429">192</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Monkey (proboscis)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Nasalis larvatus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">166</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Monkey (Red-tailed)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Cercopithecus ascanius</td>
+            <td class="entry" headers="dynamic-tables__entry__429">190</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Monkey (spider)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Ateles sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__429">139</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Monkey (squirrel)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Saimiri sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__429">167</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Monkey (Talapoin)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Cercopithecus talapoin</td>
+            <td class="entry" headers="dynamic-tables__entry__429">196</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Monkey (Vervet)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Cercopithecus pygerythrus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">195</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Moose</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Alces alces</td>
+            <td class="entry" headers="dynamic-tables__entry__429">245</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Mouse (domestic)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Mus musculus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">19</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Mouse (meadow)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Zapus hudsonius</td>
+            <td class="entry" headers="dynamic-tables__entry__429">21</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Mouse (Cotton)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Peromyscus gossypinus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">23</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Mouse (White-footed)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Peromyscus leucopus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">23</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Opossum (Virginia)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Didelphis virginiana</td>
+            <td class="entry" headers="dynamic-tables__entry__429">12</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Orangutan (Bornean)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Pongo pygmaeus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">234</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Orca</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Orcinus orca</td>
+            <td class="entry" headers="dynamic-tables__entry__429">532</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Otter</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Lutra sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__429">73</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Pig (domestic)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Sus domesticus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">113</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Porcupine (Crested)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Hystrix cristata</td>
+            <td class="entry" headers="dynamic-tables__entry__429">112</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Porcupine (North American)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Erethizon dorsatum</td>
+            <td class="entry" headers="dynamic-tables__entry__429">113</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Porpoise (harbour)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Phocoena phocoena</td>
+            <td class="entry" headers="dynamic-tables__entry__429">270</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Pronghorn</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Antilocapra americana</td>
+            <td class="entry" headers="dynamic-tables__entry__429">246</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Puma</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Puma concolor</td>
+            <td class="entry" headers="dynamic-tables__entry__429">90</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Quokka</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Setonix brachyurus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">26</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Rabbit (domestic)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Oryctolagus cuniculus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">31</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Rabbit (European)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Oryctolagus cuniculus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">31</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Raccoon</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Procyon lotor</td>
+            <td class="entry" headers="dynamic-tables__entry__429">63</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Rat</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Rattus sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__429">22</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Reindeer</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Reindeer (Rangifer tarandus)</td>
+            <td class="entry" headers="dynamic-tables__entry__429">215</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Rat (Hispid cotton)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Sigmodon hispidus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">27</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Rhinoceros (black)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Diceros bicornis</td>
+            <td class="entry" headers="dynamic-tables__entry__429">450</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Rhinoceros (Indian)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Rhinoceros unicornis</td>
+            <td class="entry" headers="dynamic-tables__entry__429">478</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Rhinoceros (white)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Ceratotherium simum</td>
+            <td class="entry" headers="dynamic-tables__entry__429">467</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Rock hyrax</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Procavia capensis</td>
+            <td class="entry" headers="dynamic-tables__entry__429">255</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Seal</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Seal</td>
+            <td class="entry" headers="dynamic-tables__entry__429">330</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Seal (Northern fur)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Callorhinus ursinus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">254</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Seal (Weddel)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Leptonychotes wedelli</td>
+            <td class="entry" headers="dynamic-tables__entry__429">310</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Sea lion</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Zalophus californianus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">350</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Sheep</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Ovis aries</td>
+            <td class="entry" headers="dynamic-tables__entry__429">150</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Sheep (Bighorn)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Ovis canadensis</td>
+            <td class="entry" headers="dynamic-tables__entry__429">180</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Slow loris (Sunda loris)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Nycticebus coucang</td>
+            <td class="entry" headers="dynamic-tables__entry__429">90</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Siamang</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Symphalangus syndactylus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">236</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Skunk (Striped)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Mephitis mephitis</td>
+            <td class="entry" headers="dynamic-tables__entry__429">65</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Squirrel (gray)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Sciurus carolinensis</td>
+            <td class="entry" headers="dynamic-tables__entry__429">35</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Squirrel (red)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Sciurus vulgaris</td>
+            <td class="entry" headers="dynamic-tables__entry__429">38</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Tamarin</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Saguinus sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__429">162</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Tapir (Malayan)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Acrocodia indica</td>
+            <td class="entry" headers="dynamic-tables__entry__429">379</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Tiger</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Panthera tigris</td>
+            <td class="entry" headers="dynamic-tables__entry__429">109</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Treeshrew (common)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Tupaia glis</td>
+            <td class="entry" headers="dynamic-tables__entry__429">46</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Walrus</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Odobenus rosmarus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">456</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Whale (Beluga)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Delphinapterus leucas</td>
+            <td class="entry" headers="dynamic-tables__entry__429">408</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Whale (sperm)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Physeter catodon</td>
+            <td class="entry" headers="dynamic-tables__entry__429">535</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Wolf</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Canis lupus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">64</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Wombat</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Vombatus ursinus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">27</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Woolly monkey (Brown)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Lagothrix lagothrica</td>
+            <td class="entry" headers="dynamic-tables__entry__429">139</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Yak</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Bos grunniens</td>
+            <td class="entry" headers="dynamic-tables__entry__429">255</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Zebu</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Bos taurus</td>
+            <td class="entry" headers="dynamic-tables__entry__429">280</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__427">Zebra (Burchell's)</td>
+            <td class="entry" headers="dynamic-tables__entry__428">Equus quagga burchelli</td>
+            <td class="entry" headers="dynamic-tables__entry__429">390</td>
+          </tr>
+        </tbody></table></div>
+    </div>
+    <pre class="pre codeblock alert alert-secondary language-markup"><code><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>table</span> <span class="ph token attr-name">otherprops</span><span class="ph token attr-value"><span class="ph token punctuation attr-equals">=</span><span class="ph token punctuation">"</span>pagination<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
+  ...etc
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>table</span><span class="ph token punctuation">&gt;</span></span></code></pre>
+    <p class="p">The following page sizes are supported:</p>
+    <dl class="dl parml row">
+      
+        <dt class="dt pt col-lg-4 text-truncate dlterm"><code class="keyword markupname xmlatt text-wrap">@otherprops="pagination"</code></dt>
+        <dd class="dd pd col-lg-8">Table page size is 10 rows (default)</dd>
+      
+      
+        <dt class="dt pt col-lg-4 text-truncate dlterm"><code class="keyword markupname xmlatt text-wrap">@otherprops="pagination-25"</code></dt>
+         <dd class="dd pd col-lg-8">Table page size is 25 rows</dd>
+      
+      
+      <dt class="dt pt col-lg-4 text-truncate dlterm"><code class="keyword markupname xmlatt text-wrap">@otherprops="pagination-50"</code></dt>
+       <dd class="dd pd col-lg-8">Table page size is 50 rows</dd>
+      
+      
+      <dt class="dt pt col-lg-4 text-truncate dlterm"><code class="keyword markupname xmlatt text-wrap">@otherprops="pagination-100"</code></dt>
+       <dd class="dd pd col-lg-8">Table page size is 100 rows</dd>
+      
+    </dl>
+
+     <section class="section"><h2 class="title h4">Sorting</h2>
+      
+      <p class="p">Add <code class="keyword markupname xmlelement">&lt;table otherprops="sortable"&gt;</code>
+      to allow each column to be sorted dynamically.</p>
+    </section>
+    <div class="bodydiv bd-example">
+      <div><table class="table table-striped" data-toggle="table" data-locale="en" data-sortable="true" data-pagination="true"><colgroup><col style="width:40%"><col style="width:40%"><col style="width:20%"></colgroup><thead class="thead">
+            <tr>
+              <th data-sortable="true" class="entry align-top" id="dynamic-tables__entry__853">Animal</th>
+              <th data-sortable="true" class="entry align-top" id="dynamic-tables__entry__854">Species</th>
+              <th data-sortable="true" class="entry align-top" id="dynamic-tables__entry__855">Gestation</th>
+            </tr>
+          </thead><tbody class="tbody">
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">African wild dog</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Lycaon pictus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">71</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Alpaca</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Lama pacos</td>
+            <td class="entry" headers="dynamic-tables__entry__855">345</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">American bison</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Bison bison</td>
+            <td class="entry" headers="dynamic-tables__entry__855">285</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Antelope (Blackbuck)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Antilope cervicapra</td>
+            <td class="entry" headers="dynamic-tables__entry__855">165</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Antelope (Impala)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Aepyceros melampus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">191</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Antelope (Sable)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Hippotragus niger</td>
+            <td class="entry" headers="dynamic-tables__entry__855">270</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Armadillo (Nine-banded)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Dasypus novemcinctus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">120</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Armadillo (Six-banded)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Euphractus sexcinctus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">62</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Baboon</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Papio sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__855">185</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Badger (American)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Taxidea taxus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">60</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Bear (black)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Ursus americanus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">220</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Bear (grizzly)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Ursus arctos</td>
+            <td class="entry" headers="dynamic-tables__entry__855">215</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Bear (polar)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Ursus maritimus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">241</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Beaver</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Castor sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__855">122</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Wild boar</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Sus scrofa</td>
+            <td class="entry" headers="dynamic-tables__entry__855">120</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Bonobo</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Pan paniscus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">228</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Bactrian camel</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Camelus bactrianus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">390</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Barbary sheep</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Ammotragus lervia</td>
+            <td class="entry" headers="dynamic-tables__entry__855">158</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Capuchin monkey</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Cebus sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__855">180</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Cat</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Felis catus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">64</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Cattle</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Bos taurus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">283</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Cheetah</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Acinoyx jubatus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">92</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Chital</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Axis axis</td>
+            <td class="entry" headers="dynamic-tables__entry__855">218</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Chimpanzee</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Pan troglodytes</td>
+            <td class="entry" headers="dynamic-tables__entry__855">240</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Chinchilla</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Chinchilla chinchilla</td>
+            <td class="entry" headers="dynamic-tables__entry__855">110</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Chinchilla (Long-tailed)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Chinchilla laniger</td>
+            <td class="entry" headers="dynamic-tables__entry__855">110</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Chipmunk</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Tamias striatus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">31</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Coyote</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Canis latrans</td>
+            <td class="entry" headers="dynamic-tables__entry__855">62</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Coypu</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Myocastor coypus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">132</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Deer (Common fallow deer</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Dama dama</td>
+            <td class="entry" headers="dynamic-tables__entry__855">228</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Deer (mule deer)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Odocoileus hemionus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">206</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Deer (Père David's)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Elaphurus davidianus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">284</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Deer (red deer</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Cervus elaphus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">238</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Deer (Sambar)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Rusa unicolor</td>
+            <td class="entry" headers="dynamic-tables__entry__855">246</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Deer (white-tailed)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Odocoileus virginianus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">201</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Dog (domestic)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Canis familiaris</td>
+            <td class="entry" headers="dynamic-tables__entry__855">61</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Dolphin (Bottlenose)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Tursiops truncatus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">364</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Dolphin (Spinner)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Stenella longirostris</td>
+            <td class="entry" headers="dynamic-tables__entry__855">318</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Donkey</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Equus asinus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">365</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Eland</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Taurotragus oryx</td>
+            <td class="entry" headers="dynamic-tables__entry__855">255</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Elephant (Asian)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Elephas maximus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">617</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Elephant (African bush)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Loxodonta africana</td>
+            <td class="entry" headers="dynamic-tables__entry__855">655</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Elephant shrew (Bushveld)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Elephantulus intufi</td>
+            <td class="entry" headers="dynamic-tables__entry__855">51</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Elephant shrew (eastern rock elephant shrew)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Elephantulus myurus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">46</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Flying squirrel (Southern)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Glaucomys volans</td>
+            <td class="entry" headers="dynamic-tables__entry__855">40</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Fox (Bat-eared)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Otocyon megalotis</td>
+            <td class="entry" headers="dynamic-tables__entry__855">65</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Fox (island)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Urocyon littoralis</td>
+            <td class="entry" headers="dynamic-tables__entry__855">63</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Fox (red)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Vulpes vulpes</td>
+            <td class="entry" headers="dynamic-tables__entry__855">52</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Gazelle (Dorcas)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Gazella dorcas</td>
+            <td class="entry" headers="dynamic-tables__entry__855">132</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Gazelle (Thomson's)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Gazella thomsonii</td>
+            <td class="entry" headers="dynamic-tables__entry__855">165</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Gerbil (Greater Egyptian)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Gebrillus pyramidum</td>
+            <td class="entry" headers="dynamic-tables__entry__855">21</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Gerbil (Mongolian)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Meriones unguiculatus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">24</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Gibbon</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Hylobates lar</td>
+            <td class="entry" headers="dynamic-tables__entry__855">220</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Giraffe</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Giraffa sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__855">430</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Goat (domestic)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Capra hircus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">150</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Goat (mountain goat)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Oreamnos americanus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">176</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Golden lion tamarin</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Leontopithecus rosalia</td>
+            <td class="entry" headers="dynamic-tables__entry__855">131</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Gorilla</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Gorilla gorilla</td>
+            <td class="entry" headers="dynamic-tables__entry__855">257</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Grivet</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Cercopithecus aethiops</td>
+            <td class="entry" headers="dynamic-tables__entry__855">210</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Guenon</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Cercopithecus sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__855">160</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Guinea pig</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Cavia sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__855">65</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Hamster</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Phodopus campbelli</td>
+            <td class="entry" headers="dynamic-tables__entry__855">20</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Hamster (Chinese)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Cricetulus griseus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">21</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Hamster (Golden)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Mesocricetus auratus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">16</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Hare (European)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Lepus europaeus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">41</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Hedgehog (European)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Erinaceus europaeus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">34</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Hippopotamus</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Hippopotamus amphibius</td>
+            <td class="entry" headers="dynamic-tables__entry__855">237</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Horse</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Equus caballus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">336</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Human</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Homo sapiens</td>
+            <td class="entry" headers="dynamic-tables__entry__855">270</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Hyena (Striped)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Hyaena hyaena</td>
+            <td class="entry" headers="dynamic-tables__entry__855">90</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Jackal (golden)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Canis aureus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">62</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Kangaroo</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Osphranter antilopinus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">42</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Kinkajou</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Potos flavus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">77</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Koala</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Phascolarctos cinereus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">34</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Langur (northern plain)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Semnopithecus entellus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">183</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Lemur</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Lemur sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__855">128</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Leopard</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Panthera pardus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">93</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Lion</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Panthera leo</td>
+            <td class="entry" headers="dynamic-tables__entry__855">108</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Llama</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Lama glama</td>
+            <td class="entry" headers="dynamic-tables__entry__855">330</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Lynx (Canadian)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Lynx canadensis</td>
+            <td class="entry" headers="dynamic-tables__entry__855">60</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Mangabey (Grey-cheeked)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Cercocebus albigena</td>
+            <td class="entry" headers="dynamic-tables__entry__855">174</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Howler monkey (mantled howler)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Alquatta paliatta</td>
+            <td class="entry" headers="dynamic-tables__entry__855">139</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Monkey (blue)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Cercopithecus mitis</td>
+            <td class="entry" headers="dynamic-tables__entry__855">140</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Monkey (Dusky leaf)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Trachypithecus obscurus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">150</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Monkey (patas)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Erythrocebus patas</td>
+            <td class="entry" headers="dynamic-tables__entry__855">192</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Monkey (proboscis)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Nasalis larvatus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">166</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Monkey (Red-tailed)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Cercopithecus ascanius</td>
+            <td class="entry" headers="dynamic-tables__entry__855">190</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Monkey (spider)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Ateles sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__855">139</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Monkey (squirrel)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Saimiri sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__855">167</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Monkey (Talapoin)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Cercopithecus talapoin</td>
+            <td class="entry" headers="dynamic-tables__entry__855">196</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Monkey (Vervet)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Cercopithecus pygerythrus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">195</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Moose</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Alces alces</td>
+            <td class="entry" headers="dynamic-tables__entry__855">245</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Mouse (domestic)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Mus musculus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">19</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Mouse (meadow)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Zapus hudsonius</td>
+            <td class="entry" headers="dynamic-tables__entry__855">21</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Mouse (Cotton)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Peromyscus gossypinus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">23</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Mouse (White-footed)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Peromyscus leucopus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">23</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Opossum (Virginia)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Didelphis virginiana</td>
+            <td class="entry" headers="dynamic-tables__entry__855">12</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Orangutan (Bornean)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Pongo pygmaeus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">234</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Orca</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Orcinus orca</td>
+            <td class="entry" headers="dynamic-tables__entry__855">532</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Otter</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Lutra sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__855">73</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Pig (domestic)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Sus domesticus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">113</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Porcupine (Crested)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Hystrix cristata</td>
+            <td class="entry" headers="dynamic-tables__entry__855">112</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Porcupine (North American)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Erethizon dorsatum</td>
+            <td class="entry" headers="dynamic-tables__entry__855">113</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Porpoise (harbour)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Phocoena phocoena</td>
+            <td class="entry" headers="dynamic-tables__entry__855">270</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Pronghorn</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Antilocapra americana</td>
+            <td class="entry" headers="dynamic-tables__entry__855">246</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Puma</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Puma concolor</td>
+            <td class="entry" headers="dynamic-tables__entry__855">90</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Quokka</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Setonix brachyurus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">26</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Rabbit (domestic)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Oryctolagus cuniculus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">31</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Rabbit (European)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Oryctolagus cuniculus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">31</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Raccoon</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Procyon lotor</td>
+            <td class="entry" headers="dynamic-tables__entry__855">63</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Rat</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Rattus sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__855">22</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Reindeer</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Reindeer (Rangifer tarandus)</td>
+            <td class="entry" headers="dynamic-tables__entry__855">215</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Rat (Hispid cotton)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Sigmodon hispidus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">27</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Rhinoceros (black)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Diceros bicornis</td>
+            <td class="entry" headers="dynamic-tables__entry__855">450</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Rhinoceros (Indian)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Rhinoceros unicornis</td>
+            <td class="entry" headers="dynamic-tables__entry__855">478</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Rhinoceros (white)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Ceratotherium simum</td>
+            <td class="entry" headers="dynamic-tables__entry__855">467</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Rock hyrax</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Procavia capensis</td>
+            <td class="entry" headers="dynamic-tables__entry__855">255</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Seal</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Seal</td>
+            <td class="entry" headers="dynamic-tables__entry__855">330</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Seal (Northern fur)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Callorhinus ursinus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">254</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Seal (Weddel)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Leptonychotes wedelli</td>
+            <td class="entry" headers="dynamic-tables__entry__855">310</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Sea lion</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Zalophus californianus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">350</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Sheep</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Ovis aries</td>
+            <td class="entry" headers="dynamic-tables__entry__855">150</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Sheep (Bighorn)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Ovis canadensis</td>
+            <td class="entry" headers="dynamic-tables__entry__855">180</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Slow loris (Sunda loris)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Nycticebus coucang</td>
+            <td class="entry" headers="dynamic-tables__entry__855">90</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Siamang</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Symphalangus syndactylus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">236</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Skunk (Striped)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Mephitis mephitis</td>
+            <td class="entry" headers="dynamic-tables__entry__855">65</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Squirrel (gray)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Sciurus carolinensis</td>
+            <td class="entry" headers="dynamic-tables__entry__855">35</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Squirrel (red)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Sciurus vulgaris</td>
+            <td class="entry" headers="dynamic-tables__entry__855">38</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Tamarin</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Saguinus sp.</td>
+            <td class="entry" headers="dynamic-tables__entry__855">162</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Tapir (Malayan)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Acrocodia indica</td>
+            <td class="entry" headers="dynamic-tables__entry__855">379</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Tiger</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Panthera tigris</td>
+            <td class="entry" headers="dynamic-tables__entry__855">109</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Treeshrew (common)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Tupaia glis</td>
+            <td class="entry" headers="dynamic-tables__entry__855">46</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Walrus</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Odobenus rosmarus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">456</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Whale (Beluga)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Delphinapterus leucas</td>
+            <td class="entry" headers="dynamic-tables__entry__855">408</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Whale (sperm)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Physeter catodon</td>
+            <td class="entry" headers="dynamic-tables__entry__855">535</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Wolf</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Canis lupus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">64</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Wombat</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Vombatus ursinus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">27</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Woolly monkey (Brown)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Lagothrix lagothrica</td>
+            <td class="entry" headers="dynamic-tables__entry__855">139</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Yak</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Bos grunniens</td>
+            <td class="entry" headers="dynamic-tables__entry__855">255</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Zebu</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Bos taurus</td>
+            <td class="entry" headers="dynamic-tables__entry__855">280</td>
+          </tr>
+          <tr>
+            <td class="entry" headers="dynamic-tables__entry__853">Zebra (Burchell's)</td>
+            <td class="entry" headers="dynamic-tables__entry__854">Equus quagga burchelli</td>
+            <td class="entry" headers="dynamic-tables__entry__855">390</td>
+          </tr>
+        </tbody></table></div>
+    </div>
+    <pre class="pre codeblock alert alert-secondary language-markup"><code><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>table</span> <span class="ph token attr-name">otherprops</span><span class="ph token attr-value"><span class="ph token punctuation attr-equals">=</span><span class="ph token punctuation">"</span>pagination sortable<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
+  ...etc
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>table</span><span class="ph token punctuation">&gt;</span></span></code></pre>
+  </div>
+</article></main></div><script language="javascript" src="../js/popovers.js"></script><script language="javascript" src="../js/dark-mode-toggler.js"></script><footer role="contentinfo" class="mt-auto border-top bg-primary-subtle"><!-- Footer --><div class="container text-center">
+  <div class="row">
+    <div class="col">
+      <!-- Social media -->
+      <p class="pt-3">
+        <!-- GitHub -->
+        <a class="btn m-1" href="https://github.com/dita-bootstrap/dita-bootstrap" role="button" style="background-color: #333333;">
+          <i class="bi bi-github text-white"></i>
+        </a>
+        <!-- LinkedIn -->
+        <a class="btn m-1" href="https://www.linkedin.com/in/infotexture/" role="button" style="background-color: #0082ca;">
+          <i class="bi bi-linkedin text-white"></i>
+        </a>
+        <!-- Mastodon -->
+        <a class="btn m-1" href="https://indieweb.social/@infotexture" role="button" style="background-color: #563acc;">
+          <i class="bi bi-mastodon text-white"></i>
+        </a>
+        <!-- Bluesky -->
+        <a class="btn m-1" href="https://bsky.app/profile/infotexture.net" role="button" style="background-color: #0085ff;">
+          <i class="bi bi-bluesky text-white"></i>
+        </a>
+      </p>
+      <p>
+        <small>
+          © 2017–2026
+          <a href="https://infotexture.net/">infotexture</a>
+        </small>
+      </p>
+    </div>
+  </div>
+</div><!-- Footer --></footer></body></html>
