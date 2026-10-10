@@ -68,7 +68,7 @@
               >Bootswatch PDF Themes</a></li>
             <li><a
                 class="dropdown-item"
-                href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.specialization"
+                href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.dtd"
               >DITA Specialization for Bootstrap</a></li>
             <li><hr class="dropdown-divider"/></li>
             <li><a
@@ -76,9 +76,9 @@
             href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.extension"
         >Bootstrap Extension Plugin</a></li>
         <li><a
-            class="dropdown-item"
-            href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.extension.specialization"
-        >DITA Specialization for Bootstrap Extension</a></li>
+                class="dropdown-item"
+                href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.extension.dtd"
+              >DITA Specialization for Bootstrap Extension</a></li>
         <li><a
             class="dropdown-item"
             href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.sass"
@@ -123,8 +123,8 @@
               >dita-bootstrap.pdf.theme</a></li>
             <li><a
                 class="dropdown-item"
-                href="https://github.com/dita-bootstrap/dita-bootstrap.specialization"
-              >dita-bootstrap.specialization</a></li>
+                href="https://github.com/dita-bootstrap/dita-bootstrap.dtd"
+              >dita-bootstrap.dtd</a></li>
             <li><hr class="dropdown-divider"/></li>
             <li><a
                 class="dropdown-item"
@@ -132,8 +132,8 @@
               >dita-bootstrap.extension</a></li>
             <li><a
                 class="dropdown-item"
-                href="https://github.com/dita-bootstrap/dita-bootstrap.extension.specialization"
-              >dita-bootstrap.extension.specialization</a></li>
+                href="https://github.com/dita-bootstrap/dita-bootstrap.extension.dtd"
+              >dita-bootstrap.extension.dtd</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://github.com/dita-bootstrap/dita-bootstrap.lunr"
@@ -187,8 +187,8 @@
               >dita-bootstrap.pdf.theme</a></li>
             <li><a
                 class="dropdown-item"
-                href="https://github.com/dita-bootstrap/dita-bootstrap.specialization/releases"
-              >dita-bootstrap.specialization</a></li>
+                href="https://github.com/dita-bootstrap/dita-bootstrap.dtd/releases"
+              >dita-bootstrap.dtd</a></li>
             <li><hr class="dropdown-divider"/></li>
             <li><a
                 class="dropdown-item"
@@ -196,8 +196,8 @@
               >dita-bootstrap.extension</a></li>
             <li><a
                 class="dropdown-item"
-                href="https://github.com/dita-bootstrap/dita-bootstrap.extension.specialization/releases"
-              >dita-bootstrap.extension.specialization</a></li>
+                href="https://github.com/dita-bootstrap/dita-bootstrap.extension.dtd/releases"
+              >dita-bootstrap.extension.dtd</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://github.com/dita-bootstrap/dita-bootstrap.lunr/releases"

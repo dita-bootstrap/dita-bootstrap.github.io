@@ -1,0 +1,83 @@
+<!DOCTYPE topic PUBLIC "-//DITA Bootstrap//DTD DITA Bootstrap Topic//EN" "bootstrap-topic.dtd">
+<topic id="collapse">
+  <title>Collapse</title>
+  <shortdesc>Toggle the visibility of content across your project with a few classes and Bootstrap’s JavaScript
+    plugin.</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Collapse</indexterm>
+        <indexterm>CSS
+          <indexterm><xmlatt>outputclass</xmlatt></indexterm>
+        </indexterm>
+        <indexterm><xmlelement>bodydiv</xmlelement></indexterm>
+        <indexterm><xmlelement>xref</xmlelement></indexterm>
+        <indexterm><xmlatt>props</xmlatt></indexterm>
+        <indexterm><xmlatt>otherprops</xmlatt></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body outputclass="language-markup">
+    <section>
+      <title>How it works</title>
+      <p>The collapse JavaScript plugin is used to show and hide content. Buttons or anchors are used as triggers that
+        are mapped to specific elements you toggle. Collapsing an element will animate the height from its current value
+        to 0. Given how CSS handles animations, you cannot use padding on a .collapse element. Instead, use the class as
+        an independent wrapping element.</p>
+    </section>
+    <section>
+      <title>Example</title>
+      <p>Below is a collapsed example that is displayed when the button is clicked. Add
+          <xmlatt>props="collapse-toggle"</xmlatt> to an <xmlelement>xref</xmlelement> element to associate a button to
+        a collapse</p>
+    </section>
+    <bodydiv border="yes" padding="3" deliveryTarget="html">
+      <p>
+        <button props="collapse-toggle" href="#collapse1">Toggle Collapse</button>
+      </p>
+      <collapse id="collapse1">
+        <card outputclass="card-body">
+          <p>Some placeholder content for the collapse component. This panel is hidden by default but revealed when the
+            user activates the relevant trigger.</p>
+        </card>
+      </collapse>
+    </bodydiv>
+    <tabbed-dialog style="pills" margin="t3">
+      <section>
+        <title>Specialization</title>
+        <codeblock><coderef href="code/specialization/collapse/example.xml"/></codeblock>
+      </section>
+      <section>
+        <title><xmlatt>outputclass</xmlatt></title>
+        <codeblock><coderef href="code/html/collapse/example.xml"/></codeblock>
+      </section>
+    </tabbed-dialog>
+    <section>
+      <title>Horizontal</title>
+      <p>The collapse plugin also supports horizontal collapsing. Add <xmlatt>outputclass="collapse-horizontal"</xmlatt>
+        to transition the width instead of height and set an <xmlatt>otherprops="style(width: ...)</xmlatt> on the
+        immediate child <xmlelement>div</xmlelement> element.</p>
+    </section>
+    <bodydiv border="yes" padding="3" deliveryTarget="html">
+      <p>
+        <button props="collapse-toggle" href="#collapse2">Toggle Width Collapse</button>
+      </p>
+      <collapse outputclass="collapse-horizontal" id="collapse2" otherprops="style(min-height: 120px;)">
+      <bodydiv outputclass="card card-body" otherprops="style(width: 300px;)">
+        <p>Some placeholder content for the collapse component. This is some placeholder content for a horizontal
+          collapse. It’s hidden by default and shown when triggered.</p>
+      </bodydiv>
+    </collapse>
+    </bodydiv>
+    <tabbed-dialog style="pills" margin="t3">
+      <section>
+        <title>Specialization</title>
+        <codeblock><coderef href="code/specialization/collapse/horizontal.xml"/></codeblock>
+      </section>
+      <section>
+        <title><xmlatt>outputclass</xmlatt></title>
+        <codeblock><coderef href="code/html/collapse/horizontal.xml"/></codeblock>
+      </section>
+    </tabbed-dialog>
+  </body>
+</topic>

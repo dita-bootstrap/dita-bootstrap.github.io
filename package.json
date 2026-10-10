@@ -1,0 +1,30 @@
+{
+  "name": "dita-bootstrap.github.io",
+  "description": "Website for DITA Bootstrap Components",
+  "homepage": "https://dita-bootstrap.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dita-bootstrap/dita-bootstrap.github.io.git"
+  },
+  "license": "Apache-2.0",
+  "scripts": {
+    "check": "npm run prettier-check",
+    "fmt": "npm run format",
+    "format": "prettier --write \"**/*.{css,dita*,json,md,xml,xsl,yml}\"",
+    "format:css": "prettier --write \"**/*.css\"",
+    "format:dita": "prettier --write \"**/*.dita\"",
+    "format:xml": "prettier --write \"**/*.xml\"",
+    "format:xsl": "prettier --write \"**/*.xsl\"",
+    "prettier": "prettier --write \"**/*.{css,dita*,json,md,xml,xsl,yml}\"",
+    "prettier-check": "prettier --check \"**/*.{css,dita*,json,md,xml,xsl,yml}\"",
+    "stylelint": "stylelint \"**/*.css\" --globby-options '{\"dot\":true}'",
+    "test": "prettier --list-different \"**/*.{css,dita*,json,md,xml,xsl,yml}\""
+  },
+  "devDependencies": {
+    "@prettier/plugin-xml": "3.4.2",
+    "lefthook": "^2.1.14",
+    "prettier": "3.9.9",
+    "stylelint": "^16.26.1",
+    "stylelint-config-twbs-bootstrap": "^16.1.0"
+  }
+}
