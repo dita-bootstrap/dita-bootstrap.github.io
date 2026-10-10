@@ -120,6 +120,11 @@
       </topicmeta>
     </topicref>
     <topicref href="html/gestation.dita" processing-role="resource-only"/>
+    <topicref href="html/swagger.dita">
+      <topicmeta>
+        <othermeta name="icon" content="bi-braces-asterisk"/>
+      </topicmeta>
+    </topicref>
     <topicref href="html/bootstrap-extension.dita">
       <topicmeta>
         <othermeta name="icon" content="bi-bootstrap"/>
