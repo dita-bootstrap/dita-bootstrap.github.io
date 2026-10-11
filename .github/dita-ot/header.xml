@@ -85,39 +85,57 @@
             <li><a
                 class="dropdown-item"
                 href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.html"
+                target="_blank"
+                rel="noopener"
               >Bootstrap HTML Plugin</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.extension"
+                target="_blank"
+                rel="noopener"
               >Bootstrap Extension Plugin</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.sass"
+                target="_blank"
+                rel="noopener"
               >Bootstrap Sass Plugin</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.table"
+                target="_blank"
+                rel="noopener"
               >Bootstrap Table Plugin</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.lunr"
+                target="_blank"
+                rel="noopener"
               >Lunr Search Plugin</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.swagger"
+                target="_blank"
+                rel="noopener"
               >Swagger Plugin</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.watermark"
+                target="_blank"
+                rel="noopener"
               >Watermark Plugin</a></li>
             <li><hr class="dropdown-divider"/></li>
             <li><a
                 class="dropdown-item"
                 href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.pdf"
+                target="_blank"
+                rel="noopener"
               >Bootstrap PDF Plugin</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.pdf.theme"
+                target="_blank"
+                rel="noopener"
               >Bootswatch PDF Themes</a></li>
             <li><hr class="dropdown-divider"/></li>
             <li class="dropdown-submenu">
@@ -131,10 +149,14 @@
                 <li><a
                     class="dropdown-item"
                     href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.dtd"
+                    target="_blank"
+                    rel="noopener"
                   >DITA Specialization for Bootstrap</a></li>
                 <li><a
                     class="dropdown-item"
                     href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.extension.dtd"
+                    target="_blank"
+                    rel="noopener"
                   >DITA Specialization for Bootstrap Extension</a></li>
               </ul>
             </li>
@@ -155,57 +177,83 @@
             <li><a
                 class="dropdown-item"
                 href="https://github.com/dita-bootstrap/dita-bootstrap.html"
+                target="_blank"
+                rel="noopener"
               >dita-bootstrap.html</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://github.com/dita-bootstrap/dita-bootstrap.extension"
+                target="_blank"
+                rel="noopener"
               >dita-bootstrap.extension</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://github.com/dita-bootstrap/dita-bootstrap.sass"
+                target="_blank"
+                rel="noopener"
               >dita-bootstrap.sass</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://github.com/dita-bootstrap/dita-bootstrap.table"
+                target="_blank"
+                rel="noopener"
               >dita-bootstrap.table</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://github.com/dita-bootstrap/dita-bootstrap.lunr"
+                target="_blank"
+                rel="noopener"
               >dita-bootstrap.lunr</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://github.com/dita-bootstrap/dita-bootstrap.swagger"
+                target="_blank"
+                rel="noopener"
               >dita-bootstrap.swagger</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://github.com/dita-bootstrap/dita-bootstrap.watermark"
+                target="_blank"
+                rel="noopener"
               >dita-bootstrap.watermark</a></li>
             <li><hr class="dropdown-divider"/></li>
             <li><a
                 class="dropdown-item"
                 href="https://github.com/dita-bootstrap/dita-bootstrap.pdf"
+                target="_blank"
+                rel="noopener"
               >dita-bootstrap.pdf</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://github.com/dita-bootstrap/dita-bootstrap.pdf.theme"
+                target="_blank"
+                rel="noopener"
               >dita-bootstrap.pdf.theme</a></li>
             <li><hr class="dropdown-divider"/></li>
             <li><a
                 class="dropdown-item"
                 href="https://github.com/dita-bootstrap/com.example.bootstrap-component"
+                target="_blank"
+                rel="noopener"
               >com.example.bootstrap-component</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://github.com/dita-bootstrap/com.example.bootstrap-offline"
+                target="_blank"
+                rel="noopener"
               >com.example.bootstrap-offline</a></li>
             <li><hr class="dropdown-divider"/></li>
             <li><a
                 class="dropdown-item"
                 href="https://github.com/dita-bootstrap/dita-bootstrap.dtd"
+                target="_blank"
+                rel="noopener"
               >dita-bootstrap.dtd</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://github.com/dita-bootstrap/dita-bootstrap.extension.dtd"
+                target="_blank"
+                rel="noopener"
               >dita-bootstrap.extension.dtd</a></li>
           </ul>
         </li>
@@ -224,56 +272,111 @@
             <li><a
                 class="dropdown-item"
                 href="https://github.com/dita-bootstrap/dita-bootstrap.html/releases"
+                target="_blank"
+                rel="noopener"
               >dita-bootstrap.html</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://github.com/dita-bootstrap/dita-bootstrap.extension/releases"
+                target="_blank"
+                rel="noopener"
               >dita-bootstrap.extension</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://github.com/dita-bootstrap/dita-bootstrap.sass/releases"
+                target="_blank"
+                rel="noopener"
               >dita-bootstrap.sass</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://github.com/dita-bootstrap/dita-bootstrap.table/releases"
+                target="_blank"
+                rel="noopener"
               >dita-bootstrap.table</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://github.com/dita-bootstrap/dita-bootstrap.lunr/releases"
+                target="_blank"
+                rel="noopener"
               >dita-bootstrap.lunr</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://github.com/dita-bootstrap/dita-bootstrap.swagger/releases"
+                target="_blank"
+                rel="noopener"
               >dita-bootstrap.swagger</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://github.com/dita-bootstrap/dita-bootstrap.watermark/releases"
+                target="_blank"
+                rel="noopener"
               >dita-bootstrap.watermark</a></li>
             <li><hr class="dropdown-divider"/></li>
             <li><a
                 class="dropdown-item"
                 href="https://github.com/dita-bootstrap/dita-bootstrap.pdf/releases"
+                target="_blank"
+                rel="noopener"
               >dita-bootstrap.pdf</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://github.com/dita-bootstrap/dita-bootstrap.pdf.theme/releases"
+                target="_blank"
+                rel="noopener"
               >dita-bootstrap.pdf.theme</a></li>
             <li><hr class="dropdown-divider"/></li>
             <li><a
                 class="dropdown-item"
                 href="https://github.com/dita-bootstrap/dita-bootstrap.dtd/releases"
+                target="_blank"
+                rel="noopener"
               >dita-bootstrap.dtd</a></li>
             <li><a
                 class="dropdown-item"
                 href="https://github.com/dita-bootstrap/dita-bootstrap.extension.dtd/releases"
+                target="_blank"
+                rel="noopener"
               >dita-bootstrap.extension.dtd</a></li>
           </ul>
         </li>
-        <li class="nav-item">
+        <li class="nav-item dropdown">
           <a
-            class="nav-link"
-            href="https://getbootstrap.com/docs/5.3"
-          >Bootstrap Docs</a>
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdownDocs"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Docs
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownDocs">
+            <li><a
+                class="dropdown-item"
+                href="https://getbootstrap.com/docs/5.3"
+                target="_blank"
+                rel="noopener"
+              >Bootstrap 5.3</a></li>
+            <li><a
+                class="dropdown-item"
+                href="https://bootstrap-table.com"
+                target="_blank"
+                rel="noopener"
+              >Bootstrap Table</a></li>
+            <li><a
+                class="dropdown-item"
+                href="https://bootstrapextensions.com/"
+                target="_blank"
+                rel="noopener"
+              >Bootstrap Extensions</a></li>
+            <li><hr class="dropdown-divider"/></li>
+            <li><a
+                class="dropdown-item"
+                href="https://dita-bootstrap.org/dita-bootstrap.extension/"
+                target="_blank"
+                rel="noopener"
+              >DITA Bootstrap Extension</a></li>
+          </ul>
         </li>
       </ul>
       <ul class="navbar-nav ms-auto">
