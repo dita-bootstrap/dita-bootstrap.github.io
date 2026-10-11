@@ -34,6 +34,16 @@
   --bs-code-color: var(--bs-secondary-text-emphasis);
 }
 
+.theme-brand {
+  --brand-base: color-mix(in oklch, var(--bs-primary) 75%, var(--bs-danger));
+  --brand-fg: color-mix(in oklch, var(--bs-black) 22%, var(--brand-base));
+  --brand-bg-subtle: color-mix(in oklch, var(--bs-white) 80%, var(--brand-base));
+}
+
+.theme-brand:hover {
+  transform: rotate(-5deg) scale(1.1);
+}
+
 /* Three-column CSS theme picker */
 .css-themes-list {
   width: 400px;
