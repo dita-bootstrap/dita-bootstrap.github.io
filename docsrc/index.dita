@@ -35,7 +35,7 @@
       >The DITA Bootstrap documentation provides information about installing, running, configuring and extending the Bootstrap plugins
       for multiple output formats:</p>
       <ul outputclass="list-group mb-5">
-        <li outputclass="list-group-item list-group-item-action">
+        <li>
           <icon outputclass="pe-2 bi-filetype-html" style="font-size: 2rem; color: var(--bs-blue);"/>
           See
           <xref
@@ -43,7 +43,7 @@
             format="dita"
             outputclass="stretched-link"
           /> for information on how to render DITA documents as HTML using Bootstrap components.</li>
-        <li outputclass="list-group-item list-group-item-action">
+        <li>
           <icon outputclass="pe-2 bi-file-pdf" style="font-size: 2rem; color: var(--bs-red);"/>
           See
           <xref
