@@ -11,5 +11,5 @@ pre-commit:
       stage_fixed: true
     stylelint:
       glob: '*.{css}'
-      run: stylelint {staged_files}
+      run: npx stylelint {staged_files}
       stage_fixed: true

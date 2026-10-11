@@ -32,7 +32,8 @@
       <title>Installing the <term>DITA Bootstrap Swagger</term> plug-in</title>
       <p>Use the <cmdname>dita</cmdname> command to add the plug-in and its dependencies to your DITA Open Toolkit
         installation:</p>
-      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>install</parmname> fox.jason.passthrough.swagger
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname
+        >install</parmname> fox.jason.passthrough.swagger
 <cmdname>dita</cmdname> <parmname>install</parmname> org.dita-bootstrap.swagger</codeblock>
     </section>
     <section>
