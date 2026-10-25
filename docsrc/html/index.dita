@@ -653,11 +653,7 @@
      <parmname>--nav-toc</parmname>=<option>&lt;sidebar-style&gt;</option></codeblock>
 
        <note type="note">For an example of <option>collapsible</option> styling, see the output at
-        <xref
-          href="https://dita-bootstrap.org/dita-bootstrap/"
-          format="html"
-          scope="external"
-        >dita-bootstrap.github.io/dita-bootstrap</xref>. </note>
+        <xref href="https://dita-bootstrap.org" format="html" scope="external">dita-bootstrap.org</xref>. </note>
     </section>
     <section>
       <title>Common Bootstrap utility classes</title>
